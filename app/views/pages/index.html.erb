@@ -1,0 +1,6 @@
+<%= link_to 'New Page', new_page_path %>
+<p id="notice"><%= notice %></p>
+
+  <% @pages.each do |page| %>
+    <%= link_to link_to page.name, page %>
+  <% end %>
