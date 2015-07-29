@@ -26,6 +26,7 @@ module RailsWelcome
     # config.i18n.default_locale = :ru
     
     config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     
     config.action_mailer.delivery_method = :smtp  #:sendmail
     config.action_mailer.smtp_settings = {

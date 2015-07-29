@@ -1,21 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-  get 'home/index'
-  end
-
-  namespace :admin do
-  get 'home/stats'
-  end
-
-  namespace :admin do
-    resources :pages
-  end
-
-  namespace :admin do
-    resources :meta_tags
-  end
-
   root 'main#home'
   
   # get 'main/home'
@@ -38,6 +22,14 @@ Rails.application.routes.draw do
   get 'lk/consultation'
 
   devise_for :users
+  
+  namespace :admin do
+    get 'home/index'
+    get 'home/stats'
+    resources :pages
+    resources :meta_tags
+  end
+  mount Ckeditor::Engine => '/ckeditor'
 
   
   #-----------------------------------------------------------------

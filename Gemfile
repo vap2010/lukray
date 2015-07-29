@@ -10,8 +10,8 @@ gem 'mysql2'
 gem 'activerecord-session_store' 
 gem 'devise'
 gem 'cancancan'
-
-
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'paperclip'
 
 
 # Use SCSS for stylesheets

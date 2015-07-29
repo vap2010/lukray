@@ -3,3 +3,4 @@ RAILS_ENV=production bundle exec rake db:migrate
 bundle
 RAILS_ENV=production bundle exec rake assets:precompile
 touch tmp/restart.txt
+

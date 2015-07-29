@@ -45,13 +45,21 @@
   </div>
   <div class="field">
     <%= f.label :announce %><br>
-    <%= f.text_area :announce %>
+    <%#= f.text_area :announce %>
+    <%= f.cktext_area :announce, :class => 'someclass', :ckeditor => {:language => 'en', :toolbar => 'mini'} %>
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%#= f.text_area :body %>
+    <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'en'} %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+  <%#= form.cktext_area :notes, :class => 'someclass', :ckeditor => {:language => 'uk'} %>
+  <%#= form.cktext_area :content, :value => 'Default value', :id => 'sometext' %>
+  <%#= cktext_area :page, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+  
