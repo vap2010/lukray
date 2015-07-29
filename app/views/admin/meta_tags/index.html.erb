@@ -1,0 +1,47 @@
+<h1>Listing admin_meta_tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Keywords</th>
+      <th>Url</th>
+      <th>Metatagable</th>
+      <th>Metatagable type</th>
+      <th>No cache</th>
+      <th>Noindex</th>
+      <th>Nofollow</th>
+      <th>Is redirect</th>
+      <th>Redirect uri</th>
+      <th>Hits count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_meta_tags.each do |admin_meta_tag| %>
+      <tr>
+        <td><%= admin_meta_tag.title %></td>
+        <td><%= admin_meta_tag.description %></td>
+        <td><%= admin_meta_tag.keywords %></td>
+        <td><%= admin_meta_tag.url %></td>
+        <td><%= admin_meta_tag.metatagable_id %></td>
+        <td><%= admin_meta_tag.metatagable_type %></td>
+        <td><%= admin_meta_tag.no_cache %></td>
+        <td><%= admin_meta_tag.noindex %></td>
+        <td><%= admin_meta_tag.nofollow %></td>
+        <td><%= admin_meta_tag.is_redirect %></td>
+        <td><%= admin_meta_tag.redirect_uri %></td>
+        <td><%= admin_meta_tag.hits_count %></td>
+        <td><%= link_to 'Show', admin_meta_tag %></td>
+        <td><%= link_to 'Edit', edit_admin_meta_tag_path(admin_meta_tag) %></td>
+        <td><%= link_to 'Destroy', admin_meta_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meta tag', new_admin_meta_tag_path %>

@@ -1,0 +1,17 @@
+<p style="font-size:11px;"> 
+  <%= link_to 'ЛК', lk_home_path  -%> | 
+  
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <%= link_to 'Site', root_path  %> | 
+      <%=  Rails.env  %> |    
+      <%= link_to 'Admin', admin_home_index_path  %> |
+    <% end %>
+   
+    <span>Здравствуйте, <%= current_user.email %></span> |
+    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+  <% end %> 
+</p>
+

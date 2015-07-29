@@ -1,0 +1,65 @@
+<%= form_for(@admin_meta_tag) do |f| %>
+  <% if @admin_meta_tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_meta_tag.errors.count, "error") %> prohibited this admin_meta_tag from being saved:</h2>
+
+      <ul>
+      <% @admin_meta_tag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br>
+    <%= f.text_area :keywords %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :metatagable_id %><br>
+    <%= f.number_field :metatagable_id %>
+  </div>
+  <div class="field">
+    <%= f.label :metatagable_type %><br>
+    <%= f.text_field :metatagable_type %>
+  </div>
+  <div class="field">
+    <%= f.label :no_cache %><br>
+    <%= f.check_box :no_cache %>
+  </div>
+  <div class="field">
+    <%= f.label :noindex %><br>
+    <%= f.check_box :noindex %>
+  </div>
+  <div class="field">
+    <%= f.label :nofollow %><br>
+    <%= f.check_box :nofollow %>
+  </div>
+  <div class="field">
+    <%= f.label :is_redirect %><br>
+    <%= f.check_box :is_redirect %>
+  </div>
+  <div class="field">
+    <%= f.label :redirect_uri %><br>
+    <%= f.text_field :redirect_uri %>
+  </div>
+  <div class="field">
+    <%= f.label :hits_count %><br>
+    <%= f.number_field :hits_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

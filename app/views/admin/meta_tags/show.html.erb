@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_meta_tag.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_meta_tag.description %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @admin_meta_tag.keywords %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @admin_meta_tag.url %>
+</p>
+
+<p>
+  <strong>Metatagable:</strong>
+  <%= @admin_meta_tag.metatagable_id %>
+</p>
+
+<p>
+  <strong>Metatagable type:</strong>
+  <%= @admin_meta_tag.metatagable_type %>
+</p>
+
+<p>
+  <strong>No cache:</strong>
+  <%= @admin_meta_tag.no_cache %>
+</p>
+
+<p>
+  <strong>Noindex:</strong>
+  <%= @admin_meta_tag.noindex %>
+</p>
+
+<p>
+  <strong>Nofollow:</strong>
+  <%= @admin_meta_tag.nofollow %>
+</p>
+
+<p>
+  <strong>Is redirect:</strong>
+  <%= @admin_meta_tag.is_redirect %>
+</p>
+
+<p>
+  <strong>Redirect uri:</strong>
+  <%= @admin_meta_tag.redirect_uri %>
+</p>
+
+<p>
+  <strong>Hits count:</strong>
+  <%= @admin_meta_tag.hits_count %>
+</p>
+
+<%= link_to 'Edit', edit_admin_meta_tag_path(@admin_meta_tag) %> |
+<%= link_to 'Back', admin_meta_tags_path %>

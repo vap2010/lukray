@@ -1,10 +1,26 @@
 Rails.application.routes.draw do
 
-  get 'main/township'
+  namespace :admin do
+  get 'home/index'
+  end
+
+  namespace :admin do
+  get 'home/stats'
+  end
+
+  namespace :admin do
+    resources :pages
+  end
+
+  namespace :admin do
+    resources :meta_tags
+  end
 
   root 'main#home'
   
-  get 'main/home'
+  # get 'main/home'
+  get 'main/township'
+  
   get 'main/page'
   get 'main/plan'
   get 'main/location'
@@ -16,6 +32,16 @@ Rails.application.routes.draw do
   get 'main/contacts'
 
 
+  get 'lk/home'       #, as: 'user_root'
+  get 'lk/profile'
+  get 'lk/order'
+  get 'lk/consultation'
+
+  devise_for :users
+
+  
+  #-----------------------------------------------------------------
+  
 
   # You can have the root of your site routed with "root"
   # root 'main#index'
