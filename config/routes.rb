@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+
   root 'main#home'
   
   # get 'main/home'
-  get 'main/township'
   
-  get 'main/page'
+  get 'main/page/:id' => 'main#page'
+   
+  get 'main/township'
   get 'main/plan'
   get 'main/location'
   get 'main/infrastructure'
@@ -15,20 +17,66 @@ Rails.application.routes.draw do
   get 'main/customers'
   get 'main/contacts'
 
+  get 'main/main'
+  get 'main/about'
+  get 'main/place'
+  get 'main/infro'
+  get 'main/around'
+  get 'main/price'
+  get 'main/contact'
+  get 'main/photo'
+  get 'main/sale'
+  get 'main/services'
+
+
+  get 'post/viewing_areas'
+  get 'post/consultation'
+  get 'post/back_call'
+  get 'post/booking_area'
+  get 'post/question_from_site'
+  get 'post/recommendation'
+  get 'post/fsm_status'
+  get 'post/business'
+  get 'post/other'
+
+  post 'post/in_viewing_areas'
+  post 'post/in_consultation'
+  post 'post/in_back_call'
+  post 'post/in_booking_area'
+  post 'post/in_question_from_site'
+  post 'post/in_recommendation'
+  post 'post/in_fsm_status'
+  post 'post/in_business'
+  post 'post/in_other'
+
 
   get 'lk/home'       #, as: 'user_root'
   get 'lk/profile'
   get 'lk/order'
   get 'lk/consultation'
 
+
   devise_for :users
+
   
   namespace :admin do
     get 'home/index'
     get 'home/stats'
+    get 'home/adm'
     resources :pages
     resources :meta_tags
+    resources :messages
+    resources :homesteads do
+      collection do
+        get 'mkr1'
+        get 'mkr2'
+        get 'mkr3'
+        get 'stats'
+      end
+    end
   end
+  
+  
   mount Ckeditor::Engine => '/ckeditor'
 
   

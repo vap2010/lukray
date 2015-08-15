@@ -12,6 +12,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'paperclip'
+# gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+# gem 'rmagick', :require => 'RMagick'
 
 
 # Use SCSS for stylesheets

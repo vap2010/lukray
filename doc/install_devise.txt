@@ -38,3 +38,5 @@ Some setup you must do manually if you haven't yet:
 ===============================================================================
 application@localhost:/srv/ror/lubkray-work$
 
+
+https://github.com/galetahub/ckeditor
