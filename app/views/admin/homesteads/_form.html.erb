@@ -1,0 +1,104 @@
+<%= form_for(@admin_homestead) do |f| %>
+  <% if @admin_homestead.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_homestead.errors.count, "error") %> prohibited this admin_homestead from being saved:</h2>
+
+      <ul>
+      <% @admin_homestead.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   <table><tr><td>
+  
+   <table>
+    <tr><td> <%= f.label :domain_id,     'Микрорайон' %>              </td><td> <%#= f.number_field :domain_id %>   
+       <%= f.select(:domain_id, Admin::Homestead.domain_for_select, :html => {:selected => @admin_homestead.domain_id }) %>
+    </td></tr>
+    
+    <tr><td> <%= f.label :land_use_id,   'Категория использования' %> </td><td> <%#= f.number_field :land_use_id %>  
+       <%= f.select(:land_use_id, Admin::Homestead.land_use_for_select, :html => {:selected => @admin_homestead.land_use_id }) %>
+    
+    </td></tr>
+    <tr><td> <%= f.label :site_num,      'Номер участка (ду)' %>      </td><td> <%= f.text_field :site_num %>       </td></tr>
+    <tr><td> <%= f.label :cadastral_num, 'Кадастровый номер' %>       </td><td> <%= f.text_field :cadastral_num %>  </td></tr>
+    <tr><td> <%= f.label :phase,         'Очередь ввода' %>           </td><td> <%#= f.number_field :phase %>        
+       <%= f.select(:phase, Admin::Homestead.phases_for_select, :html => {:selected => @admin_homestead.phase }) %>
+    </td></tr>
+    <tr><td> <%= f.label :status_id,     'Статус участка' %>          </td><td> <%#= f.number_field :status_id %>    
+       <%= f.select(:status_id, Admin::Homestead.status_for_select, :html => {:selected => @admin_homestead.status_id }) %>    
+    </td></tr>
+    <tr><td> <%= f.label :booked_date,   'Дата брони' %>              </td><td> <%= f.date_select :booked_date %>          </td></tr>
+    <tr><td> <%= f.label :acreage_s,     'Площадь в кв метрах' %>     </td><td> <%= f.text_field :square_meters, :size => 4 %> </td></tr>
+    <tr><td> <%= f.label :price,         'Цена за участок' %>         </td><td> <%= f.text_field :price,     :size => 6 %> </td></tr>
+    <tr><td> <%= f.label :discount,      'Скидка/наценка' %>          </td><td> <%= f.text_field :discount,  :size => 4 %> </td></tr>
+   </table>
+   
+   </td><td>
+    
+   <table> 
+    <tr><td> <%= f.label :has_coast,     'Выходит на берег' %>        </td><td> <%= f.check_box :has_coast %>       </td></tr>
+    <tr><td> <%= f.label :has_forest,    'Граничит с лесом' %>        </td><td> <%= f.check_box :has_forest %>      </td></tr>
+    <tr><td> <%= f.label :corner_site,   'Угловой участок' %>         </td><td> <%= f.check_box :corner_site %>     </td></tr>
+    <tr><td> <%= f.label :outside_site,  'Крайний участок' %>         </td><td> <%= f.check_box :outside_site %>    </td></tr>
+    
+    <tr><td> <%= f.label :land_link_id,  'Парные участки (ids)' %>    </td><td> <%= f.number_field :land_link_id, :size => 10 %> </td></tr>
+    
+    <tr><td> <%= f.label :shape_id,      'Форма участка' %>           </td><td> <%#= f.number_field :shape_id %>     
+       <%= f.select(:shape_id, Admin::Homestead.shape_for_select, :html => {:selected => @admin_homestead.shape_id }) %>  
+    </td></tr>
+    <tr><td> <%= f.label :slope,         'Уклон, крутизна (гр)' %>         </td><td> <%= f.text_field :slope %>          </td></tr>
+    <tr><td> <%= f.label :altitude,      'Высота над морем' %>        </td><td> <%= f.number_field :altitude %>     </td></tr>
+    <tr><td> <%= f.label :k_interes,     'Число интересов' %>         </td><td> <%= f.number_field :k_interes %>    </td></tr>
+    <tr><td> <%= f.label :k_browsing,    'Число просмотров' %>        </td><td> <%= f.number_field :k_browsing %>   </td></tr>
+    <tr><td> <%= f.label :neighbors,     'Соседние участки' %>        </td><td> <%= f.number_field :neighbors %>    </td></tr>
+   </table>
+   
+  </td></tr></table>
+
+<%= f.label :note,          'Комментарий' %>          <%= f.text_area :note %> 
+   
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%
+
+
+=begin
+
+
+  domain_id:integer          номер территории
+  land_use_id:integer        категория использования
+  site_num:string            номер участка (ду)
+  cadastral_num:string       кадастровый номер
+  phase:integer              очередь ввода
+  status_id:integer          статус участка
+  t.datetime :booked_date   забронировано до
+  acreage_s:string           площадь в сотках
+  price:string               цена за участок
+  discount:string            скидка/наценка
+  has_coast:boolean          имеет выход на берег
+  has_forest:boolean         граничит с лесом
+  corner_site:boolean        угловой участок
+  outside_site:boolean       крайний участок
+  land_link_id:integer       связь с парным участком
+  shape_id:integer           форма участка
+  slope:string               уклон, крутизна
+  altitude:integer           высота над морем
+  k_interes:integer          число интересов
+  k_browsing:integer         число просмотров
+  neighbors:string           id соседних участков
+  note:text                  комментарий       
+  
+=end
+
+
+%>

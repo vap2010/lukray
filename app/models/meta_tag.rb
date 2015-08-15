@@ -1,7 +1,7 @@
 class MetaTag < ActiveRecord::Base
 
   belongs_to :metatagable, :polymorphic => true
-  validates :url, :presence => true, :uniqueness => true
+  validates :url, :presence => true  #, :uniqueness => true
 
 
   scope :meta_no_edit,  where(:is_meta_no_edit => false)

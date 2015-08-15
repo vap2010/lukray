@@ -1,0 +1,1 @@
+json.extract! @admin_homestead, :id, :domain_id, :land_use_id, :site_num, :cadastral_num, :phase, :status_id, :acreage_s, :price, :discount, :has_coast, :has_forest, :corner_site, :outside_site, :land_link_id, :shape_id, :slope, :altitude, :k_interes, :k_browsing, :neighbors, :note, :created_at, :updated_at

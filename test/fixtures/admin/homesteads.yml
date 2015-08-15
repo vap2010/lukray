@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  domain_id: 1
+  land_use_id: 1
+  site_num: MyString
+  cadastral_num: MyString
+  phase: 1
+  status_id: 1
+  acreage_s: MyString
+  price: MyString
+  discount: MyString
+  has_coast: false
+  has_forest: false
+  corner_site: false
+  outside_site: false
+  land_link_id: 1
+  shape_id: 1
+  slope: MyString
+  altitude: 1
+  k_interes: 1
+  k_browsing: 1
+  neighbors: 1
+  note: MyText
+
+two:
+  domain_id: 1
+  land_use_id: 1
+  site_num: MyString
+  cadastral_num: MyString
+  phase: 1
+  status_id: 1
+  acreage_s: MyString
+  price: MyString
+  discount: MyString
+  has_coast: false
+  has_forest: false
+  corner_site: false
+  outside_site: false
+  land_link_id: 1
+  shape_id: 1
+  slope: MyString
+  altitude: 1
+  k_interes: 1
+  k_browsing: 1
+  neighbors: 1
+  note: MyText

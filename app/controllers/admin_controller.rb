@@ -3,6 +3,7 @@ class AdminController < ApplicationController
   before_filter :authenticate_user!    #, except => [:show, :index]
   before_filter :check_user_access! 
 
+  @@zone = :lk
 
   ##   load_and_authorize_resource param_method: :my_sanitizer
 #

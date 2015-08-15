@@ -1,38 +1,40 @@
 <h1>Listing admin_pages</h1>
 
-<table>
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
   <thead>
     <tr>
-      <th>Parent</th>
-      <th>Position</th>
-      <th>Is deleted</th>
-      <th>Is published</th>
-      <th>Is shown in menu</th>
-      <th>Is preview published</th>
+      <th align="center">del</th>
+      <th align="center">id</th>
+      <th align="center">Parent</th>
+      <th align="center">Pos</th>
+      <th align="center">pub</th>
+      <th align="center">Is shown<br /> in menu</th>
+      <th align="center">Is preview<br /> published</th>
       <th>Title</th>
       <th>Menu title</th>
-      <th>Announce</th>
-      <th>Body</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @admin_pages.each do |admin_page| %>
       <tr>
-        <td><%= admin_page.parent_id %></td>
-        <td><%= admin_page.position %></td>
-        <td><%= admin_page.is_deleted %></td>
-        <td><%= admin_page.is_published %></td>
-        <td><%= admin_page.is_shown_in_menu %></td>
-        <td><%= admin_page.is_preview_published %></td>
-        <td><%= admin_page.title %></td>
-        <td><%= admin_page.menu_title %></td>
-        <td><%= admin_page.announce %></td>
-        <td><%= admin_page.body %></td>
-        <td><%= link_to 'Show', admin_page %></td>
-        <td><%= link_to 'Edit', edit_admin_page_path(admin_page) %></td>
-        <td><%= link_to 'Destroy', admin_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%
+           bold = ''
+           bold = ' style="font-weight:bold;"' if ! admin_page.parent
+           bold = bold.gsub(/;"/, " color:grey;\"") if admin_page.is_deleted   # "
+        %>
+        <td<%= raw bold -%>><%= link_to '[x]', admin_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td align="center"<%= raw bold -%>><%= admin_page.id %></td>
+        <td align="center"<%= raw bold -%>><%= admin_page.parent_id %></td>
+        <td align="center"<%= raw bold -%>><%= admin_page.position %></td>
+        <td align="center"<%= raw bold -%>><%= okno(admin_page.is_published) %></td>
+        <td align="center"<%= raw bold -%>><%= okno(admin_page.is_shown_in_menu) %></td>
+        <td align="center"<%= raw bold -%>><%= okno(admin_page.is_preview_published) %></td>
+        <td<%= raw bold -%>><%= admin_page.title %></td>
+        <td<%= raw bold -%>><%= admin_page.menu_title %></td>
+        <td<%= raw bold -%>><%= link_to 'Show', admin_page %></td>
+        <td<%= raw bold -%>><%= link_to 'Edit', edit_admin_page_path(admin_page) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,17 @@
+<%#
+<form id="forma_zvon" action="" method="POST">
+<input class="" type="text" name="name" placeholder="ВАШЕ ИМЯ">
+<input class="" type="text" name="phone" placeholder="ТЕЛЕФОН*">
+<input class="" type="text" name="pmail" placeholder="E-MAIL">
+<input class="btn s_submit" type="submit" value="Отправить" onclick="AjaxFormRequest('result_div_id', 'forma_zvon', '/post/in_back_call')">
+</form>
+%>
+<%  @message = Message.new %>
+<%= form_for(@message, :url => { :controller => "/post", :action => "in_back_call"}, :method => "post") do |f| %>
+    <%= f.text_field :name, :placeholder => "ВАШЕ ИМЯ"  %>
+    <%= f.text_field :phone, :placeholder => "ТЕЛЕФОН"  %>
+    <%= f.text_field :email, :placeholder => "E-MAIL"  %>
+    <%= f.hidden_field :srcurl, :value => "#{request.env['REQUEST_URI']}"  %>
+    
+    <%= f.submit :class => "btn s_submit", :value => "Отправить", :onclick => "\"AjaxFormRequest('result_div_id', 'forma_zvon', '/post/in_back_call')\"" %>
+<% end %>

@@ -1,0 +1,54 @@
+<h1>Listing admin_homesteads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>del</th>
+      <th>Domain</th>
+      <th>Land use</th>
+      <th>Site num</th>
+      <th>Cadastral num</th>
+      <th>Phase</th>
+      <th>Status</th>
+      <th>price for are</th>
+      <th>Price</th>
+      <th>Has coast</th>
+      <th>Has forest</th>
+      <th>Corner site</th>
+      <th>Outside site</th>
+      <th>Land link</th>
+      <th>K interes</th>
+      <th>K browsing</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_homesteads.each do |admin_homestead| %>
+      <tr>
+        <td><%= link_to '[x]', admin_homestead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admin_homestead.domain_id %></td>
+        <td><%= admin_homestead.land_use_id %></td>
+        <td><%= admin_homestead.site_num %></td>
+        <td><%= admin_homestead.cadastral_num %></td>
+        <td><%= admin_homestead.phase %></td>
+        <td><%= admin_homestead.status_id %></td>
+        <td><%= admin_homestead.price_for_are %></td>
+        <td><%= admin_homestead.price %></td>
+        <td><%= admin_homestead.has_coast %></td>
+        <td><%= admin_homestead.has_forest %></td>
+        <td><%= admin_homestead.corner_site %></td>
+        <td><%= admin_homestead.outside_site %></td>
+        <td><%= admin_homestead.land_link_id %></td>
+        <td><%= admin_homestead.k_interes %></td>
+        <td><%= admin_homestead.k_browsing %></td>
+        <td><%= link_to 'Show', admin_homestead %></td>
+        <td><%= link_to 'Edit', edit_admin_homestead_path(admin_homestead) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Homestead', new_admin_homestead_path %>

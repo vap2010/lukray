@@ -10,56 +10,74 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="actions" align="center">    <%= f.submit %>  </div>
 
   <div class="field">
-    <%= f.label :parent_id %><br>
-    <%= f.number_field :parent_id %>
+    <%= f.label :is_deleted %>  <%= f.check_box :is_deleted %> |
+    <%= f.label :parent_id %> <%= f.text_field :parent_id, :size => 5  %> |
+    <%= f.label :position %>   <%= f.text_field :position, :size => 5  %> |
+    <%= f.label :is_published %>  <%= f.check_box :is_published %>
   </div>
   <div class="field">
-    <%= f.label :position %><br>
-    <%= f.number_field :position %>
+    <%= f.label :title %> <%= f.text_field :title, :size => 80 %>
   </div>
   <div class="field">
-    <%= f.label :is_deleted %><br>
-    <%= f.check_box :is_deleted %>
+    <%= f.label :menu_title %>  <%= f.text_field :menu_title, :size => 80 %>
+    <%= f.label :is_shown_in_menu %>     <%= f.check_box :is_shown_in_menu %> 
   </div>
+  
   <div class="field">
-    <%= f.label :is_published %><br>
-    <%= f.check_box :is_published %>
-  </div>
-  <div class="field">
-    <%= f.label :is_shown_in_menu %><br>
-    <%= f.check_box :is_shown_in_menu %>
-  </div>
-  <div class="field">
-    <%= f.label :is_preview_published %><br>
-    <%= f.check_box :is_preview_published %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :menu_title %><br>
-    <%= f.text_field :menu_title %>
-  </div>
-  <div class="field">
-    <%= f.label :announce %><br>
+    <%= f.label :announce %>
+    <%= f.label :is_preview_published %> <%= f.check_box :is_preview_published %>
+    <br>
     <%#= f.text_area :announce %>
-    <%= f.cktext_area :announce, :class => 'someclass', :ckeditor => {:language => 'en', :toolbar => 'mini'} %>
+    <%= f.cktext_area :announce, :class => 'someclass', :ckeditor => {:language => 'en', :height => 80, :toolbar => 'mini'} %>  <%#  , :toolbar => 'mini'  %>
   </div>
+  
+  <div class="actions" align="center">    <%= f.submit %>  </div>
+  
   <div class="field">
     <%= f.label :body %><br>
     <%#= f.text_area :body %>
-    <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'en'} %>
+    <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'en', :height => 500, :css => '/assets/skel/css/style.css'} %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="actions" align="center">    <%= f.submit %>  </div>
 <% end %>
 
 
   <%#= form.cktext_area :notes, :class => 'someclass', :ckeditor => {:language => 'uk'} %>
   <%#= form.cktext_area :content, :value => 'Default value', :id => 'sometext' %>
   <%#= cktext_area :page, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+  
+  
+<%#  
+=begin
+
+$(document).ready(function()
+{
+    var editor = CKEDITOR.replace('здесь ID текстарии',
+    {
+        // настройка тулбара
+        toolbar:
+        [
+            ['Source'],
+            ['Link', 'Image'],
+            ['Undo','Redo'],
+            ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript'],
+            ['Find','Replace','-','SelectAll','RemoveFormat'],
+            ['NumberedList', 'BulletedList', '-', 'SpecialChar', '-', 'Outdent', 'Indent', 'Blockquote'],
+        ],
+        // настройка высоты
+        height: 290,
+        // если нужно загружать файлы
+        filebrowserUploadUrl: 'file/Uploader/Url'
+        // если нужно чтобы контент отображался в определенных стилях, например в стилях сайта
+        contentsCss: '/content/css/style.css',
+        
+        contentsCss: '/assets/skel/css/style.css'
+    });
+});
+=end
+%>
   

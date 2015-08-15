@@ -1,2 +1,28 @@
-<h1>Main#page</h1>
-<p>Find me in app/views/main/page.html.erb</p>
+<% if @page %>
+<h1> <%= @page.title  %> </h1>
+
+
+<%= raw @page.body  %>
+
+
+<% if @page.id == 15 %>
+  <style type="text/css">
+	.karta>ymaps{	width:100%!important;	}
+	.karta {margin: 20px 0px 20px 0px; }
+  </style>
+  <div class="container karta">
+   <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=hsZABmQ432OPsrRz7I1KO0EL7aqtEhAj&width=1070&height=550"></script>
+  </div>
+<% end %>
+
+<% if @page.id == 16 %>
+  <style type="text/css">
+	.karta>ymaps{	width:100%!important;	}
+	.karta {margin: 20px 0px 20px 0px; }
+  </style>
+  <div class="container karta">
+	<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=qZBhuveTWGz24hail9JddsVwcrLcmo0O&width=1070&height=550"></script>
+  </div>
+<% end %>
+
+<% end %> <%# / if @page  %>

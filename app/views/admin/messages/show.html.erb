@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is actual:</strong>
+  <%= @admin_message.is_actual %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @admin_message.is_deleted %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @admin_message.date %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_message.category_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_message.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @admin_message.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin_message.email %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_message.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @admin_message.body %>
+</p>
+
+<p>
+  <strong>Homestead:</strong>
+  <%= @admin_message.homestead_id %>
+</p>
+
+<%= link_to 'Edit', edit_admin_message_path(@admin_message) %> |
+<%= link_to 'Back', admin_messages_path %>

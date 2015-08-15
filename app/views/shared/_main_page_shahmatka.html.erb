@@ -1,0 +1,93 @@
+		<div class="shahmatka">
+		
+		   <%#  1  %>
+		   <% page1 = Page.find_by_id(2) 
+            if page1 and page1.am_i_published? %>
+			<div class="bl_m_text">
+				<a href="<%= page1.url -%>"  class="in_text">
+					<h3>О нашем поселке</h3>
+					<p>Площать: 40 Га</p>
+					<p>Дорога и комуникации</p>
+					<p>10-15 соток: 80 участков</p>
+					<p>15-25 соток: 60 участков</p>
+					<p>25-40 соток: 40 участков</p>
+				</a>
+			</div>
+			<% else %>
+  			<div class="bl_m_icon" id="bl_m_icon1"></div>
+			<% end %>
+			
+			<div class="bl_m_icon" id="bl_m_icon2"></div>
+
+
+		   <%#  2  %>
+		   <% page2 = Page.find_by_id(13) 
+            if page2 and page2.am_i_published? %>
+			<div class="bl_m_text">
+				<a href="<%= page2.url -%>" class="in_text">
+					<h3>Лето здесь длится дольше</h3>
+					<p>Самый теплый и мало-дождливый район на юге Московской области.</p>
+					<i>Узнать больше</i>
+				</a>
+			</div>
+			<% else %>
+  			<div class="bl_m_icon" id="bl_m_icon1"></div>
+			<% end %>
+			
+			<div class="bl_m_icon" id="bl_m_icon1"></div>
+
+			
+		   <%#  3  %>
+		   <% page3 = Page.find_by_id(2) 
+            if page3 and page3.am_i_published? %>
+			<div class="bl_m_text bl_m_text_blue">
+				<div class="in_text">
+					<h3>Пора бронировать лучшее место</h3>
+					<p>Установите характеристики для вашего участка</p>
+					<a href="<%= page3.url -%>" class="btn modal_form">Записаться</a>
+				</div>
+			</div>
+			<% else %>
+  			<div class="bl_m_icon" id="bl_m_icon1"></div>
+			<% end %>
+			
+
+			<div class="bl_m_icon" id="bl_m_icon4"></div>
+
+		   <%#  4  %>
+		   <% page4 = Page.find_by_id(11) 
+            if page4 and page4.am_i_published? %>
+			<div class="bl_m_text">
+				<a href="<%= page4.url -%>"  class="in_text">
+					<h3>Около часа езды до Москвы</h3>
+					<p>Проезд к поселку возможен круглый год и в любую погоду.</p>
+					<i>Посмотреть на карте</i>
+				</a>
+			</div>
+			<% else %>
+  			<div class="bl_m_icon" id="bl_m_icon1"></div>
+			<% end %>
+			
+			<div class="bl_m_icon" id="bl_m_icon5"></div>
+
+			
+		   <%#  5  %>
+		   <% page5 = Page.find_by_id(39) 
+            if page5 and page5.am_i_published? %>
+			<div class="bl_m_text">
+				<a href="<%= page5.url -%>"  class="in_text">
+					<h3>Продажа участков без посредников</h3>
+					<p>Идеальное юридическое сопровождение и полная безопасность сделки.</p>
+					<i>Изучить договор</i>
+				</a>
+			</div>
+			<% else %>
+  			<div class="bl_m_icon" id="bl_m_icon1"></div>
+			<% end %>
+			
+			<div class="bl_m_icon" id="bl_m_icon3"></div>
+			
+
+			
+			<div class="clear"></div>
+		</div>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Любимый край</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="vadim: 925 585-61-39">
+  <%= csrf_meta_tags %>
+  
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<%#
+	 <link rel="stylesheet" href="assets/skel/css/bgstretcher.css">
+	 <link rel="stylesheet" href="assets/skel/css/jquery.arcticmodal-0.3.css">
+	 <link href="assets/skel/css/style.css" rel="stylesheet">
+	 <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+	
+	 <script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
+	 <script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
+	 <script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
+	 <script type="text/javascript" src="/assets/skel/js/script.js"></script>
+	
+	%>
+
+	<link rel="stylesheet" href="/assets/skel/css/bgstretcher.css">
+	<link rel="stylesheet" href="/assets/skel/css/jquery.arcticmodal-0.3.css">
+	<link rel="stylesheet" href="/assets/skel/css/style.css">
+	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+	
+	<script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
+	<script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
+	<script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="/assets/skel/js/script.js"></script>
+	<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+		
+	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+<body>
+<!--Форма заказа звонка-->
+<div style="display: none;">
+    <div class="box-modal" id="exampleModal">
+        <div class="box-modal_close arcticmodal-close">x</div>
+        <h4>Обратный звонок</h4>
+		<div id="messegeResult"></div>
+		  <%= render 'post/back_call' %>
+    </div>
+</div>
+<!--Навигация-->
+<div class="navigation">
+	<div class="container">
+		<nav id="nav-wrap">
+         <%= render 'shared/menu_main'  %>
+		</nav>
+	</div>
+</div>	
+<!--Шапка сайта-->
+<header>
+	<div class="container">
+		<div class="zagolovok">
+			<h3>Продажа земельных участков под застройку<br/><span>в коттеджном поселке</span></h3>
+		</div>
+		<div class="head_icon_phone"></div>
+		<div class="contakt">
+			<a class="cont-icon" id="cont-skypes" style="background:none;"></a>
+			<a class="cont-icon" id="cont-skypes" style="background:none;"></a>
+		
+			<a href="skype:&#102;&#114;&#101;&#101;&#100;&#111;&#109;&#104;&#105;&#108;&#108;&#46;&#114;&#117;" class="cont-icon" id="cont-skype"><%#
+          <div id="SkypeButton_Call_freedomhill.ru_1">
+            <script type="text/javascript">
+              Skype.ui({
+                "name": "call",
+                "element": "SkypeButton_Call_freedomhill.ru_1",
+                "participants": ["freedomhill.ru"],
+                "imageSize": 10
+              });
+            </script>
+          </div> -%></a>
+			
+			<%#
+		 	 <a href="" class="cont-icon" id="cont-icq"></a>
+			 <a href="" class="cont-icon" id="cont-phone"></a>
+			%> 
+			<a  href="m&#97;ilto:&#105;&#110;&#64;&#102;&#114;&#101;&#101;&#100;&#111;&#109;&#104;&#105;&#108;&#108;&#46;&#114;&#117;?subject=email-from-freedomhill" class="cont-icon" id="cont-mail"></a>
+			<div class="phone">+7 495 150 08 87 </div>
+			<div class="clear"></div>
+			
+			<a href="#" class="btn modal_form">Обратный звонок</a>
+			<a href="#" class="vopros">Задать вопрос</a>
+		</div>
+		
+		<% if is_main_page? %>
+		  <div class="for_logo"><div class="logo"></div></div>
+		<% else %>
+  		  <div class="for_logo"><a href="/" class="logo"></a></div>
+		<% end %>		
+		
+		<div class="clear"></div>
+	</div>
+</header>
+<%
+   visual_section_css_class = 'bl_page_head'
+   visual_section_css_class = 'bl_first' if is_main_page?
+   visual_section_css_class += ' head_min' if @page and @page.skin.try(:id).to_s.to_i == 3 
+%>
+<section class="<%= visual_section_css_class -%>">
+	<div class="bg_polukrug"></div>
+	<div class="container">
+		<div class="block_head">
+		
+		 <% if is_main_page? %>
+			<ul><li>Тишина</li><li>Природа</li><li>Озеро</li><li>Дорога</li><li>Охрана</li><li>Ферма</li></ul>
+			<h1>Край <span class="text_white">хорошей </span><span class="text_yellow">погоды</span></h1>
+			<div class="bl_krug_img"><p class="pagination"></p></div>
+		 <% else %>
+			<div class="bread_crumb">
+				<ul>
+					<li><a href="/">Главная</a></li>
+					<li><a href="<%= @page.url if @page -%>"><%= @page.menu_title if @page -%></a></li>
+				</ul>
+			</div>
+			
+			<h1>Край <span class="text_white">хорошей </span><span class="text_yellow">погоды</span></h1>
+			
+			<%# !-- h1>Основной заголовок заголовок</h1 -- %>
+			
+			<%= raw @page.announce if @page and @page.is_announce_view?  %> 
+		 <% end %>
+			
+		</div>
+		
+    <% if  is_main_page?  %>
+      <%= render 'shared/main_page_shahmatka'  %>
+    <% end %>		
+    
+	</div>
+</section>
+
+
+<% if  is_main_page?  %>
+  <%= render 'shared/main_four_infoblocks'  %>
+<% else %>
+  <section class="content">
+	 <div class="container">
+      <%= yield %>
+	 </div>
+  </section>
+<% end %>
+
+
+
+<footer>
+	<div class="container">
+	<div class="f_left">
+		<p class="copyright">© 2015  Любимый край</p>
+		<div class="soc_button">
+		  <!--
+			<a href="#" id="vk"></a>
+			<a href="#" id="faceb"></a>
+			<a href="#" id="tweet"></a>
+			<a href="#" id="google"></a>
+			<a href="#" id="insta"></a>
+		  -->	
+			<div class="clear"></div>
+		<div align="left">
+        <%= render 'shared/sign_in_out'  %>
+      </div>
+      
+		</div>
+	</div>
+	<div class="f_right">
+		<p class="phone">+7 495 150 08 87</p>
+	</div>
+	<div class="f_menu">
+		<ul>
+		  <%= raw footer_li_link(2) %>
+		  <%= raw footer_li_link(6) %>
+		  <%= raw footer_li_link(11) %>
+		  <%= raw footer_li_link(17) %>
+		</ul>
+		<ul>
+		  <%= raw footer_li_link(19) %>
+		  <%= raw footer_li_link(26) %>
+		  <%= raw footer_li_link(35) %>
+		  <%= raw footer_li_link(36) %>
+		</ul>
+		<ul>
+		  <%= raw footer_li_link(39) %>
+		  <%= raw footer_li_link(40) %>
+		  <%= raw footer_li_link(41) %>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<p class="copyright_mobile">© 2015  Любимый край</p>
+	</div>
+</footer>
+</div>
+</body>
+</html>

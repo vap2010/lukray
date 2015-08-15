@@ -1,0 +1,43 @@
+<h1>Listing admin_messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Is actual</th>
+      <th>Is deleted</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Homestead</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_messages.each do |admin_message| %>
+      <tr>
+        <td><%= admin_message.is_actual %></td>
+        <td><%= admin_message.is_deleted %></td>
+        <td><%= admin_message.date %></td>
+        <td><%= admin_message.category_id %></td>
+        <td><%= admin_message.name %></td>
+        <td><%= admin_message.phone %></td>
+        <td><%= admin_message.email %></td>
+        <td><%= admin_message.title %></td>
+        <td><%= admin_message.body %></td>
+        <td><%= admin_message.homestead_id %></td>
+        <td><%= link_to 'Show', admin_message %></td>
+        <td><%= link_to 'Edit', edit_admin_message_path(admin_message) %></td>
+        <td><%= link_to 'Destroy', admin_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_admin_message_path %>

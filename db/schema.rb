@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730022124) do
+ActiveRecord::Schema.define(version: 20150805095715) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -28,6 +28,56 @@ ActiveRecord::Schema.define(version: 20150730022124) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "homesteads", force: true do |t|
+    t.integer  "domain_id"
+    t.integer  "sector_id"
+    t.integer  "land_use_id",      default: 1
+    t.integer  "phase"
+    t.string   "site_num"
+    t.string   "cadastral_num"
+    t.string   "num"
+    t.integer  "status_id",        default: 1
+    t.datetime "booked_date"
+    t.string   "square_meters"
+    t.string   "price_for_are"
+    t.string   "price_infra"
+    t.string   "price"
+    t.string   "discount",         default: "0"
+    t.integer  "land_link_id"
+    t.integer  "distance_to_lake"
+    t.boolean  "has_coast",        default: false
+    t.boolean  "has_forest",       default: false
+    t.boolean  "near_forest",      default: false
+    t.boolean  "corner_site",      default: false
+    t.boolean  "outside_site",     default: false
+    t.boolean  "has_basement",     default: false
+    t.boolean  "has_building",     default: false
+    t.integer  "shape_id"
+    t.integer  "altitude"
+    t.string   "slope"
+    t.integer  "k_interes",        default: 0
+    t.integer  "k_browsing",       default: 0
+    t.string   "neighbors"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: true do |t|
+    t.boolean  "is_actual"
+    t.boolean  "is_deleted"
+    t.datetime "date"
+    t.integer  "category_id"
+    t.integer  "homestead_id"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "meta_tags", force: true do |t|
     t.text     "title"

@@ -1,29 +1,55 @@
+			<ul id="nav">
+			  <% view_main_menu.each do |top_page| %>
+				<li>
+				  <%= link_to top_page.menu_title, {:controller => '/main', :action=> top_page.alias}, :class => (@toppage == top_page ? "active" : nil) -%>
+				  <% unless top_page.children.empty? %><% end %>
+				  <%= render 'shared/menu_main_subpage', :page => top_page -%>
+				</li>
+			  <% end %>
+			
+			  <%#
+				<li><a href="index.html" class="active">О поселке</a></li>
+				<li>
+					<a href="page.html">План поселка</a>
+					<div class="podmenu">
+						<a href="page.html" class="menu_preview">
+							<img src="assets/skel/img/preimusch/bl_preimuschestva4.jpg" alt="img_menu">
+							<h3>Краткое содержание пункта меню о важном</h3>
+							<p>Один из крупнейших национальных парков США - заповедник Yellow Stone находится на северо-западе штата</p>
+						</a>
+						<ul>
+							<li><a href="page.html">Примыкающие ландшафты</a></li>
+							<li><a href="page.html">Природные артефакты</a></li>
+							<li><a href="page.html">Климат и погода</a></li>
+							<li><a href="page.html">Среднерусская возвышенность</a></li>
+							<li><a href="page.html">Флора и фауна</a></li>
+							<li><a href="page.html">Рыба речная и озерная</a></li>
+							<li><a href="page.html">Рыбалка и охота</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="page.html">Местоположение</a></li>
+				<li><a href="page2.html">Инфраструктура</a></li>
+				<li><a href="page2.html">Природа</a></li>
+				<li><a href="page.html">Окресности</a></li>
+				<li><a href="page.html">Цены</a></li>
+				<li><a href="page.html">Контакты</a></li>
+				%>
+			</ul>
 
 
-<%= link_to 'В начало', root_path -%> |
-
-<%= link_to 'О поселке', main_township_path -%> |
-
-<%= link_to 'План', main_plan_path -%> |
-
-<%= link_to 'Местоположение', main_location_path -%> |
-
-<%= link_to 'Инфраструктура', main_infrastructure_path -%> |
-
-<%= link_to 'Природа', main_nature_path -%> |
-
-<%= link_to 'Фотогаллерея', main_gallery_path -%> |
-
-<%= link_to 'Окрестности', main_environs_path -%> |
-
-<%= link_to 'Покупателю', main_customers_path -%> |
-
-<%= link_to 'Контакты', main_contacts_path -%>
-
-
-<%= render 'shared/sign_in_out'  %>
-
-
-<%= user_session.inspect  %>
+<%#= link_to 'В начало', root_path -%>
+<%#= link_to 'О поселке', main_township_path -%>
+<%#= link_to 'План', main_plan_path -%>
+<%#= link_to 'Местоположение', main_location_path -%>
+<%#= link_to 'Инфраструктура', main_infrastructure_path -%>
+<%#= link_to 'Природа', main_nature_path -%>
+<%#= link_to 'Фотогаллерея', main_gallery_path -%>
+<%#= link_to 'Окрестности', main_environs_path -%>
+<%#= link_to 'Покупателю', main_customers_path -%>
+<%#= link_to 'Контакты', main_contacts_path -%>
+  
+<%#= render 'shared/sign_in_out'  %>
+<%#= user_session.inspect  %>
 
 

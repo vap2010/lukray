@@ -1,3 +1,11 @@
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+table.tdborders_ccc    { border-top:#ccc 1px solid;   border-left:#ccc 1px solid;    }
+table.tdborders_ccc th { border-right:#ccc 1px solid; border-bottom:#ccc 1px solid;  }
+table.tdborders_ccc td { border-right:#ccc 1px solid; border-bottom:#ccc 1px solid;  }
+
+

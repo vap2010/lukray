@@ -1,0 +1,51 @@
+<section id="bl_preimusch">
+	<div class="container">
+	
+   <%#  ib-1  %>
+   <% page_ib1 = Page.find_by_id(13) 
+      if page_ib1 and page_ib1.am_i_published? %>
+		<a href="<%= page_ib1.url -%>" class="bl_preimuschestva">
+			<p class="img_preim"><img src="assets/skel/img/preimusch/bl_preimuschestva1.jpg" alt="Природа и экология"></p>
+			<h3>Природа и экология</h3>
+			<p>Поселок с двух сторон окружен дивным озером - это оазис нетронутой средне-русской природы.</p>
+		</a>
+	<% end %>	
+	  
+   <%#  ib-2  %>
+   <% page_ib2 = Page.find_by_id(13) 
+      if page_ib2 and page_ib2.am_i_published? %>
+		<a href="<%= page_ib2.url -%>" class="bl_preimuschestva">
+			<p class="img_preim"><img src="assets/skel/img/preimusch/bl_preimuschestva2.jpg" alt="Хорошее расположение"></p>
+			<h3>Хорошее расположение</h3>
+			<p> Здесь еще очень долго не будет рядом города, очень тихо и спокойно, а до Москвы всего час езды.</p>
+		</a>
+	<% end %>	
+	  
+   <%#  ib-3  %>
+   <% page_ib3 = Page.find_by_id(42) 
+      if page_ib3 and page_ib3.am_i_published? %>
+		<a href="<%= page_ib3.url -%>" class="bl_preimuschestva">
+			<p class="img_preim"><img src="assets/skel/img/preimusch/bl_preimuschestva3.jpg" alt="Акции и спецпредложения"></p>
+			<h3>Акции и спецпредложения</h3>
+			<p>Участки у воды, включая часть береговой линии, успеют купить только первые, потом будет аукцион.</p>
+		</a>
+	<% end %>	
+	  
+   <%#  ib-4  %>
+   <% page_ib4 = Page.find_by_id(43) 
+      if page_ib4 and page_ib4.am_i_published? %>
+		<a href="<%= page_ib4.url -%>" class="bl_preimuschestva">
+			<p class="img_preim"><img src="assets/skel/img/preimusch/bl_preimuschestva4.jpg" alt="Фермерское хозяйство"></p>
+			<h3>Фермерское хозяйство</h3>
+			<p>Мы здесь живем уже не первый год, а наше фермеское хозяйство находится рядом с любимым поселком.</p>
+		</a>
+	<% end %>	
+	
+		<div class="clear"></div>
+		
+		
+		<%#		  <a href="#" class="btn">Все преимущества</a> 		 %>
+		
+		
+	</div>
+</section>

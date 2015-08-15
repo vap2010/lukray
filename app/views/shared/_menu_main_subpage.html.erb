@@ -1,0 +1,53 @@
+<%  main_submenu = view_main_submenu(page)  
+    first_point  = main_submenu[0] 
+    other_points = main_submenu[1]          %>
+
+<!-- 
+<%#=  first_point.inspect  %>
+<%#=  other_points.inspect  %>
+ -->
+
+
+  	<% if first_point or !other_points.empty?  %>
+    <div class="podmenu">
+    
+      <% if first_point %>
+        <%= link_to (raw first_point.announce), first_point.url, :class => "menu_preview"  -%>
+    	<% end %>
+    	
+  	  <% if !other_points.empty?  %>
+    	<ul>
+    	  <% other_points.each do |menu_point| %>
+    		 <li><%= link_to menu_point.menu_title, menu_point.url  -%></li>
+    	  <% end %>
+    	</ul>
+    	<% end %>
+    	
+    </div>
+  	<% end  %>
+
+<%#
+
+ <img src="assets/skel/img/preimusch/bl_preimuschestva4.jpg" alt="img_menu">
+ <h3>Краткое содержание пункта меню о важном</h3>
+ <p>Один из крупнейших национальных парков США - заповедник Yellow Stone находится на северо-западе штата</p>
+
+
+    <div class="podmenu">
+    	<a href="page.html" class="menu_preview">
+    		<img src="assets/skel/img/preimusch/bl_preimuschestva4.jpg" alt="img_menu">
+    		<h3>Краткое содержание пункта меню о важном</h3>
+    		<p>Один из крупнейших национальных парков США - заповедник Yellow Stone находится на северо-западе штата</p>
+    	</a>
+    	<ul>
+    		<li><a href="page.html">Примыкающие ландшафты</a></li>
+    		<li><a href="page.html">Природные артефакты</a></li>
+    		<li><a href="page.html">Климат и погода</a></li>
+    		<li><a href="page.html">Среднерусская возвышенность</a></li>
+    		<li><a href="page.html">Флора и фауна</a></li>
+    		<li><a href="page.html">Рыба речная и озерная</a></li>
+    		<li><a href="page.html">Рыбалка и охота</a></li>
+    	</ul>
+    </div>
+
+%>

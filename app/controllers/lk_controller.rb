@@ -1,6 +1,7 @@
 # class LkController < ApplicationController
 class LkController < AdminController
   # load_and_authorize_resource
+  layout 'application_hill'
 
 
   def home

@@ -1,0 +1,47 @@
+
+
+<hr>
+
+<h2>По микрорайонам</h2>
+
+<table>
+<%= raw show_select_stat_in_table(@domain) %>
+</table>
+
+<hr>
+
+<h2>По секторам (для 1-го микрорайона)</h2>
+
+<table>
+<%= raw show_select_stat_in_table(@sector) %>
+</table>
+
+<hr>
+
+<h2>По очереди выставления в продажу</h2>
+
+<table>
+<%= raw show_select_stat_in_table(@phases) %>
+</table>
+
+<hr>
+
+<h2>По стоимости участка (т.р)</h2>
+
+<table>
+<%= raw show_select_stat_in_table(@cost.to_a) %>
+</table>
+
+<hr>
+
+<h2>По площади (кв.м)</h2>
+
+<table>
+<%= raw show_select_stat_in_table(@plosh.to_a) %>
+</table>
+
+<hr>
+
+    
+
+
