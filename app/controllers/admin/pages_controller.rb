@@ -42,6 +42,8 @@ class Admin::PagesController < Admin::AdminController
     end
 
     def admin_page_params
-      params.require(:admin_page).permit(:parent_id, :position, :is_deleted, :is_published, :is_shown_in_menu, :is_preview_published, :title, :menu_title, :announce, :body)
+      params.require(:admin_page).permit(:parent_id, :position, :is_deleted, 
+             :is_published, :is_shown_in_menu, :is_preview_published, :title, 
+             :menu_title, :announce, :body, :script_after)
     end
 end

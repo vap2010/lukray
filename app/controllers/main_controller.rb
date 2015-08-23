@@ -10,7 +10,19 @@ class MainController < ApplicationController
 
   def page
     @page ||= Page.find(params[:id])
+    if @page.has_script_after =~ /\Amap-/ 
+      uch = []
+      uch = [1]   if @page.id == 8 
+      uch = [2,3] if @page.id == 9 
+      uch = [2,3] if @page.id == 10 
+      @homesteads = Homestead.where(:domain_id => uch)   #  params[:id]     
+    end
     render action: :page and return 
+  end
+
+  def modal
+    @homestead = Homestead.find(params[:id])
+    render layout: false
   end
 
   def township

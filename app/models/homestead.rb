@@ -1,9 +1,17 @@
 class Homestead < ActiveRecord::Base
 
 
+  
+  scope :mkr1, -> { where(domain_id: 1) }
+  scope :mkr2, -> { where(domain_id: 2) }
+  scope :mkr3, -> { where(domain_id: 3) }
+  scope :only_private_h, -> { where('sector_id != 10') }
+  
 
-  def self.get_select_name(point, key_name_id)  
-    Hash[*self.try("#{point}_for_select".to_sym).flatten].invert[key_name_id]
+  def self.get_select_name(ararname, key_name_id)  
+    k = "#{ararname}_for_select".to_sym
+    Hash[*Homestead.try(k).flatten].invert[key_name_id.to_s.to_i].gsub(/\(.*\)/,'')
+    # Hash[*Homestead.try(:sectors_for_select).flatten]
   end
 
   def self.get_stat_for_select(select_name, db_key_sym)  
@@ -20,6 +28,10 @@ class Homestead < ActiveRecord::Base
       ['Участок на опушке леса (микрорайон № 3.)',    3] ]
   end
 
+
+  def sector_name
+    self.class.get_select_name(:sectors, self.sector_id.to_s.to_i)
+  end
   def self.sectors_for_select
     [ ['Принадлежность к сектору не указана',          0],
       ['Общественная зона',                           10],
@@ -49,6 +61,10 @@ class Homestead < ActiveRecord::Base
       ['2-я очередь. Старт продаж май 2015г.',     2] ]
   end
 
+
+  def status_name
+    self.class.get_select_name(:status, self.status_id.to_s.to_i)
+  end
   def self.status_for_select
     [ ['Статус не указан',            0],
       ['Участок не продается',        1],
@@ -116,6 +132,34 @@ end
   k_browsing:integer         число просмотрв
   neighbors:string           id соседних участков
   note:text                  комментарий       
-  
+
+
+    add_column :homesteads, :coords, :string
+    add_column :homesteads, :show_on_map,            :boolean, :default => true
+    add_column :homesteads, :show_but_add_compare,   :boolean, :default => true
+    add_column :homesteads, :show_but_demonstrate,   :boolean, :default => true
+    add_column :homesteads, :show_but_auction,       :boolean, :default => false
+    add_column :homesteads, :show_but_booking,       :boolean, :default => true
+
+
+
+  site_num:string            участок № 147               (строка будет всегда)              
+  booked_date:datetime       в резерве до 23.09.2015           (строки может не быть)       
+  square_meters:string       площадь 1200 кв метров      (строка будет всегда)              
+  price:string               цена 1 800 000 руб.               (строки может не быть)       
+  land_link_id:integer       (есть парный участок)             (строки может не быть)       
+  distance_to_lake:integer   путь до озера 380 метров          (строки может не быть)       
+  has_coast:boolean          выходит на берег озера            (строки может не быть)       
+  has_forest:boolean         участок с лесом                   (строки может не быть)       
+  near_forest:boolean        участок около леса                (строки может не быть)       
+  corner_site:boolean        угловой участок                   (строки может не быть)       
+  outside_site:boolean       крайний участок                   (строки может не быть)       
+  has_basement:boolean       есть фундамент для дома           (строки может не быть)       
+  has_building:boolean       есть постройки                    (строки может не быть)       
+  altitude:integer           высота над уровнем моря 245 м.    (строки может не быть)       
+  slope:string               уклон поверхности 9 град.         (строки может не быть)       
+  note:text                  комментарий: фраза до 10 слов.    (строки может не быть)       
+
+
 =end
 

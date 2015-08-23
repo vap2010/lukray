@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="actions">    <%= f.submit %>  </div>
 
   <div class="field">
    <table><tr><td>
@@ -55,25 +57,37 @@
     <tr><td> <%= f.label :k_interes,     'Число интересов' %>         </td><td> <%= f.number_field :k_interes %>    </td></tr>
     <tr><td> <%= f.label :k_browsing,    'Число просмотров' %>        </td><td> <%= f.number_field :k_browsing %>   </td></tr>
     <tr><td> <%= f.label :neighbors,     'Соседние участки' %>        </td><td> <%= f.number_field :neighbors %>    </td></tr>
+    
+    
    </table>
    
   </td></tr></table>
 
-<%= f.label :note,          'Комментарий' %>          <%= f.text_area :note %> 
-   
+  <%= f.label :note,          'Комментарий' %>          <%= f.text_area :note, :cols => 80, :rows => 2 %> 
+  <br />
+  <%= f.label :show_on_map,          'Показать на схеме' %>    <%= f.check_box :show_on_map   %> 
+  <%= f.label :show_but_add_compare, 'Площадь в кв метрах' %>  <%= f.check_box :show_but_add_compare %> 
+  <%= f.label :show_but_demonstrate, 'Запись на просмотр' %>   <%= f.check_box :show_but_demonstrate %> 
+  <%= f.label :show_but_auction,     'Участие в аукционе' %>   <%= f.check_box :show_but_auction %> 
+  <%= f.label :show_but_booking,     'Забронировать' %>        <%= f.check_box :show_but_booking %> 
+  <br />
+  <%= f.label :coords,     'Координаты точек на map' %>   <%= f.text_field :coords, :size => 80 %> 
   </div>
   
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="actions">    <%= f.submit %>  </div>
 <% end %>
 
 
 <%
 
-
 =begin
 
+  :coords, :string       
+:show_on_map,          
+:show_but_add_compare, 
+:show_but_demonstrate, 
+:show_but_auction,     
+:show_but_booking,     
 
   domain_id:integer          номер территории
   land_use_id:integer        категория использования
@@ -97,7 +111,15 @@
   k_browsing:integer         число просмотров
   neighbors:string           id соседних участков
   note:text                  комментарий       
-  
+
+:coords, :string       
+:show_on_map,          
+:show_but_add_compare, 
+:show_but_demonstrate, 
+:show_but_auction,     
+:show_but_booking,     
+
+
 =end
 
 

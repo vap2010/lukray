@@ -1,0 +1,92 @@
+<h1><%= params[:id] -%></h1>
+<h4>участок № <%= @homestead.site_num.to_s -%></h4>
+<p>микрорайон № <%= @homestead.domain_id.to_s -%></p>
+
+<% if @homestead.sector_id > 0 %>
+<p><%= @homestead.sector_name -%></p>
+<% end %>
+
+<% if @homestead.status_id > 0 %>
+<p><%= @homestead.status_name -%></p>
+<% end %>
+
+<% if @homestead.square_meters.to_s.to_i > 0 %>
+<p>площадь <%= @homestead.square_meters.to_s -%> кв метров</p>
+<% end %>
+
+<% if @homestead.price.to_s.to_i > 0 %>
+<p>цена <%= @homestead.price.to_s -%> руб.</p>
+<% end %>
+
+<%#  p>(есть парный участок)</p  %>
+
+<% if @homestead.distance_to_lake.to_s.to_i > 0 %>
+<p>путь до озера <%= @homestead.distance_to_lake.to_s -%> метров</p>
+<% end %>
+
+<% if @homestead.has_coast  %>
+<p>выходит на берег озера</p>
+<% end %>
+
+<% if @homestead.has_forest  %>
+<p>участок с лесом</p>
+<% end %>
+
+<% if @homestead.near_forest  %>
+<p>участок около леса</p>
+<% end %>
+
+<% if @homestead.corner_site  %>
+<p>угловой участок</p>
+<% end %>
+
+<% if @homestead.outside_site  %>
+<p>крайний участок</p>
+<% end %>
+
+<% if @homestead.has_basement  %>
+<p>есть фундамент для дома</p>
+<% end %>
+
+<% if @homestead.has_building  %>
+<p>есть постройки</p>
+<% end %>
+
+<% if @homestead.altitude.to_s.to_i > 0 %>
+<p>высота над уровнем моря <%= @homestead.altitude.to_s -%> м.</p>
+<% end %>
+
+<% if @homestead.slope.to_s.to_i > 0 %>
+<p>уклон поверхности <%= @homestead.slope.to_s -%> град.</p>
+<% end %>
+
+<% if @homestead.note.to_s.size > 10 %>
+<p><%= @homestead.note.to_s -%></p>
+<% end %>
+
+
+<p><a href="#" class="btn compare">Добавить к сравнению</a></p>
+<p><a href="#" class="btn">Записаться на просмотр</a></p>
+<p><a href="#" class="btn">Участвую в аукционе</a></p>
+<p><a href="#" class="btn">Зарезервировать</a></p>
+
+<%#
+
+  site_num:string            участок № 147               (строка будет всегда)              
+  booked_date:datetime       в резерве до 23.09.2015           (строки может не быть)       
+  square_meters:string       площадь 1200 кв метров      (строка будет всегда)              
+  price:string               цена 1 800 000 руб.               (строки может не быть)       
+  land_link_id:integer       (есть парный участок)             (строки может не быть)       
+  distance_to_lake:integer   путь до озера 380 метров          (строки может не быть)       
+  has_coast:boolean          выходит на берег озера            (строки может не быть)       
+  has_forest:boolean         участок с лесом                   (строки может не быть)       
+  near_forest:boolean        участок около леса                (строки может не быть)       
+  corner_site:boolean        угловой участок                   (строки может не быть)       
+  outside_site:boolean       крайний участок                   (строки может не быть)       
+  has_basement:boolean       есть фундамент для дома           (строки может не быть)       
+  has_building:boolean       есть постройки                    (строки может не быть)       
+  altitude:integer           высота над уровнем моря 245 м.    (строки может не быть)       
+  slope:string               уклон поверхности 9 град.         (строки может не быть)       
+  note:text                  комментарий: фраза до 10 слов.    (строки может не быть)       
+
+%>

@@ -42,13 +42,22 @@ module ApplicationHelper
   
   def show_select_stat_in_table(stats)
     res = ''
-    stats.sort{|s1, s2| s1[0] <=> s2[0]}.each do |st| 
+    stats.sort{ |s1, s2| compare_select_point(s1[0], s2[0]) }.each do |st| 
       if st[1].to_s.to_i > 0
         res += "<tr><td>#{st[0].to_s}</td><td>#{st[1].to_s}</td></tr>\n"
       end
     end
     res
   end
+  
+  
+  def compare_select_point(s1, s2) 
+    if s1.to_s[0] =~ /\d/  and  s2.to_s[0] =~ /\d/ 
+      s1 = s1.to_i 
+      s2 = s2.to_i 
+    end 
+    s1 <=> s2 
+  end 
   
   
   

@@ -1,44 +1,58 @@
 
-
 <hr>
+<table cellpadding="20"><tr><td>
+
+
+<b>Общая площадь участков: <%= @s -%></b><br />
+   микрорайон № 1 - <%= @s1 -%> кв.м - <%= @n1 -%> уч. <br />
+   микрорайон № 2 - <%= @s2 -%> кв.м - <%= @n2 -%> уч. <br />
+   микрорайон № 3 - <%= @s3 -%> кв.м - <%= @n3 -%> уч. <br />
+<hr>
+
 
 <h2>По микрорайонам</h2>
 
-<table>
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
 <%= raw show_select_stat_in_table(@domain) %>
-</table>
-
-<hr>
-
-<h2>По секторам (для 1-го микрорайона)</h2>
-
-<table>
-<%= raw show_select_stat_in_table(@sector) %>
 </table>
 
 <hr>
 
 <h2>По очереди выставления в продажу</h2>
 
-<table>
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
 <%= raw show_select_stat_in_table(@phases) %>
 </table>
 
-<hr>
+</td><td>
+
+<h2>По секторам (для 1-го микрорайона)</h2>
+
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
+<%= raw show_select_stat_in_table(@sector) %>
+</table>
+
+</td></tr>
+<tr><td>
+
 
 <h2>По стоимости участка (т.р)</h2>
 
-<table>
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
 <%= raw show_select_stat_in_table(@cost.to_a) %>
 </table>
 
-<hr>
+</td><td>
 
 <h2>По площади (кв.м)</h2>
 
-<table>
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
 <%= raw show_select_stat_in_table(@plosh.to_a) %>
 </table>
+
+
+</td></tr></table>
+
 
 <hr>
 

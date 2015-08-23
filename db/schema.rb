@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805095715) do
+ActiveRecord::Schema.define(version: 20150821145129) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -32,36 +32,42 @@ ActiveRecord::Schema.define(version: 20150805095715) do
   create_table "homesteads", force: true do |t|
     t.integer  "domain_id"
     t.integer  "sector_id"
-    t.integer  "land_use_id",      default: 1
+    t.integer  "land_use_id",          default: 1
     t.integer  "phase"
     t.string   "site_num"
     t.string   "cadastral_num"
     t.string   "num"
-    t.integer  "status_id",        default: 1
+    t.integer  "status_id",            default: 1
     t.datetime "booked_date"
     t.string   "square_meters"
     t.string   "price_for_are"
     t.string   "price_infra"
     t.string   "price"
-    t.string   "discount",         default: "0"
+    t.string   "discount",             default: "0"
     t.integer  "land_link_id"
     t.integer  "distance_to_lake"
-    t.boolean  "has_coast",        default: false
-    t.boolean  "has_forest",       default: false
-    t.boolean  "near_forest",      default: false
-    t.boolean  "corner_site",      default: false
-    t.boolean  "outside_site",     default: false
-    t.boolean  "has_basement",     default: false
-    t.boolean  "has_building",     default: false
+    t.boolean  "has_coast",            default: false
+    t.boolean  "has_forest",           default: false
+    t.boolean  "near_forest",          default: false
+    t.boolean  "corner_site",          default: false
+    t.boolean  "outside_site",         default: false
+    t.boolean  "has_basement",         default: false
+    t.boolean  "has_building",         default: false
     t.integer  "shape_id"
     t.integer  "altitude"
     t.string   "slope"
-    t.integer  "k_interes",        default: 0
-    t.integer  "k_browsing",       default: 0
+    t.integer  "k_interes",            default: 0
+    t.integer  "k_browsing",           default: 0
     t.string   "neighbors"
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "coords"
+    t.boolean  "show_on_map",          default: true
+    t.boolean  "show_but_add_compare", default: true
+    t.boolean  "show_but_demonstrate", default: true
+    t.boolean  "show_but_auction",     default: false
+    t.boolean  "show_but_booking",     default: true
   end
 
   create_table "messages", force: true do |t|
@@ -111,6 +117,7 @@ ActiveRecord::Schema.define(version: 20150805095715) do
     t.string   "alias"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "script_after"
   end
 
   create_table "roles", force: true do |t|

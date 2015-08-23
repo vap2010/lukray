@@ -42,6 +42,13 @@
     <%#= f.text_area :body %>
     <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'en', :height => 500, :css => '/assets/skel/css/style.css'} %>
   </div>
+
+  
+  <div class="field">
+   <%= f.label :script_after %>  <%= f.text_field :script_after, :size => 20 %>
+  </div>
+
+  
   <div class="actions" align="center">    <%= f.submit %>  </div>
 <% end %>
 

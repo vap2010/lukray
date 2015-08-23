@@ -5,7 +5,7 @@
 <%= raw @page.body  %>
 
 
-<% if @page.id == 15 %>
+<% if @page.id == 15 %><%#  как проехать от Москвы  %>
   <style type="text/css">
 	.karta>ymaps{	width:100%!important;	}
 	.karta {margin: 20px 0px 20px 0px; }
@@ -15,7 +15,7 @@
   </div>
 <% end %>
 
-<% if @page.id == 16 %>
+<% if @page.id == 16 %><%#  как проехать от Тулы  %>
   <style type="text/css">
 	.karta>ymaps{	width:100%!important;	}
 	.karta {margin: 20px 0px 20px 0px; }
@@ -24,5 +24,11 @@
 	<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=qZBhuveTWGz24hail9JddsVwcrLcmo0O&width=1070&height=550"></script>
   </div>
 <% end %>
+
+<% if @page.has_script_after =~ /\Amap-/  %>
+  <%= render "shared/map_apeas_schema", :page => @page %>
+<% end %>
+
+
 
 <% end %> <%# / if @page  %>

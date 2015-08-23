@@ -25,8 +25,16 @@ class Admin::HomesteadsController < Admin::AdminController
 
   def stats
     @domain = Homestead.get_stat_for_select('domain', :domain_id)  
-    @sector = Homestead.get_stat_for_select('sectors', :sector_id)  
+    @sector = Homestead.mkr1.get_stat_for_select('sectors', :sector_id)  
     @phases = Homestead.get_stat_for_select('phases', :phase)  
+    @s      = Homestead.all.inject(0){|s, h| s += h.square_meters.to_s.to_i} 
+    @s1     = Homestead.mkr1.inject(0){|s, h| s += h.square_meters.to_s.to_i} 
+    @s2     = Homestead.mkr2.inject(0){|s, h| s += h.square_meters.to_s.to_i} 
+    @s3     = Homestead.mkr3.inject(0){|s, h| s += h.square_meters.to_s.to_i} 
+    @n1     = Homestead.only_private_h.mkr1.size 
+    @n2     = Homestead.only_private_h.mkr2.size 
+    @n3     = Homestead.only_private_h.mkr3.size     
+    
     @cost = {}
     @plosh = {}
     Admin::Homestead.all.each do |h|

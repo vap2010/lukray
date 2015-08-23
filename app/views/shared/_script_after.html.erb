@@ -1,0 +1,10 @@
+<% if page and !page.children.empty?  %>
+<% page.children.published.each do |pg| %>
+  <div class="one_col_center">
+    <h3><%= link_to pg.title, pg.url %></h3>
+    <p><%= raw pg.announce %> </p>
+    <div align="right"><%= link_to 'Подробнее', pg.url %></div>
+  </div>
+<% end %>
+<% end %>
+

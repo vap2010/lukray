@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   
   # get 'main/home'
   
-  get 'main/page/:id' => 'main#page'
+  get 'main/page/:id'  => 'main#page'
+  get 'main/modal/:id' => 'main#modal'
    
   get 'main/township'
   get 'main/plan'

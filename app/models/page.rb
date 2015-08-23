@@ -3,6 +3,7 @@ class Page < ActiveRecord::Base
   
   belongs_to :parent, class_name: 'Page'
   has_many :children, class_name: 'Page', foreign_key: :parent_id, dependent: :destroy  #, order: :position
+     #                conditions: {is_deleted: false},
 
   scope :published,   -> { where(:is_deleted => false).where(:is_published => true) }  
   scope :menu_points, -> { published.where(:is_shown_in_menu => true).order(:position) }  
@@ -43,10 +44,37 @@ class Page < ActiveRecord::Base
     end  
   end
 
+  def has_script_after
+    self.script_after.to_s.gsub(/\s/, '')  
+  end
+
+
   def self.top_menu_aliases
     ['main', 'about', 'plan', 'place', 'infro', 'nature', 'around',
      'price', 'contact', 'photo', 'sale', 'services']
   end
 
+
+  def self.show_script_after
+    res = []
+    self.all.each do |pg|
+      if ! pg.script_after.to_s.blank?
+        res << "#{pg.id} -- #{pg.script_after.to_s}"
+      end
+    end
+    puts "\n#{res.join("\n")}\n"
+  end
+
+
+
   # scope :konkurs,      -> (time1, time2) { konkurs_valid(time1, time2).konkurs_period(time1, time2).not_banned.this_not_banned }  
 end
+
+
+=begin
+
+10 -- map-/i/map/KARTA_02_1170.jpg
+19 -- script_after
+26 -- script_after
+
+=end

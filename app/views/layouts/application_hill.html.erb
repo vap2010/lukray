@@ -31,14 +31,25 @@
 
 	<link rel="stylesheet" href="/assets/skel/css/bgstretcher.css">
 	<link rel="stylesheet" href="/assets/skel/css/jquery.arcticmodal-0.3.css">
+   <% if @page and @page.has_script_after =~ /\Amap-/ %>
+  	  <link rel="stylesheet" href="/assets/skel/css/jquery.qtip.css">
+   <% end %>	
 	<link rel="stylesheet" href="/assets/skel/css/style.css">
 	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
 	
 	<script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
+   <% if @page and @page.has_script_after =~ /\Amap-/ %>
+	  <script type="text/javascript" src="/assets/skel/js/jquery.qtip.min.js"></script>
+	  <script type="text/javascript" src="/assets/skel/js/jquery.livequery.js"></script>
+   <% end %>	
 	<script type="text/javascript" src="/assets/skel/js/script.js"></script>
 	<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+   <% if @page and @page.has_script_after =~ /\Amap-/ %>
+	  <script type="text/javascript" src="/assets/skel/js/script-new.js"></script>
+   <% end %>	
+		
 		
 	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
