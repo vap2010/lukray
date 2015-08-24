@@ -91,6 +91,20 @@ class Homestead < ActiveRecord::Base
     
     
 
+  def actual_status_name
+    self.class.get_select_name(:status, self.actual_status_id.to_s.to_i)
+  end
+  def actual_status_id
+    if self.land_use_id == 3
+      self.phase > 0 ? self.status_id : 1
+    else
+      0
+    end
+  end
+
+
+
+
 end
 
 

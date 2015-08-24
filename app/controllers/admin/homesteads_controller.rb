@@ -9,18 +9,24 @@ class Admin::HomesteadsController < Admin::AdminController
   end
 
   def mkr1
-    @admin_homesteads = Admin::Homestead.where(:domain_id => 1)
-    respond_with(@admin_homesteads)
+    @admin_homesteads = Admin::Homestead.where(:domain_id => 1).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    respond_with(@admin_homesteads)  do |format|
+      format.html { render template: 'admin/homesteads/index' }
+    end
   end
 
   def mkr2
-    @admin_homesteads = Admin::Homestead.where(:domain_id => 2)
-    respond_with(@admin_homesteads)
+    @admin_homesteads = Admin::Homestead.where(:domain_id => 2).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    respond_with(@admin_homesteads)  do |format|
+      format.html { render template: 'admin/homesteads/index' }
+    end
   end
   
   def mkr3
-    @admin_homesteads = Admin::Homestead.where(:domain_id => 3)
-    respond_with(@admin_homesteads)
+    @admin_homesteads = Admin::Homestead.where(:domain_id => 3).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    respond_with(@admin_homesteads)  do |format|
+      format.html { render template: 'admin/homesteads/index' }
+    end
   end
 
   def stats

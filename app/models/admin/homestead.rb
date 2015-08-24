@@ -1,6 +1,22 @@
 class Admin::Homestead < Homestead
   self.table_name = "homesteads"
 
+
+
+  # Admin::Homestead.set_status_ids
+  def self.set_status_ids
+    n = 0
+    self.all.each do |h| 
+      h.status_id = 1
+      if h.land_use_id == 3 and h.phase > 0
+        h.status_id = 2
+        n += 1 if h.save
+      end    
+      h.save
+    end
+    puts "Ok = #{n}"
+  end
+
  
 end
 

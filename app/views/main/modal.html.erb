@@ -1,21 +1,23 @@
-<h1><%= params[:id] -%></h1>
-<h4>участок № <%= @homestead.site_num.to_s -%></h4>
-<p>микрорайон № <%= @homestead.domain_id.to_s -%></p>
+<h2>участок № <%= @homestead.site_num.to_s -%>
+    <span title="<%= params[:id] -%>"><small>(мкр.№ <%= @homestead.domain_id.to_s -%>)</small></span>
+</h2>
+
+<p><%= @homestead.actual_status_name -%></p>
+<% if @homestead.status_id > 0 %>
+<% end %>
+
 
 <% if @homestead.sector_id > 0 %>
-<p><%= @homestead.sector_name -%></p>
+<p>сектор: <%= @homestead.sector_name -%></p>
 <% end %>
 
-<% if @homestead.status_id > 0 %>
-<p><%= @homestead.status_name -%></p>
-<% end %>
 
 <% if @homestead.square_meters.to_s.to_i > 0 %>
-<p>площадь <%= @homestead.square_meters.to_s -%> кв метров</p>
+<p>площадь: <%= @homestead.square_meters.to_s -%> кв метров</p>
 <% end %>
 
 <% if @homestead.price.to_s.to_i > 0 %>
-<p>цена <%= @homestead.price.to_s -%> руб.</p>
+<p>цена: <%= @homestead.price.to_s -%> руб.</p>
 <% end %>
 
 <%#  p>(есть парный участок)</p  %>
@@ -49,15 +51,15 @@
 <% end %>
 
 <% if @homestead.has_building  %>
-<p>есть постройки</p>
+<p>имеются постройки</p>
 <% end %>
 
 <% if @homestead.altitude.to_s.to_i > 0 %>
-<p>высота над уровнем моря <%= @homestead.altitude.to_s -%> м.</p>
+<p>высота над уровнем моря: <%= @homestead.altitude.to_s -%> м.</p>
 <% end %>
 
 <% if @homestead.slope.to_s.to_i > 0 %>
-<p>уклон поверхности <%= @homestead.slope.to_s -%> град.</p>
+<p>уклон поверхности: <%= @homestead.slope.to_s -%> град.</p>
 <% end %>
 
 <% if @homestead.note.to_s.size > 10 %>
@@ -65,10 +67,14 @@
 <% end %>
 
 
-<p><a href="#" class="btn compare">Добавить к сравнению</a></p>
-<p><a href="#" class="btn">Записаться на просмотр</a></p>
-<p><a href="#" class="btn">Участвую в аукционе</a></p>
-<p><a href="#" class="btn">Зарезервировать</a></p>
+<%#
+  <p><a href="#" class="btn compare">Добавить к сравнению</a></p>
+  <p><a href="#" class="btn">Записаться на просмотр</a></p>
+
+  <p><a href="#" class="btn">Участвую в аукционе</a></p>
+  <p><a href="#" class="btn">Зарезервировать</a></p>
+%>
+
 
 <%#
 

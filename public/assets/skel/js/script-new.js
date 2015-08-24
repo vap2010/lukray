@@ -1,32 +1,32 @@
-var color1 = '#E9E9E9';
-var color1active = '#F4F4F4';  /* Статус не указан	#E9E9E9	#F4F4F4 */
+var color0 = '#E9E9E9';
+var color0active = '#F4F4F4';  /* Статус не указан	#E9E9E9	#F4F4F4 */
 
-var color2 = '#8B8B8B';
-var color2active = '#B7B7B7';  /* Участок не продается	#8B8B8B	#B7B7B7 */
+var color1 = '#a0a0a0';
+var color1active = '#B7B7B7';  /* Участок не продается	#8B8B8B	#B7B7B7 */
 
-var color3 = '#9DCBA7';
-var color3active = '#AADCB5';  /* Свободен для приобретения	#9DCBA7	#AADCB5 */
+var color2 = '#32CB4B';
+var color2active = '#AADCB5';  /* Свободен для приобретения	#9DCBA7	#AADCB5 */
 
-var color4 = '#EFE8AA';
-var color4active = '#FAF3B2';  /* Добавлен к сравнению	#EFE8AA	#FAF3B2 */
+var color3 = '#EFE8AA';
+var color3active = '#FAF3B2';  /* Добавлен к сравнению	#EFE8AA	#FAF3B2 */
 
-var color5 = '#FFEA38';
-var color5active = '#DEFF78';  /* Записан на просмотр	#FFEA38	#DEFF78 */
+var color4 = '#FFEA38';
+var color4active = '#DEFF78';  /* Записан на просмотр	#FFEA38	#DEFF78 */
 
-var color6 = '#FFBBCF';
-var color6active = '#FFD9D9';  /* Заявка на аукцион	#FFBBCF	#FFD9D9 */
+var color5 = '#FFBBCF';
+var color5active = '#FFD9D9';  /* Заявка на аукцион	#FFBBCF	#FFD9D9 */
 
-var color7 = '#CC99FE';
-var color7active = '#E1CAFE';  /* Участок зарезервирован	#CC99FE	#E1CAFE */
+var color6 = '#CC99FE';
+var color6active = '#E1CAFE';  /* Участок зарезервирован	#CC99FE	#E1CAFE */
 
-var color8 = '#FF90F6';
-var color8active = '#FFC3F7';  /* Участок забронирован	#FF90F6	#FFC3F7 */
+var color7 = '#FF90F6';
+var color7active = '#FFC3F7';  /* Участок забронирован	#FF90F6	#FFC3F7 */
 
-var color9 = '#6063FF';
-var color9active = '#9B9FFF';  /* Участок продан	#6063FF	#9B9FFF */
+var color8 = '#6063FF';
+var color8active = '#9B9FFF';  /* Участок продан	#6063FF	#9B9FFF */
 
-var color10 = '#F47474';
-var color10active = '#F4A5A0';  /* Это ваш дачный участок	#F47474	#F4A5A0 */
+var color9 = '#F47474';
+var color9active = '#F4A5A0';  /* Это ваш дачный участок	#F47474	#F4A5A0 */
 
 
 
@@ -65,6 +65,10 @@ $(document).ready(function(){
 		$this.attr('data-id',index+1);
 		/*   $this.attr('data-type',Math.floor((Math.random() * 10) + 1));   */ 
 		switch ($this.data('type')){
+			case 0:
+				color = color0;
+				colorActive = color0active;
+			break;
 			case 1:
 				color = color1;
 				colorActive = color1active;
@@ -100,10 +104,6 @@ $(document).ready(function(){
 			case 9:
 				color = color9;
 				colorActive = color9active;
-			break;
-			case 10:
-				color = color10;
-				colorActive = color10active;
 			break;
 		}
 		$this.data('color',color);
@@ -155,7 +155,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('.navigation, header ,section ,footer').click(function(){
+	$('.navigation, header, section, footer').click(function(){
 		$('.map area.active').each(function(){
 			var $this = $(this);
 			draw($this.data('id'), $this.data('color'), $this.data('color-active'), $this.data('coord'), $this.data('width'), $this.data('height'), 0, 0, false);
@@ -176,8 +176,8 @@ $(document).ready(function(){
 	$('.compare').livequery(function(){
 		$(this).click(function(){
 			var $this = $('.map area.active');
-			$this.data('type',4);
-			$this.data('color',color4);
+			$this.data('type',3);
+			$this.data('color',color3);
 			$this.data('color-active',color4active);
 			draw($this.data('id'), $this.data('color'), $this.data('color-active'), $this.data('coord'), $this.data('width'), $this.data('height'), 0, 0, true);
 			return false;
