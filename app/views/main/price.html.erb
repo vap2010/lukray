@@ -1,0 +1,20 @@
+<h1> <%= @page.title  -%> </h1>
+<%= raw @page.body  %>
+
+
+<table cellpadding="20">
+<tr>
+<td style="padding-left:20px:"><b>Микрорайон 1</b></td>
+<td style="padding-left:20px:"><b>Микрорайон 2</b></td>
+<td style="padding-left:20px:"><b>Микрорайон 3</b></td>
+
+</tr>
+<tr>
+
+<td valign="top" style="padding:20px:"><%= render 'prices_table', :homes => @homesteads1 -%></td>
+<td valign="top" style="padding:20px:"><%= render 'prices_table', :homes => @homesteads2 -%></td>
+<td valign="top" style="padding:20px:"><%= render 'prices_table', :homes => @homesteads3 -%></td>
+
+</tr>
+</table>
+

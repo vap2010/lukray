@@ -3,7 +3,8 @@
 <table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
   <thead>
     <tr>
-      <th>del</th>
+      <th> id  </th>
+      <th> del </th>
       <th>Domain</th>
       <th>Land<br /> use</th>
       <th>Site<br /> num</th>
@@ -13,6 +14,7 @@
       <th>Square<br /> meters</th>      
       <th>price<br /> for are</th>
       <th>Price</th>
+      <th>Infra</th>
       <th>K<br /> interes</th>
       <th>K<br /> browsing</th>
       <th colspan="2"></th>
@@ -22,6 +24,7 @@
   <tbody>
     <% @admin_homesteads.each do |admin_homestead| %>
       <tr>
+        <td align="center"><%= admin_homestead.id %></td>
         <td align="center"><%= link_to '[x]', admin_homestead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td align="center"><%= admin_homestead.domain_id %></td>
         <td align="center"><%= admin_homestead.land_use_id %></td>
@@ -32,6 +35,7 @@
         <td align="right"><%= admin_homestead.square_meters %></td>        
         <td align="right"><%= admin_homestead.price_for_are %></td>
         <td align="right"><%= admin_homestead.price %></td>
+        <td align="right"><%= admin_homestead.price_infra %></td>
         <td align="center"><%= admin_homestead.k_interes %></td>
         <td align="center"><%= admin_homestead.k_browsing %></td>
         <td align="center"><%= link_to 'Show', admin_homestead %></td>

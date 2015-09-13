@@ -1,0 +1,11 @@
+<style type="html/css">
+<% ii = 1
+   for im in @big_images_arr  -%>
+.block_head .bl_krug_img ul li:nth-child(<%= ii.to_s -%>){	background:url('<%= im.preview.url -%>') no-repeat !important; }
+<%   ii += 1
+   end -%>
+</style>
+
+<script type="text/javascript">
+big_images_arr=[<%= raw (@big_images_arr.map{|im| "'#{im.picture.url}'" } * ',') -%>];
+</script>

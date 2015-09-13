@@ -21,7 +21,7 @@ class Admin::HomeController < Admin::AdminController
   
   def supersdmin_access
     if current_user.has_role? 'superadmin'
-      direct_to '/'
+      redirect_to '/'
     end
   end
   

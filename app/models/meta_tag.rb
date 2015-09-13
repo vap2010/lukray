@@ -2,6 +2,7 @@ class MetaTag < ActiveRecord::Base
 
   belongs_to :metatagable, :polymorphic => true
   validates :url, :presence => true  #, :uniqueness => true
+  attr_accessor :is_hand_control
 
 
   scope :meta_no_edit,  where(:is_meta_no_edit => false)

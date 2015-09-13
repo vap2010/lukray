@@ -3,7 +3,9 @@
 <table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
   <thead>
     <tr>
+      <% if current_user.role_id == 4 %>
       <th align="center">del</th>
+      <% end %>
       <th align="center">id</th>
       <th align="center">Parent</th>
       <th align="center">Pos</th>
@@ -24,7 +26,9 @@
            bold = ' style="font-weight:bold;"' if ! admin_page.parent
            bold = bold.gsub(/;"/, " color:grey;\"") if admin_page.is_deleted   # "
         %>
+        <% if current_user.role_id == 4 %>
         <td<%= raw bold -%>><%= link_to '[x]', admin_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
         <td align="center"<%= raw bold -%>><%= admin_page.id %></td>
         <td align="center"<%= raw bold -%>><%= admin_page.parent_id %></td>
         <td align="center"<%= raw bold -%>><%= admin_page.position %></td>

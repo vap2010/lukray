@@ -1,10 +1,10 @@
 class RequestMailler < ActionMailer::Base
-  default from: "in@freedomhill.ru"
+  default from: "order@lubikry.ru"
   
   def site_request_post(post_query)
     @post_query = post_query
-    @url  = 'http://www.freedomhill.ru'
-    mail(to: 'qualification@classy.ru', subject: 'Mail from Site')
+    @url  = 'http://www.lubikry.ru'
+    mail(to: 'wellcome@lubikry.ru', subject: 'Письмо с сайта from Любимый Край')
   end
   # pubus@classy.ru
  

@@ -6,7 +6,10 @@ class Homestead < ActiveRecord::Base
   scope :mkr2, -> { where(domain_id: 2) }
   scope :mkr3, -> { where(domain_id: 3) }
   scope :only_private_h, -> { where('sector_id != 10') }
-  
+
+  def self.site_num_sort(hhs)
+    hhs.sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+  end  
 
   def self.get_select_name(ararname, key_name_id)  
     k = "#{ararname}_for_select".to_sym
@@ -94,6 +97,7 @@ class Homestead < ActiveRecord::Base
   def actual_status_name
     self.class.get_select_name(:status, self.actual_status_id.to_s.to_i)
   end
+  
   def actual_status_id
     if self.land_use_id == 3
       self.phase > 0 ? self.status_id : 1
@@ -102,7 +106,10 @@ class Homestead < ActiveRecord::Base
     end
   end
 
-
+  def show_price
+    asi = actual_status_id
+    asi > 1 and asi < 6 and price.to_s.to_i > 1 
+  end
 
 
 end

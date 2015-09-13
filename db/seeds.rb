@@ -65,12 +65,66 @@ if Homestead.count == 0
   puts 'Homesteads OK' if Seeds::LoadHomesteadsTable.load_homesteads  
 end
 
+if Category.count == 0
+  Category.create({ position: 1, type_id: 1, title: 'Микрорайон 1 - Большой участок у озера'  })
+  Category.create({ position: 2, type_id: 1, title: 'Микрорайон 2 - Небольшой лесной участок' })
+  Category.create({ position: 3, type_id: 1, title: 'Микрорайон 3 - Участок на опушке леса'   })
+  
+  Category.create({ position: 1, type_id: 2, title: 'Шаблон регулярной страницы с высоким визуалом' })
+  Category.create({ position: 2, type_id: 2, title: 'Шаблон регулярной страницы с низким визуалом'  })
+  
+  Category.create({ position: 1, type_id: 3, title: 'Рекламные материалы' })
+  Category.create({ position: 2, type_id: 3, title: 'Лицензии и сертификаты' })
+  Category.create({ position: 3, type_id: 3, title: 'Договора и приложения' })
+  Category.create({ position: 4, type_id: 3, title: 'Кадастровые документы' })
+  Category.create({ position: 5, type_id: 3, title: 'Другие документы' })
+  
+  Category.create({ position: 1, type_id: 4, title: 'Новости поселка' })
+  Category.create({ position: 2, type_id: 4, title: 'Что происходит в округе' })
+  
+  Category.create({ position: 1, type_id: 5, title: 'Фотогалерея - Ферма' })
+  Category.create({ position: 2, type_id: 5, title: 'Фотогалерея - Природа'  })
+  Category.create({ position: 3, type_id: 5, title: 'Фотогалерея - Окрестности' })
+  Category.create({ position: 4, type_id: 5, title: 'Фотогалерея - Времена года' })
+  Category.create({ position: 5, type_id: 5, title: 'Фотогалерея - Ведутся работы' })
+  Category.create({ position: 6, type_id: 5, title: 'Фотогалерея - Будущее поселка' })
+  
+  Category.create({ position: 1, type_id: 6, title: 'Баннеры - в шахматку на входную' })
+  Category.create({ position: 2, type_id: 6, title: 'Баннеры - на входную под визуал' })
+  Category.create({ position: 3, type_id: 6, title: 'Баннеры - для внутренних страниц'})
+  
+  Category.create({ position: 1, type_id: 7, title: 'Запрос - вопрос с сайта'})
+  Category.create({ position: 2, type_id: 7, title: 'Запрос - обратный звонок'})
+  Category.create({ position: 3, type_id: 7, title: 'Запрос - консультацию по подбору'})
+  Category.create({ position: 4, type_id: 7, title: 'Запрос - на просмотр участков'})
+  Category.create({ position: 5, type_id: 7, title: 'Запрос - бронирование участка'})
+  Category.create({ position: 6, type_id: 7, title: 'Запрос - деловое предложение'})
+  Category.create({ position: 7, type_id: 7, title: 'Запрос - на статус ВНС'})
+  Category.create({ position: 8, type_id: 7, title: 'Запрос - рекомендация клиента'})
+
+  puts 'Categories OK' 
+end
 
 
 
 
 =begin
-            'price', 'contact',
+ - территории поселка (1, 2, 3)
+ - скины страниц,
+ - категории документов,
+ - категории новостей,
+ - список фотогалерей
+ - категории баннеров
+ - категории запросов с сайта. 
+
+- на просмотр участков, 
+- на консультацию по подбору, 
+- на обратный звонок, 
+- заявка на бронирование, 
+- вопрос с сайта,
+- рекомендация клиента,
+- заявка на статус "внс"
+- деловое предложение,
 
       Фотогалерея 
             Природа

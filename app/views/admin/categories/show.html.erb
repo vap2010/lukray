@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @admin_category.position %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @admin_category.is_deleted %>
+</p>
+
+<p>
+  <strong>Is published:</strong>
+  <%= @admin_category.is_published %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @admin_category.type_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_category.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @admin_category.image %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @admin_category.text %>
+</p>
+
+<%= link_to 'Edit', edit_admin_category_path(@admin_category) %> |
+<%= link_to 'Back', admin_categories_path %>

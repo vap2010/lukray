@@ -13,7 +13,10 @@
 | <%= link_to 'Запросы',    ''  %>  
 | <%= link_to 'Баннеры',    ''  %>  
 | <%= link_to 'Статистика', admin_home_stats_path  %>  
+
+<% if current_user.role_id == 4 %>
 | <%= link_to 'Adm',        admin_home_adm_path %> 
+<% end %>
 
 </p>
 

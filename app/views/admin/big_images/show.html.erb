@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @admin_big_image.position %>
+</p>
+
+<p>
+  <strong>Is public:</strong>
+  <%= @admin_big_image.is_public %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @admin_big_image.is_deleted %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_big_image.category_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_big_image.title %>
+</p>
+
+<p>
+  <strong>Params:</strong>
+  <%= @admin_big_image.params %>
+</p>
+
+<%= link_to 'Edit', edit_admin_big_image_path(@admin_big_image) %> |
+<%= link_to 'Back', admin_big_images_path %> | 
+<%= link_to 'New Big image', new_admin_big_image_path %>

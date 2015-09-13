@@ -1,0 +1,20 @@
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
+  <thead>
+    <tr>
+      <th align="center">Номер<br />дачного<br />участка</th>
+      <th align="center">Площадь<br /> участка <br /> кв.м.</th>
+      <th align="center">Цена<br /> земельного<br /> участка</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% homes.each do |hom|  %>
+    <% if hom.show_price %>
+    <tr>
+      <td align="center"><%= hom.site_num -%></td>
+      <td align="center"><%= hom.square_meters -%></td>
+      <td align="center"><%= hom.price -%></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

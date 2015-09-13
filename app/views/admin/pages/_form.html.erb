@@ -18,6 +18,9 @@
     <%= f.label :parent_id %> <%= f.text_field :parent_id, :size => 5  %> |
     <%= f.label :position %>   <%= f.text_field :position, :size => 5  %> |
     <%= f.label :is_published %>  <%= f.check_box :is_published %>
+    
+    <%= f.label :skin_id %>  <%= f.text_field :skin_id, :size => 4 %>
+    
   </div>
   <div class="field">
     <%= f.label :title %> <%= f.text_field :title, :size => 80 %>
@@ -45,8 +48,12 @@
 
   
   <div class="field">
+   <%= f.label :script_for_eval %>  <%= f.text_field :script_for_eval, :size => 20 %><br />
    <%= f.label :script_after %>  <%= f.text_field :script_after, :size => 20 %>
   </div>
+
+
+  <%= render :partial => "admin/meta_tags_form", :locals => {:f => f}  %>
 
   
   <div class="actions" align="center">    <%= f.submit %>  </div>

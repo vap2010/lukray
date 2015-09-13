@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: 1
+  is_public: false
+  is_deleted: false
+  category_id: 1
+  title: MyString
+  params: MyString
+
+two:
+  position: 1
+  is_public: false
+  is_deleted: false
+  category_id: 1
+  title: MyString
+  params: MyString

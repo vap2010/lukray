@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Blocked:</strong>
+  <%= @admin_user.blocked %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @admin_user.type_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @admin_user.status_id %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @admin_user.role_id %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @admin_user.phone %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @admin_user.mobile %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_user.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @admin_user.surname %>
+</p>
+
+<p>
+  <strong>Patronymic:</strong>
+  <%= @admin_user.patronymic %>
+</p>
+
+<%= link_to 'Edit', edit_admin_user_path(@admin_user) %> |
+<%= link_to 'Back', admin_users_path %>

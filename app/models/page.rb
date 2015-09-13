@@ -10,6 +10,7 @@ class Page < ActiveRecord::Base
 
 
 
+
   def url
     if self.meta_tag and !self.meta_tag.url.blank?
       "/#{self.meta_tag.url.to_s}.html"

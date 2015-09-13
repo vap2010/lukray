@@ -1,0 +1,45 @@
+<h1>Listing admin_big_images</h1>
+
+
+<% @big_images_categories.each do |bicat| %>
+<%= link_to 'New Big image', new_admin_big_image_path %>
+
+<h2><%= bicat.id -%>) <%= bicat.title -%> </h2>
+
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
+  <thead>
+    <tr>
+      <th>del</th>
+      <th>Pos</th>
+      <th>Pic</th>
+      <th>Pub</th>
+      <th>Del</th>
+      <th>Category<br />id</th>
+      <th>Title</th>
+      <th>Params</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>  
+    <% Admin::BigImage.where(:category_id => bicat.id).order(:position).each do |admin_big_image| %>
+      <tr>
+        <td><%= link_to '[x]', admin_big_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admin_big_image.position %></td>
+        <td><%= image_tag admin_big_image.preview.url %></td>        
+        <td><%= admin_big_image.is_public %></td>
+        <td><%= admin_big_image.is_deleted %></td>
+        <td><%= admin_big_image.category_id %></td>
+        <td><%= admin_big_image.title %></td>
+        <td><%= admin_big_image.params %></td>
+        <td><%= link_to 'Show', admin_big_image %></td>
+        <td><%= link_to 'Edit', edit_admin_big_image_path(admin_big_image) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% end %>
+
+
+<%= link_to 'New Big image', new_admin_big_image_path %>

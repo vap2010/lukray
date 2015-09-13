@@ -1,0 +1,33 @@
+  <div class="field" style="border:#ccc 1px solid; padding:6px; background-color:#eee;">
+    <table>
+    <%= f.fields_for :meta_tag do |mt| %>
+     <%   disabl = nil;   disabl  = "disabled"   if false        %>
+     <tr>
+       <td><%= mt.label       :title -%>: </td><td> <%= mt.text_field :title,  :disabled => disabl, :size => 60  -%> </td>
+       <td width="30"></td>
+       <td>
+         <%= mt.label        :url -%>: </td><td> <%= mt.text_field :url,  :disabled => disabl, :size => 38  -%>
+         <%= mt.check_box    :is_hand_control -%>
+         <%= mt.label :is_hand_control,  :disabled => disabl -%>
+       </td>
+     </tr>
+     <tr>
+       <td><%= mt.label :description -%>: </td><td> <%= mt.text_field :description,  :disabled => disabl, :size => 60 -%> </td>
+       <td width="30"></td>
+       <td><%= mt.label    :keywords -%>: </td><td> <%= mt.text_field :keywords,  :disabled => disabl,    :size => 60 -%> </td>
+     </tr>                          
+     <tr>
+       <td colspan="3"><%= mt.label :is_redirect -%>:  <%= mt.check_box :is_redirect,  :disabled => disabl -%>
+         <%= mt.label    :redirect_uri -%>: <%= mt.text_field :redirect_uri, :disabled => disabl, :size => 46 -%>
+       </td>
+       <td colspan="2">
+         <%= mt.check_box :no_cache,      :disabled => disabl -%>   <%= mt.label :no_cache -%>  |
+         <%= mt.check_box :noindex,       :disabled => disabl -%>   <%= mt.label :noindex -%>  |
+         <%= mt.check_box :nofollow,      :disabled => disabl -%>   <%= mt.label :nofollow -%> |
+         <%= mt.check_box :is_meta_no_edit  -%>  <%= mt.label :is_meta_no_edit, 'is editable' -%>
+       </td>
+     </tr>
+    <% end %>
+    </table>
+  </div>
+

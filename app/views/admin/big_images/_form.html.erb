@@ -1,0 +1,57 @@
+<%= form_for(@admin_big_image) do |f| %>
+  <% if @admin_big_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_big_image.errors.count, "error") %> prohibited this admin_big_image from being saved:</h2>
+
+      <ul>
+      <% @admin_big_image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.number_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :is_public %><br>
+    <%= f.check_box :is_public %>
+  </div>
+  <div class="field">
+    <%= f.label :is_deleted %><br>
+    <%= f.check_box :is_deleted %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :params %><br>
+    <%= f.text_field :params %>
+  </div>
+  
+  
+
+  <div class="field">
+    <%= image_tag @admin_big_image.preview.url %>
+    <%= f.file_field :preview %>
+  </div>
+  
+  <div class="field">
+    <%= image_tag @admin_big_image.picture.url %>
+    <%= f.file_field :picture %>
+  </div>
+  
+  
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

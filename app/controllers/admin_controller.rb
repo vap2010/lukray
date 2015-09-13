@@ -16,7 +16,7 @@ class AdminController < ApplicationController
   private
 
   def check_user_access!
-    redrect_to root_url unless current_user.admin?
+    redirect_to root_url unless current_user.admin?
   end
 
 

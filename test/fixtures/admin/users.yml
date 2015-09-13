@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blocked: false
+  type_id: 1
+  status_id: 1
+  role_id: 1
+  phone: MyString
+  mobile: MyString
+  name: MyString
+  surname: MyString
+  patronymic: MyString
+
+two:
+  blocked: false
+  type_id: 1
+  status_id: 1
+  role_id: 1
+  phone: MyString
+  mobile: MyString
+  name: MyString
+  surname: MyString
+  patronymic: MyString

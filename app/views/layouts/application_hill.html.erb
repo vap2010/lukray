@@ -13,10 +13,7 @@
   
   <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
-	<%#
+  <%#
 	 <link rel="stylesheet" href="assets/skel/css/bgstretcher.css">
 	 <link rel="stylesheet" href="assets/skel/css/jquery.arcticmodal-0.3.css">
 	 <link href="assets/skel/css/style.css" rel="stylesheet">
@@ -26,31 +23,49 @@
 	 <script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
 	 <script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
 	 <script type="text/javascript" src="/assets/skel/js/script.js"></script>
-	
-	%>
+  %>
 
 	<link rel="stylesheet" href="/assets/skel/css/bgstretcher.css">
 	<link rel="stylesheet" href="/assets/skel/css/jquery.arcticmodal-0.3.css">
+	
    <% if @page and @page.has_script_after =~ /\Amap-/ %>
   	  <link rel="stylesheet" href="/assets/skel/css/jquery.qtip.css">
    <% end %>	
+   
 	<link rel="stylesheet" href="/assets/skel/css/style.css">
 	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
 	
 	<script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
-   <% if @page and @page.has_script_after =~ /\Amap-/ %>
+	
+   <% if @page and @page.has_script_after =~ /\Amap-/  %>
 	  <script type="text/javascript" src="/assets/skel/js/jquery.qtip.min.js"></script>
 	  <script type="text/javascript" src="/assets/skel/js/jquery.livequery.js"></script>
    <% end %>	
+   
+   <%= render 'layouts/big_image_set' if is_main_page? %>
+   
 	<script type="text/javascript" src="/assets/skel/js/script.js"></script>
-	<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+	
+	<%#
+	  <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+   %>
+   
    <% if @page and @page.has_script_after =~ /\Amap-/ %>
+    <% if @page and [8,9,10].include? @page.id  %>
 	  <script type="text/javascript" src="/assets/skel/js/script-new.js"></script>
-   <% end %>	
-		
-		
+    <% end %>	
+   <% end %>
+   
+   <% if controller_name == 'lk' %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <% end %>
+
+
+<%#   .bl_page_head{ background: #ccc url(../img/bg/bg_1.jpg) center no-repeat; }    визуал внутр страниц  %>
+	
+
 	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
@@ -82,23 +97,27 @@
 			<a class="cont-icon" id="cont-skypes" style="background:none;"></a>
 			<a class="cont-icon" id="cont-skypes" style="background:none;"></a>
 		
-			<a href="skype:&#102;&#114;&#101;&#101;&#100;&#111;&#109;&#104;&#105;&#108;&#108;&#46;&#114;&#117;" class="cont-icon" id="cont-skype"><%#
-          <div id="SkypeButton_Call_freedomhill.ru_1">
-            <script type="text/javascript">
-              Skype.ui({
-                "name": "call",
-                "element": "SkypeButton_Call_freedomhill.ru_1",
-                "participants": ["freedomhill.ru"],
-                "imageSize": 10
-              });
-            </script>
-          </div> -%></a>
+			<a href="skype:&#108;&#117;&#098;&#105;&#107;&#114;&#121;" class="cont-icon" id="cont-skype"><%#
+			
+           <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+           <div id="SkypeButton_Call_lubikry_1">
+             <script type="text/javascript">
+               Skype.ui({
+                 "name": "dropdown",
+                 "element": "SkypeButton_Call_lubikry_1",
+                 "participants": ["lubikry"],
+                 "imageSize": 10
+               });
+             </script>
+           </div>
+           
+         -%></a>
 			
 			<%#
 		 	 <a href="" class="cont-icon" id="cont-icq"></a>
 			 <a href="" class="cont-icon" id="cont-phone"></a>
 			%> 
-			<a  href="m&#97;ilto:&#105;&#110;&#64;&#102;&#114;&#101;&#101;&#100;&#111;&#109;&#104;&#105;&#108;&#108;&#46;&#114;&#117;?subject=email-from-freedomhill" class="cont-icon" id="cont-mail"></a>
+			<a  href="m&#97;ilto:&#119;&#101;&#108;&#108;&#099;&#111;&#109;&#101;&#064;&#108;&#117;&#098;&#105;&#107;&#114;&#121;&#046;&#114;&#117;?subject=email-from-lubikry" class="cont-icon" id="cont-mail"></a>
 			<div class="phone">+7 495 150 08 87 </div>
 			<div class="clear"></div>
 			
@@ -118,7 +137,7 @@
 <%
    visual_section_css_class = 'bl_page_head'
    visual_section_css_class = 'bl_first' if is_main_page?
-   visual_section_css_class += ' head_min' if @page and @page.skin.try(:id).to_s.to_i == 3 
+   visual_section_css_class += ' head_min' if @page and @page.skin_id == 5    ## @page.skin.try(:id).to_s.to_i == 5 
 %>
 <section class="<%= visual_section_css_class -%>">
 	<div class="bg_polukrug"></div>
@@ -186,7 +205,8 @@
 		</div>
 	</div>
 	<div class="f_right">
-		<p class="phone">+7 495 150 08 87</p>
+		<p class="phone">+7 495 150 08 87</p>		
+		<%= render 'layouts/web_counts' %>
 	</div>
 	<div class="f_menu">
 		<ul>
@@ -205,6 +225,8 @@
 		  <%= raw footer_li_link(39) %>
 		  <%= raw footer_li_link(40) %>
 		  <%= raw footer_li_link(41) %>
+		  <%= raw footer_li_link(43) %>
+		  <%= raw footer_li_link(42) %>
 		</ul>
 	</div>
 	<div class="clear"></div>
@@ -212,5 +234,12 @@
 	</div>
 </footer>
 </div>
+
+<%#!--
+<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=86e805b39fdc81bc21fcdc30841f1ae6" charset="UTF-8"></script>
+--%>
+
+
+
 </body>
 </html>

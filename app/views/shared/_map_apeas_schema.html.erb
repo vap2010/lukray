@@ -1,8 +1,24 @@
 		<div class="map">
+
+<% if  @page.id == 6    %>
+		<div class="mapp">
+			<img src="<%= page.has_script_after.to_s.gsub(/\Amap-/, '')  -%>" width="1170" height="632" usemap="#mapp" alt="">
+			<map id="mapp" name="mapp">
+
+    <area shape="poly" href="/main/page/8" alt="Микрорайон № 1" coords="225, 281, 270, 336, 372, 366, 377, 374, 273, 423, 274, 545, 259, 551, 206, 538, 146, 513, 131, 499, 123, 479, 126, 465, 143, 425, 157, 393, 158, 373, 178, 343, 198, 317, 186, 309, 199, 292, 210, 300" />
+    <area shape="poly" href="/main/page/8" alt="Микрорайон № 1" coords="33, 334, 33, 354, 146, 354, 146, 334" />
+    <area shape="poly" href="/main/page/9" alt="Микрорайон № 2" coords="942, 338, 1020, 294, 1021, 277, 1001, 266, 943, 289" />
+    <area shape="poly" href="/main/page/9" alt="Микрорайон № 2" coords="813, 269, 926, 269, 926, 250, 813, 250" />
+    <area shape="poly" href="/main/page/9" alt="Микрорайон № 3" coords="1024, 484, 1075, 382, 1043, 327, 1000, 341, 942, 350, 981, 423" />
+    <area shape="poly" href="/main/page/9" alt="Микрорайон № 3" coords="867, 447, 981, 447, 981, 430, 867, 430" />
+    
+<% else %>
+		<div class="map">
 			<img src="<%= page.has_script_after.to_s.gsub(/\Amap-/, '')  -%>" width="1170" height="800" class="map-image" alt="">
 			<img src="/assets/skel/img/overlay.png" class="map-overlay" usemap="#map" alt="">
 			<map id="map" name="map">
 
+<% end %>
 
 <% if  @page.id == 8    %>
   <%= areas_for_map(Homestead.where(:domain_id => 1))  -%>
@@ -13,7 +29,7 @@
 <% end %>
 
 
-<% if  @page.id == 10  %><%#     false and @page.id == 8 or    %>
+<% if false and @page.id == 10  %><%#     false and @page.id == 8 or    %>
 
   <area shape="poly" alt="28 " data-type="6" coords="401, 600, 386, 596, 395, 572, 408, 575" />
   <area shape="poly" alt="29 " data-type="6" coords="424, 579, 417, 604, 401, 600, 408, 575" />
@@ -369,6 +385,633 @@
 
 
 <% end %>
+
+
+
+<% if @page.id == 10  %>            <%#     false and     %>
+
+    <area shape="poly" data-type="6" coords="660, 699, 644, 726, 640, 727, 637, 727, 634, 726, 631, 722, 648, 692" alt="301" />
+    <area shape="poly" data-type="6" coords="622, 713, 631, 722, 648, 692, 633, 684, 630, 684" alt="300" />
+    <area shape="poly" data-type="6" coords="602, 709, 613, 707, 622, 713, 630, 684, 609, 681" alt="299" />
+    <area shape="poly" data-type="6" coords="581, 709, 592, 705, 598, 709, 602, 709, 609, 681, 589, 678" alt="298" />
+    <area shape="poly" data-type="6" coords="589, 678, 581, 709, 564, 699, 570, 674, 575, 676" alt="297" />
+    <area shape="poly" data-type="6" coords="551, 667, 570, 674, 564, 699, 559, 696, 550, 696, 544, 694" alt="296" />
+    <area shape="poly" data-type="6" coords="524, 689, 537, 699, 544, 694, 551, 667, 532, 660" alt="295" />
+    <area shape="poly" data-type="6" coords="512, 654, 532, 660, 524, 689, 504, 684" alt="294" />
+    <area shape="poly" data-type="6" coords="485, 676, 504, 684, 512, 654, 493, 647" alt="293" />
+    <area shape="poly" data-type="6" coords="468, 663, 485, 676, 493, 647, 474, 641" alt="292" />
+    <area shape="poly" data-type="6" coords="468, 663, 454, 657, 448, 658, 455, 636, 474, 641" alt="291" />
+    <area shape="poly" data-type="6" coords="428, 656, 448, 658, 455, 636, 435, 631" alt="290" />
+    <area shape="poly" data-type="6" coords="410, 645, 424, 655, 428, 656, 435, 631, 416, 625" alt="289" />
+    <area shape="poly" data-type="6" coords="389, 645, 410, 645, 416, 625, 396, 620" alt="288" />
+    <area shape="poly" data-type="6" coords="375, 610, 366, 633, 389, 645, 396, 620, 380, 616" alt="287" />
+    <area shape="poly" data-type="6" coords="589, 678, 609, 681, 616, 658, 596, 653" alt="286" />
+    <area shape="poly" data-type="6" coords="577, 647, 596, 653, 589, 678, 575, 676, 570, 674" alt="285" />
+    <area shape="poly" data-type="6" coords="551, 667, 570, 674, 577, 647, 557, 642" alt="284" />
+    <area shape="poly" data-type="6" coords="532, 660, 551, 667, 557, 642, 538, 637" alt="283" />
+    <area shape="poly" data-type="6" coords="512, 654, 532, 660, 538, 637, 518, 632" alt="282" />
+    <area shape="poly" data-type="6" coords="493, 647, 512, 654, 518, 632, 499, 626" alt="281" />
+    <area shape="poly" data-type="6" coords="474, 641, 493, 647, 499, 626, 479, 621" alt="280" />
+    <area shape="poly" data-type="6" coords="455, 636, 474, 641, 479, 621, 460, 616" alt="279" />
+    <area shape="poly" data-type="6" coords="435, 631, 455, 636, 460, 616, 440, 611" alt="278" />
+    <area shape="poly" data-type="6" coords="416, 625, 435, 631, 440, 611, 421, 605" alt="277" />
+    <area shape="poly" data-type="6" coords="396, 620, 416, 625, 421, 605, 401, 600" alt="276" />
+    <area shape="poly" data-type="6" coords="386, 596, 381, 595, 375, 610, 380, 616, 396, 620, 401, 600" alt="275" />
+    <area shape="poly" data-type="6" coords="401, 600, 386, 596, 395, 572, 408, 575" alt="274" />
+    <area shape="poly" data-type="6" coords="424, 579, 417, 604, 401, 600, 408, 575" alt="273" />
+    <area shape="poly" data-type="6" coords="440, 611, 425, 607, 432, 581, 447, 585" alt="272" />
+    <area shape="poly" data-type="6" coords="456, 615, 463, 589, 447, 585, 440, 611" alt="271" />
+    <area shape="poly" data-type="6" coords="479, 621, 464, 617, 471, 591, 486, 596" alt="270" />
+    <area shape="poly" data-type="6" coords="495, 625, 479, 621, 486, 596, 502, 600" alt="269" />
+    <area shape="poly" data-type="6" coords="518, 632, 503, 628, 510, 602, 525, 606" alt="268" />
+    <area shape="poly" data-type="6" coords="534, 636, 541, 611, 525, 606, 518, 632" alt="267" />
+    <area shape="poly" data-type="6" coords="557, 642, 542, 638, 548, 613, 564, 617" alt="266" />
+    <area shape="poly" data-type="6" coords="573, 646, 580, 621, 564, 617, 557, 642" alt="265" />
+    <area shape="poly" data-type="6" coords="596, 653, 581, 649, 588, 623, 603, 627" alt="264" />
+    <area shape="poly" data-type="6" coords="612, 657, 619, 632, 603, 627, 596, 653" alt="263" />
+    <area shape="poly" data-type="6" coords="630, 684, 609, 681, 616, 658, 619, 659, 635, 663" alt="262" />
+    <area shape="poly" data-type="6" coords="655, 668, 635, 663, 630, 684, 633, 684, 648, 692" alt="261" />
+    <area shape="poly" data-type="6" coords="642, 638, 627, 634, 619, 659, 635, 663" alt="260" />
+    <area shape="poly" data-type="6" coords="657, 642, 651, 667, 635, 663, 642, 638" alt="259" />
+    <area shape="poly" data-type="6" coords="676, 675, 676, 709, 648, 692, 655, 668" alt="258" />
+    <area shape="poly" data-type="6" coords="665, 644, 659, 670, 676, 675, 677, 647" alt="257" />
+    <area shape="poly" data-type="6" coords="593, 613, 613, 618, 615, 618, 618, 617, 619, 615, 619, 592, 599, 587" alt="256" />
+    <area shape="poly" data-type="6" coords="574, 607, 593, 613, 599, 587, 580, 582" alt="255" />
+    <area shape="poly" data-type="6" coords="558, 603, 574, 607, 580, 582, 565, 578" alt="254" />
+    <area shape="poly" data-type="6" coords="542, 599, 558, 603, 565, 578, 549, 574" alt="253" />
+    <area shape="poly" data-type="6" coords="527, 595, 542, 599, 549, 574, 534, 570" alt="252" />
+    <area shape="poly" data-type="6" coords="511, 590, 527, 595, 534, 570, 518, 565" alt="251" />
+    <area shape="poly" data-type="6" coords="495, 586, 511, 590, 518, 565, 502, 561" alt="250" />
+    <area shape="poly" data-type="6" coords="479, 582, 495, 586, 502, 561, 486, 557" alt="249" />
+    <area shape="poly" data-type="6" coords="464, 578, 479, 582, 486, 557, 470, 553" alt="248" />
+    <area shape="poly" data-type="6" coords="448, 574, 464, 578, 470, 553, 455, 548" alt="247" />
+    <area shape="poly" data-type="6" coords="429, 569, 448, 574, 455, 548, 437, 543" alt="246" />
+    <area shape="poly" data-type="6" coords="416, 537, 409, 557, 410, 560, 411, 562, 414, 564, 429, 569, 437, 543" alt="245" />
+    <area shape="poly" data-type="6" coords="452, 547, 426, 540, 428, 529, 449, 519, 459, 522" alt="244" />
+    <area shape="poly" data-type="6" coords="477, 527, 459, 522, 452, 547, 470, 553" alt="243" />
+    <area shape="poly" data-type="6" coords="493, 531, 477, 527, 470, 553, 486, 557" alt="242" />
+    <area shape="poly" data-type="6" coords="509, 536, 493, 531, 486, 557, 502, 561" alt="241" />
+    <area shape="poly" data-type="6" coords="524, 540, 509, 536, 502, 561, 518, 565" alt="240" />
+    <area shape="poly" data-type="6" coords="540, 544, 524, 540, 518, 565, 534, 570" alt="239" />
+    <area shape="poly" data-type="6" coords="549, 574, 534, 570, 540, 544, 556, 548" alt="238" />
+    <area shape="poly" data-type="6" coords="572, 553, 556, 548, 549, 574, 565, 578" alt="237" />
+    <area shape="poly" data-type="6" coords="580, 582, 565, 578, 572, 553, 587, 557" alt="236" />
+    <area shape="poly" data-type="6" coords="597, 587, 580, 582, 587, 557, 593, 558, 604, 561" alt="235" />
+    <area shape="poly" data-type="6" coords="619, 563, 619, 591, 598, 586, 604, 563" alt="234" />
+    <area shape="poly" data-type="6" coords="499, 525, 475, 518, 477, 507, 498, 497, 505, 500" alt="233" />
+    <area shape="poly" data-type="6" coords="518, 530, 499, 525, 505, 500, 512, 501, 525, 505" alt="232" />
+    <area shape="poly" data-type="6" coords="518, 530, 525, 505, 543, 510, 537, 535" alt="231" />
+    <area shape="poly" data-type="6" coords="558, 514, 559, 534, 557, 537, 552, 539, 537, 535, 543, 510" alt="230" />
+    <area shape="poly" data-type="6" coords="541, 483, 533, 480, 515, 489, 512, 501, 534, 508" alt="229" />
+    <area shape="poly" data-type="6" coords="558, 487, 558, 514, 534, 508, 541, 483" alt="228" />
+    <area shape="poly" data-type="6" coords="567, 527, 567, 540, 572, 545, 592, 549, 592, 527" alt="227" />
+    <area shape="poly" data-type="6" coords="619, 543, 619, 561, 604, 561, 593, 558, 593, 543" alt="226" />
+    <area shape="poly" data-type="6" coords="619, 527, 619, 542, 593, 542, 593, 527" alt="225" />
+    <area shape="poly" data-type="6" coords="567, 510, 567, 526, 592, 526, 592, 510" alt="224" />
+    <area shape="poly" data-type="6" coords="619, 510, 619, 526, 593, 526, 593, 510" alt="223" />
+    <area shape="poly" data-type="6" coords="592, 509, 567, 509, 567, 494, 592, 494" alt="222" />
+    <area shape="poly" data-type="6" coords="618, 494, 619, 509, 593, 509, 593, 494" alt="221" />
+    <area shape="poly" data-type="6" coords="567, 477, 567, 493, 592, 493, 592, 477" alt="220" />
+    <area shape="poly" data-type="6" coords="618, 472, 618, 493, 593, 493, 593, 472" alt="219" />
+    <area shape="poly" data-type="6" coords="592, 453, 567, 465, 567, 476, 592, 476" alt="218" />
+    <area shape="poly" data-type="6" coords="618, 440, 618, 471, 593, 471, 593, 453" alt="217" />
+    <area shape="poly" data-type="6" coords="653, 630, 632, 623, 628, 620, 628, 610, 653, 610" alt="216" />
+    <area shape="poly" data-type="6" coords="677, 610, 677, 635, 655, 630, 655, 610" alt="215" />
+    <area shape="poly" data-type="6" coords="654, 609, 628, 609, 628, 593, 654, 593" alt="214" />
+    <area shape="poly" data-type="6" coords="676, 590, 677, 609, 655, 609, 655, 590" alt="213" />
+    <area shape="poly" data-type="6" coords="676, 571, 676, 589, 655, 589, 655, 571" alt="212" />
+    <area shape="poly" data-type="6" coords="627, 571, 627, 586, 654, 586, 654, 571" alt="211" />
+    <area shape="poly" data-type="6" coords="654, 570, 627, 570, 627, 554, 654, 554" alt="210" />
+    <area shape="poly" data-type="6" coords="675, 551, 676, 570, 655, 570, 655, 551" alt="209" />
+    <area shape="poly" data-type="6" coords="675, 532, 675, 550, 655, 550, 655, 532" alt="208" />
+    <area shape="poly" data-type="6" coords="627, 532, 627, 547, 654, 547, 654, 532" alt="207" />
+    <area shape="poly" data-type="6" coords="655, 531, 675, 531, 675, 512, 655, 512" alt="206" />
+    <area shape="poly" data-type="6" coords="654, 515, 627, 515, 627, 531, 654, 531" alt="205" />
+    <area shape="poly" data-type="6" coords="675, 492, 675, 511, 654, 511, 654, 492" alt="204" />
+    <area shape="poly" data-type="6" coords="627, 492, 627, 508, 653, 508, 653, 492" alt="203" />
+    <area shape="poly" data-type="6" coords="627, 476, 654, 476, 654, 491, 627, 491" alt="202" />
+    <area shape="poly" data-type="6" coords="675, 473, 675, 491, 655, 491, 655, 473" alt="201" />
+    <area shape="poly" data-type="6" coords="675, 472, 675, 448, 654, 448, 654, 472" alt="200" />
+    <area shape="poly" data-type="6" coords="627, 454, 627, 469, 653, 469, 653, 454" alt="199" />
+    <area shape="poly" data-type="6" coords="654, 424, 627, 437, 627, 453, 654, 453, 653, 442" alt="198" />
+    <area shape="poly" data-type="6" coords="675, 414, 675, 447, 654, 447, 654, 424" alt="197" />
+    <area shape="poly" data-type="6" coords="544, 441, 558, 422, 579, 436, 575, 443, 555, 453" alt="195" />
+    <area shape="poly" data-type="6" coords="571, 403, 558, 422, 579, 436, 592, 417" alt="194" />
+    <area shape="poly" data-type="6" coords="584, 430, 591, 436, 620, 422, 623, 418, 602, 404" alt="193" />
+    <area shape="poly" data-type="6" coords="580, 389, 571, 403, 592, 417, 602, 404" alt="192" />
+    <area shape="poly" data-type="6" coords="602, 404, 623, 418, 632, 405, 611, 390" alt="191" />
+    <area shape="poly" data-type="6" coords="611, 390, 632, 405, 643, 389, 643, 385, 635, 383, 619, 378" alt="190" />
+    <area shape="poly" data-type="6" coords="580, 389, 589, 376, 611, 390, 602, 404" alt="189" />
+    <area shape="poly" data-type="6" coords="598, 362, 589, 376, 611, 390, 620, 376" alt="188" />
+    <area shape="poly" data-type="6" coords="598, 362, 611, 344, 627, 349, 620, 376" alt="187" />
+    <area shape="poly" data-type="6" coords="627, 349, 619, 378, 635, 383, 643, 353" alt="186" />
+    <area shape="poly" data-type="6" coords="636, 378, 654, 383, 662, 359, 643, 353" alt="185" />
+    <area shape="poly" data-type="6" coords="654, 383, 673, 389, 680, 364, 662, 359" alt="184" />
+    <area shape="poly" data-type="6" coords="684, 392, 702, 384, 706, 371, 693, 368, 680, 364, 673, 389" alt="183" />
+    <area shape="poly" data-type="6" coords="638, 325, 626, 321, 611, 344, 630, 350" alt="182" />
+    <area shape="poly" data-type="6" coords="654, 329, 638, 325, 630, 350, 646, 354" alt="181" />
+    <area shape="poly" data-type="6" coords="662, 359, 646, 354, 654, 329, 669, 334" alt="180" />
+    <area shape="poly" data-type="6" coords="685, 338, 669, 334, 662, 359, 678, 363" alt="179" />
+    <area shape="poly" data-type="6" coords="701, 342, 685, 338, 678, 363, 693, 368" alt="178" />
+    <area shape="poly" data-type="6" coords="711, 372, 693, 368, 701, 342, 719, 348" alt="177" />
+    <area shape="poly" data-type="6" coords="744, 355, 742, 365, 721, 375, 711, 372, 719, 348" alt="176" />
+    <area shape="poly" data-type="6" coords="646, 292, 634, 309, 634, 312, 635, 315, 637, 316, 653, 321, 661, 296" alt="175" />
+    <area shape="poly" data-type="6" coords="672, 326, 653, 321, 661, 296, 680, 301" alt="174" />
+    <area shape="poly" data-type="6" coords="680, 301, 672, 326, 687, 331, 695, 306" alt="173" />
+    <area shape="poly" data-type="6" coords="695, 306, 687, 331, 703, 335, 711, 310" alt="172" />
+    <area shape="poly" data-type="6" coords="719, 340, 703, 335, 711, 310, 726, 315" alt="171" />
+    <area shape="poly" data-type="6" coords="726, 315, 719, 340, 734, 344, 742, 320" alt="170" />
+    <area shape="poly" data-type="6" coords="755, 350, 734, 344, 742, 320, 763, 325" alt="169" />
+    <area shape="poly" data-type="6" coords="787, 332, 784, 345, 767, 354, 755, 350, 763, 325" alt="168" />
+    <area shape="poly" data-type="6" coords="799, 309, 826, 317, 823, 327, 803, 336, 793, 334" alt="167" />
+    <area shape="poly" data-type="6" coords="781, 304, 799, 309, 793, 334, 774, 328" alt="166" />
+    <area shape="poly" data-type="6" coords="765, 299, 781, 304, 774, 328, 758, 324" alt="165" />
+    <area shape="poly" data-type="6" coords="750, 294, 765, 299, 758, 324, 742, 320" alt="164" />
+    <area shape="poly" data-type="6" coords="734, 290, 750, 294, 742, 320, 726, 315" alt="163" />
+    <area shape="poly" data-type="6" coords="718, 285, 734, 290, 726, 315, 711, 310" alt="162" />
+    <area shape="poly" data-type="6" coords="703, 281, 718, 285, 711, 310, 695, 306" alt="161" />
+    <area shape="poly" data-type="6" coords="687, 276, 703, 281, 695, 306, 680, 301" alt="160" />
+    <area shape="poly" data-type="6" coords="671, 272, 687, 276, 680, 301, 664, 297" alt="159" />
+    <area shape="poly" data-type="6" coords="662, 267, 671, 272, 664, 297, 646, 292" alt="158" />
+    <area shape="poly" data-type="6" coords="846, 286, 860, 290, 854, 313, 850, 316, 838, 312" alt="157" />
+    <area shape="poly" data-type="6" coords="846, 286, 838, 312, 823, 308, 830, 281" alt="156" />
+    <area shape="poly" data-type="6" coords="801, 301, 815, 306, 823, 279, 808, 275" alt="155" />
+    <area shape="poly" data-type="6" coords="808, 275, 801, 301, 785, 297, 793, 270" alt="154" />
+    <area shape="poly" data-type="6" coords="763, 290, 778, 295, 786, 268, 770, 264" alt="153" />
+    <area shape="poly" data-type="6" coords="770, 264, 763, 290, 748, 286, 755, 260" alt="152" />
+    <area shape="poly" data-type="6" coords="725, 279, 740, 284, 748, 258, 733, 253" alt="151" />
+    <area shape="poly" data-type="6" coords="717, 249, 710, 275, 725, 279, 733, 253" alt="150" />
+    <area shape="poly" data-type="6" coords="688, 269, 703, 273, 710, 247, 695, 243" alt="149" />
+    <area shape="poly" data-type="6" coords="665, 261, 676, 237, 695, 243, 688, 269" alt="148" />
+    <area shape="poly" data-type="6" coords="889, 274, 913, 280, 914, 285, 888, 298, 883, 297" alt="147" />
+    <area shape="poly" data-type="6" coords="872, 270, 889, 274, 883, 297, 866, 292" alt="146" />
+    <area shape="poly" data-type="6" coords="852, 265, 872, 270, 866, 292, 846, 286" alt="145" />
+    <area shape="poly" data-type="6" coords="833, 260, 852, 265, 846, 286, 827, 280" alt="144" />
+    <area shape="poly" data-type="6" coords="814, 254, 833, 260, 827, 280, 808, 275" alt="143" />
+    <area shape="poly" data-type="6" coords="789, 269, 808, 275, 814, 254, 795, 249" alt="142" />
+    <area shape="poly" data-type="6" coords="770, 264, 789, 269, 795, 249, 776, 243" alt="141" />
+    <area shape="poly" data-type="6" coords="752, 259, 770, 264, 776, 243, 758, 238" alt="140" />
+    <area shape="poly" data-type="6" coords="733, 253, 752, 259, 758, 238, 739, 232" alt="139" />
+    <area shape="poly" data-type="6" coords="720, 227, 739, 232, 733, 253, 714, 248" alt="138" />
+    <area shape="poly" data-type="6" coords="701, 222, 720, 227, 714, 248, 695, 243" alt="137" />
+    <area shape="poly" data-type="6" coords="682, 215, 701, 222, 695, 243, 673, 236" alt="136" />
+    <area shape="poly" data-type="6" coords="424, 488, 417, 508, 420, 512, 425, 513, 436, 508, 443, 498" alt="135" />
+    <area shape="poly" data-type="6" coords="443, 498, 450, 501, 480, 487, 458, 472" alt="134" />
+    <area shape="poly" data-type="6" coords="433, 464, 424, 488, 443, 498, 454, 478" alt="133" />
+    <area shape="poly" data-type="6" coords="454, 478, 433, 464, 442, 447, 464, 463" alt="132" />
+    <area shape="poly" data-type="6" coords="500, 477, 480, 487, 458, 472, 469, 457" alt="131" />
+    <area shape="poly" data-type="6" coords="486, 467, 500, 477, 517, 470, 519, 466, 497, 451" alt="130" />
+    <area shape="poly" data-type="6" coords="505, 438, 527, 453, 519, 466, 497, 451" alt="129" />
+    <area shape="poly" data-type="6" coords="497, 451, 486, 467, 465, 454, 477, 437" alt="128" />
+    <area shape="poly" data-type="6" coords="507, 435, 497, 451, 475, 436, 485, 420" alt="127" />
+    <area shape="poly" data-type="6" coords="455, 423, 446, 441, 465, 454, 477, 437" alt="126" />
+    <area shape="poly" data-type="6" coords="465, 406, 455, 423, 475, 436, 485, 420" alt="125" />
+    <area shape="poly" data-type="6" coords="540, 434, 532, 447, 510, 431, 518, 419" alt="124" />
+    <area shape="poly" data-type="6" coords="485, 420, 507, 435, 518, 419, 496, 404" alt="123" />
+    <area shape="poly" data-type="6" coords="496, 404, 485, 420, 465, 406, 474, 389" alt="122" />
+    <area shape="poly" data-type="6" coords="496, 404, 474, 389, 485, 373, 507, 388" alt="121" />
+    <area shape="poly" data-type="6" coords="518, 419, 496, 404, 507, 388, 529, 402" alt="120" />
+    <area shape="poly" data-type="6" coords="549, 420, 540, 434, 518, 419, 527, 405" alt="119" />
+    <area shape="poly" data-type="6" coords="507, 388, 518, 371, 540, 386, 529, 402" alt="118" />
+    <area shape="poly" data-type="6" coords="562, 401, 554, 414, 531, 399, 540, 386" alt="117" />
+    <area shape="poly" data-type="6" coords="540, 386, 562, 401, 571, 388, 549, 373" alt="116" />
+    <area shape="poly" data-type="6" coords="518, 371, 540, 386, 551, 370, 529, 356" alt="115" />
+    <area shape="poly" data-type="6" coords="518, 371, 507, 388, 485, 373, 496, 356" alt="114" />
+    <area shape="poly" data-type="6" coords="487, 369, 480, 366, 483, 328, 505, 343" alt="113" />
+    <area shape="poly" data-type="6" coords="507, 340, 496, 356, 518, 371, 529, 356" alt="112" />
+    <area shape="poly" data-type="6" coords="529, 356, 551, 370, 562, 354, 540, 339" alt="111" />
+    <area shape="poly" data-type="6" coords="540, 339, 529, 356, 507, 340, 518, 324" alt="110" />
+    <area shape="poly" data-type="6" coords="496, 309, 488, 322, 509, 337, 518, 324" alt="109" />
+    <area shape="poly" data-type="6" coords="584, 369, 575, 382, 553, 367, 562, 354" alt="108" />
+    <area shape="poly" data-type="6" coords="562, 354, 584, 369, 593, 356, 571, 341" alt="107" />
+    <area shape="poly" data-type="6" coords="540, 339, 562, 354, 573, 338, 551, 323" alt="106" />
+    <area shape="poly" data-type="6" coords="551, 323, 540, 339, 518, 324, 529, 308" alt="105" />
+    <area shape="poly" data-type="6" coords="505, 296, 496, 309, 518, 324, 527, 311" alt="104" />
+    <area shape="poly" data-type="6" coords="606, 336, 598, 349, 575, 335, 584, 322" alt="103" />
+    <area shape="poly" data-type="6" coords="551, 323, 573, 338, 584, 322, 562, 307" alt="102" />
+    <area shape="poly" data-type="6" coords="584, 322, 606, 336, 615, 323, 593, 309" alt="101" />
+    <area shape="poly" data-type="6" coords="562, 307, 584, 322, 595, 306, 573, 291" alt="100" />
+    <area shape="poly" data-type="6" coords="628, 304, 620, 317, 598, 302, 606, 289" alt="99 " />
+    <area shape="poly" data-type="6" coords="573, 291, 595, 306, 606, 289, 584, 274" alt="98 " />
+    <area shape="poly" data-type="6" coords="606, 289, 628, 304, 637, 291, 615, 276" alt="97 " />
+    <area shape="poly" data-type="6" coords="619, 270, 641, 285, 652, 268, 652, 264, 648, 261, 631, 252" alt="96 " />
+    <area shape="poly" data-type="6" coords="617, 273, 606, 289, 584, 274, 595, 258" alt="95 " />
+    <area shape="poly" data-type="6" coords="625, 261, 617, 273, 595, 258, 603, 246" alt="94 " />
+    <area shape="poly" data-type="6" coords="613, 232, 623, 245, 631, 252, 625, 261, 603, 246" alt="93 " />
+    <area shape="poly" data-type="6" coords="540, 292, 562, 307, 551, 323, 529, 308" alt="92 " />
+    <area shape="poly" data-type="6" coords="518, 277, 509, 290, 531, 305, 540, 292" alt="91 " />
+    <area shape="poly" data-type="6" coords="540, 292, 551, 275, 573, 291, 562, 307" alt="90 " />
+    <area shape="poly" data-type="6" coords="527, 264, 518, 277, 540, 292, 548, 279" alt="89 " />
+    <area shape="poly" data-type="6" coords="584, 274, 573, 291, 551, 275, 562, 259" alt="88 " />
+    <area shape="poly" data-type="6" coords="595, 258, 584, 274, 562, 259, 573, 244" alt="87 " />
+    <area shape="poly" data-type="6" coords="605, 242, 595, 258, 573, 244, 584, 227" alt="86 " />
+    <area shape="poly" data-type="6" coords="540, 245, 531, 257, 553, 272, 562, 259" alt="85 " />
+    <area shape="poly" data-type="6" coords="548, 231, 571, 247, 562, 259, 540, 245" alt="84 " />
+    <area shape="poly" data-type="6" coords="597, 211, 613, 232, 605, 242, 584, 227" alt="83 " />
+    <area shape="poly" data-type="6" coords="565, 208, 553, 225, 575, 240, 587, 223" alt="82 " />
+    <area shape="poly" data-type="6" coords="578, 187, 597, 211, 587, 223, 565, 208" alt="81 " />
+    <area shape="poly" data-type="6" coords="644, 251, 658, 257, 670, 232, 656, 227" alt="80 " />
+    <area shape="poly" data-type="6" coords="656, 227, 644, 251, 634, 245, 626, 236, 647, 220" alt="79 " />
+    <area shape="poly" data-type="6" coords="664, 206, 682, 215, 674, 234, 656, 227, 647, 220" alt="78 " />
+    <area shape="poly" data-type="6" coords="647, 220, 626, 236, 616, 224, 638, 207" alt="77 " />
+    <area shape="poly" data-type="6" coords="653, 191, 664, 206, 647, 220, 636, 204" alt="76 " />
+    <area shape="poly" data-type="6" coords="641, 176, 653, 191, 636, 204, 624, 189" alt="75 " />
+    <area shape="poly" data-type="6" coords="602, 206, 611, 218, 633, 201, 624, 189" alt="74 " />
+    <area shape="poly" data-type="6" coords="624, 189, 602, 206, 593, 193, 614, 177" alt="73 " />
+    <area shape="poly" data-type="6" coords="629, 160, 641, 176, 624, 189, 612, 174" alt="72 " />
+    <area shape="poly" data-type="6" coords="617, 145, 629, 160, 612, 174, 600, 158" alt="71 " />
+    <area shape="poly" data-type="6" coords="600, 158, 610, 171, 588, 187, 578, 175" alt="70 " />
+    <area shape="poly" data-type="6" coords="591, 146, 600, 158, 617, 145, 608, 132" alt="69 " />
+    <area shape="poly" data-type="6" coords="595, 115, 608, 132, 591, 146, 583, 135, 584, 129" alt="68 " />
+    <area shape="poly" data-type="6" coords="341, 526, 367, 529, 373, 516, 348, 506" alt="67 " />
+    <area shape="poly" data-type="6" coords="348, 506, 341, 526, 321, 524, 322, 517, 333, 503" alt="66 " />
+    <area shape="poly" data-type="6" coords="377, 503, 402, 512, 398, 525, 394, 528, 368, 526, 375, 509" alt="65 " />
+    <area shape="poly" data-type="6" coords="348, 506, 373, 516, 378, 499, 354, 490" alt="64 " />
+    <area shape="poly" data-type="6" coords="354, 490, 348, 506, 333, 503, 335, 483" alt="63 " />
+    <area shape="poly" data-type="6" coords="410, 491, 405, 505, 380, 496, 386, 481" alt="62 " />
+    <area shape="poly" data-type="6" coords="354, 490, 378, 499, 386, 481, 361, 472" alt="61 " />
+    <area shape="poly" data-type="6" coords="361, 472, 354, 490, 335, 483, 336, 474, 341, 464" alt="60 " />
+    <area shape="poly" data-type="6" coords="386, 481, 410, 491, 416, 476, 391, 466" alt="59 " />
+    <area shape="poly" data-type="6" coords="361, 472, 386, 481, 392, 463, 368, 454" alt="58 " />
+    <area shape="poly" data-type="6" coords="368, 454, 361, 472, 341, 464, 350, 447" alt="57 " />
+    <area shape="poly" data-type="6" coords="368, 454, 392, 463, 399, 444, 376, 433" alt="56 " />
+    <area shape="poly" data-type="6" coords="376, 433, 368, 454, 350, 447, 357, 424" alt="55 " />
+    <area shape="poly" data-type="6" coords="424, 454, 419, 469, 394, 459, 399, 444" alt="54 " />
+    <area shape="poly" data-type="6" coords="372, 404, 368, 413, 357, 424, 376, 433, 388, 412" alt="53 " />
+    <area shape="poly" data-type="6" coords="399, 444, 424, 454, 432, 441, 408, 428" alt="52 " />
+    <area shape="poly" data-type="6" coords="388, 412, 376, 433, 399, 444, 410, 425" alt="51 " />
+    <area shape="poly" data-type="6" coords="443, 421, 435, 434, 412, 421, 420, 408" alt="50 " />
+    <area shape="poly" data-type="6" coords="420, 408, 410, 425, 388, 412, 397, 395" alt="49 " />
+    <area shape="poly" data-type="6" coords="397, 395, 388, 412, 372, 404, 375, 395, 376, 384" alt="48 " />
+    <area shape="poly" data-type="6" coords="420, 408, 443, 421, 451, 407, 427, 394" alt="47 " />
+    <area shape="poly" data-type="6" coords="397, 395, 420, 408, 429, 391, 406, 378" alt="46 " />
+    <area shape="poly" data-type="6" coords="406, 378, 397, 395, 376, 384, 382, 365" alt="45 " />
+    <area shape="poly" data-type="6" coords="462, 387, 454, 401, 431, 387, 438, 374" alt="44 " />
+    <area shape="poly" data-type="6" coords="406, 378, 429, 391, 440, 369, 416, 360" alt="43 " />
+    <area shape="poly" data-type="6" coords="389, 353, 382, 365, 406, 378, 414, 363" alt="42 " />
+    <area shape="poly" data-type="6" coords="468, 365, 469, 376, 462, 387, 438, 374, 440, 369, 442, 363" alt="41 " />
+    <area shape="poly" data-type="6" coords="442, 362, 469, 364, 469, 348, 443, 347" alt="40 " />
+    <area shape="poly" data-type="6" coords="416, 360, 440, 369, 442, 363, 443, 343, 417, 342" alt="39 " />
+    <area shape="poly" data-type="6" coords="417, 342, 416, 360, 414, 363, 389, 353, 393, 347, 394, 339" alt="38 " />
+    <area shape="poly" data-type="6" coords="417, 340, 443, 343, 445, 318, 418, 313" alt="37 " />
+    <area shape="poly" data-type="6" coords="418, 313, 417, 341, 394, 338, 394, 320, 397, 315, 395, 308" alt="36 " />
+    <area shape="poly" data-type="6" coords="451, 307, 473, 322, 470, 325, 471, 340, 443, 339, 445, 318, 446, 315" alt="35 " />
+    <area shape="poly" data-type="6" coords="431, 289, 418, 308, 418, 313, 395, 308, 394, 301, 394, 298, 396, 296, 403, 295, 407, 293, 407, 287, 411, 283, 417, 279" alt="34 " />
+    <area shape="poly" data-type="6" coords="431, 289, 418, 308, 418, 313, 445, 318, 446, 315, 453, 303" alt="33 " />
+    <area shape="poly" data-type="6" coords="431, 289, 453, 303, 464, 287, 442, 273" alt="32 " />
+    <area shape="poly" data-type="6" coords="431, 265, 417, 279, 431, 289, 442, 273" alt="31 " />
+    <area shape="poly" data-type="6" coords="486, 302, 477, 315, 455, 300, 464, 287" alt="30 " />
+    <area shape="poly" data-type="6" coords="464, 287, 486, 302, 495, 289, 473, 275" alt="29 " />
+    <area shape="poly" data-type="6" coords="442, 273, 464, 287, 475, 272, 453, 257" alt="28 " />
+    <area shape="poly" data-type="6" coords="453, 257, 442, 273, 431, 265, 440, 252, 440, 248" alt="27 " />
+    <area shape="poly" data-type="6" coords="453, 257, 475, 272, 486, 255, 465, 241" alt="26 " />
+    <area shape="poly" data-type="6" coords="465, 241, 453, 257, 440, 248, 444, 227" alt="25 " />
+    <area shape="poly" data-type="6" coords="508, 270, 499, 283, 477, 268, 486, 255" alt="24 " />
+    <area shape="poly" data-type="6" coords="486, 255, 508, 270, 517, 257, 495, 242" alt="23 " />
+    <area shape="poly" data-type="6" coords="465, 241, 486, 255, 497, 239, 475, 224" alt="22 " />
+    <area shape="poly" data-type="6" coords="475, 224, 465, 241, 444, 227, 457, 212" alt="21 " />
+    <area shape="poly" data-type="6" coords="530, 238, 521, 251, 499, 236, 508, 223" alt="20 " />
+    <area shape="poly" data-type="6" coords="475, 224, 497, 239, 508, 223, 486, 208" alt="19 " />
+    <area shape="poly" data-type="6" coords="469, 197, 457, 212, 475, 224, 486, 208" alt="18 " />
+    <area shape="poly" data-type="6" coords="508, 223, 530, 238, 538, 225, 517, 210" alt="17 " />
+    <area shape="poly" data-type="6" coords="486, 208, 508, 223, 519, 207, 497, 192" alt="16 " />
+    <area shape="poly" data-type="6" coords="497, 192, 486, 208, 469, 197, 481, 181" alt="15 " />
+    <area shape="poly" data-type="6" coords="552, 205, 543, 218, 521, 204, 530, 191" alt="14 " />
+    <area shape="poly" data-type="6" coords="497, 192, 508, 176, 533, 186, 530, 191, 519, 207" alt="13 " />
+    <area shape="poly" data-type="6" coords="559, 187, 558, 197, 552, 205, 530, 191, 533, 186, 534, 181" alt="12 " />
+    <area shape="poly" data-type="6" coords="558, 98, 582, 117, 574, 126, 546, 120" alt="11 " />
+    <area shape="poly" data-type="6" coords="491, 168, 481, 181, 497, 192, 508, 176" alt="10 " />
+    <area shape="poly" data-type="6" coords="537, 166, 563, 172, 559, 187, 534, 181" alt="9 " />
+    <area shape="poly" data-type="6" coords="508, 176, 533, 186, 538, 162, 512, 157" alt="8 " />
+    <area shape="poly" data-type="6" coords="512, 157, 508, 176, 491, 168, 494, 164, 492, 159, 477, 151, 484, 146" alt="7 " />
+    <area shape="poly" data-type="6" coords="568, 149, 564, 164, 539, 158, 542, 143" alt="6 " />
+    <area shape="poly" data-type="6" coords="512, 157, 538, 162, 542, 143, 516, 138" alt="5 " />
+    <area shape="poly" data-type="6" coords="516, 138, 512, 157, 484, 146, 477, 151, 467, 145, 467, 140, 480, 123" alt="4 " />
+    <area shape="poly" data-type="6" coords="545, 127, 570, 133, 568, 149, 542, 143" alt="3 " />
+    <area shape="poly" data-type="6" coords="521, 121, 545, 127, 542, 143, 516, 138" alt="2 " />
+    <area shape="poly" data-type="6" coords="521, 121, 496, 101, 480, 123, 516, 138" alt="1 " />
+
+
+
+<%#
+=begin               
+
+592, 417, 608, 428, 620, 422, 623, 418, 602, 404
+584, 430, 591, 436, 620, 422, 623, 418, 602, 404
+
+
+592, 453, 567, 465, 567, 477, 592, 477
+592, 453, 567, 465, 567, 476, 592, 476
+
+618, 440, 618, 472, 592, 472, 592, 453
+618, 440, 618, 471, 593, 471, 593, 453
+
+      
+    <area shape="poly" alt="1  " data-type="6" coords="660, 699, 644, 726, 640, 727, 637, 727, 634, 726, 631, 722, 648, 692" alt="301" />
+    <area shape="poly" alt="2  " data-type="6" coords="622, 713, 631, 722, 648, 692, 633, 684, 630, 684" alt="300" />
+    <area shape="poly" alt="3  " data-type="6" coords="602, 709, 613, 707, 622, 713, 630, 684, 609, 681" alt="299" />
+    <area shape="poly" alt="4  " data-type="6" coords="581, 709, 592, 705, 598, 709, 602, 709, 609, 681, 589, 678" alt="298" />
+    <area shape="poly" alt="5  " data-type="6" coords="589, 678, 581, 709, 564, 699, 570, 674, 575, 676" alt="297" />
+    <area shape="poly" alt="6  " data-type="6" coords="551, 667, 570, 674, 564, 699, 559, 696, 550, 696, 544, 694" alt="296" />
+    <area shape="poly" alt="7  " data-type="6" coords="524, 689, 537, 699, 544, 694, 551, 667, 532, 660" alt="295" />
+    <area shape="poly" alt="8  " data-type="6" coords="512, 654, 532, 660, 524, 689, 504, 684" alt="294" />
+    <area shape="poly" alt="9  " data-type="6" coords="485, 676, 504, 684, 512, 654, 493, 647" alt="293" />
+    <area shape="poly" alt="10 " data-type="6" coords="468, 663, 485, 676, 493, 647, 474, 641" alt="292" />
+    <area shape="poly" alt="11 " data-type="6" coords="468, 663, 454, 657, 448, 658, 455, 636, 474, 641" alt="291" />
+    <area shape="poly" alt="12 " data-type="6" coords="428, 656, 448, 658, 455, 636, 435, 631" alt="290" />
+    <area shape="poly" alt="13 " data-type="6" coords="410, 645, 424, 655, 428, 656, 435, 631, 416, 625" alt="289" />
+    <area shape="poly" alt="14 " data-type="6" coords="389, 645, 410, 645, 416, 625, 396, 620" alt="288" />
+    <area shape="poly" alt="15 " data-type="6" coords="375, 610, 366, 633, 389, 645, 396, 620, 380, 616" alt="287" />
+    <area shape="poly" alt="16 " data-type="6" coords="589, 678, 609, 681, 616, 658, 596, 653" alt="286" />
+    <area shape="poly" alt="17 " data-type="6" coords="577, 647, 596, 653, 589, 678, 575, 676, 570, 674" alt="285" />
+    <area shape="poly" alt="18 " data-type="6" coords="551, 667, 570, 674, 577, 647, 557, 642" alt="284" />
+    <area shape="poly" alt="19 " data-type="6" coords="532, 660, 551, 667, 557, 642, 538, 637" alt="283" />
+    <area shape="poly" alt="20 " data-type="6" coords="512, 654, 532, 660, 538, 637, 518, 632" alt="282" />
+    <area shape="poly" alt="21 " data-type="6" coords="493, 647, 512, 654, 518, 632, 499, 626" alt="281" />
+    <area shape="poly" alt="22 " data-type="6" coords="474, 641, 493, 647, 499, 626, 479, 621" alt="280" />
+    <area shape="poly" alt="23 " data-type="6" coords="455, 636, 474, 641, 479, 621, 460, 616" alt="279" />
+    <area shape="poly" alt="24 " data-type="6" coords="435, 631, 455, 636, 460, 616, 440, 611" alt="278" />
+    <area shape="poly" alt="25 " data-type="6" coords="416, 625, 435, 631, 440, 611, 421, 605" alt="277" />
+    <area shape="poly" alt="26 " data-type="6" coords="396, 620, 416, 625, 421, 605, 401, 600" alt="276" />
+    <area shape="poly" alt="27 " data-type="6" coords="386, 596, 381, 595, 375, 610, 380, 616, 396, 620, 401, 600" alt="275" />
+    <area shape="poly" alt="28 " data-type="6" coords="401, 600, 386, 596, 395, 572, 408, 575" alt="274" />
+    <area shape="poly" alt="29 " data-type="6" coords="424, 579, 417, 604, 401, 600, 408, 575" alt="273" />
+    <area shape="poly" alt="30 " data-type="6" coords="440, 611, 425, 607, 432, 581, 447, 585" alt="272" />
+    <area shape="poly" alt="31 " data-type="6" coords="456, 615, 463, 589, 447, 585, 440, 611" alt="271" />
+    <area shape="poly" alt="32 " data-type="6" coords="479, 621, 464, 617, 471, 591, 486, 596" alt="270" />
+    <area shape="poly" alt="33 " data-type="6" coords="495, 625, 479, 621, 486, 596, 502, 600" alt="269" />
+    <area shape="poly" alt="34 " data-type="6" coords="518, 632, 503, 628, 510, 602, 525, 606" alt="268" />
+    <area shape="poly" alt="35 " data-type="6" coords="534, 636, 541, 611, 525, 606, 518, 632" alt="267" />
+    <area shape="poly" alt="36 " data-type="6" coords="557, 642, 542, 638, 548, 613, 564, 617" alt="266" />
+    <area shape="poly" alt="37 " data-type="6" coords="573, 646, 580, 621, 564, 617, 557, 642" alt="265" />
+    <area shape="poly" alt="38 " data-type="6" coords="596, 653, 581, 649, 588, 623, 603, 627" alt="264" />
+    <area shape="poly" alt="39 " data-type="6" coords="612, 657, 619, 632, 603, 627, 596, 653" alt="263" />
+    <area shape="poly" alt="40 " data-type="6" coords="630, 684, 609, 681, 616, 658, 619, 659, 635, 663" alt="262" />
+    <area shape="poly" alt="41 " data-type="6" coords="655, 668, 635, 663, 630, 684, 633, 684, 648, 692" alt="261" />
+    <area shape="poly" alt="42 " data-type="6" coords="642, 638, 627, 634, 619, 659, 635, 663" alt="260" />
+    <area shape="poly" alt="43 " data-type="6" coords="657, 642, 651, 667, 635, 663, 642, 638" alt="259" />
+    <area shape="poly" alt="44 " data-type="6" coords="676, 675, 676, 709, 648, 692, 655, 668" alt="258" />
+    <area shape="poly" alt="45 " data-type="6" coords="665, 644, 659, 670, 676, 675, 677, 647" alt="257" />
+    <area shape="poly" alt="46 " data-type="6" coords="593, 613, 613, 618, 615, 618, 618, 617, 619, 615, 619, 592, 599, 587" alt="256" />
+    <area shape="poly" alt="47 " data-type="6" coords="574, 607, 593, 613, 599, 587, 580, 582" alt="255" />
+    <area shape="poly" alt="48 " data-type="6" coords="558, 603, 574, 607, 580, 582, 565, 578" alt="254" />
+    <area shape="poly" alt="49 " data-type="6" coords="542, 599, 558, 603, 565, 578, 549, 574" alt="253" />
+    <area shape="poly" alt="50 " data-type="6" coords="527, 595, 542, 599, 549, 574, 534, 570" alt="252" />
+    <area shape="poly" alt="51 " data-type="6" coords="511, 590, 527, 595, 534, 570, 518, 565" alt="251" />
+    <area shape="poly" alt="52 " data-type="6" coords="495, 586, 511, 590, 518, 565, 502, 561" alt="250" />
+    <area shape="poly" alt="53 " data-type="6" coords="479, 582, 495, 586, 502, 561, 486, 557" alt="249" />
+    <area shape="poly" alt="54 " data-type="6" coords="464, 578, 479, 582, 486, 557, 470, 553" alt="248" />
+    <area shape="poly" alt="55 " data-type="6" coords="448, 574, 464, 578, 470, 553, 455, 548" alt="247" />
+    <area shape="poly" alt="56 " data-type="6" coords="429, 569, 448, 574, 455, 548, 437, 543" alt="246" />
+    <area shape="poly" alt="57 " data-type="6" coords="416, 537, 409, 557, 410, 560, 411, 562, 414, 564, 429, 569, 437, 543" alt="245" />
+    <area shape="poly" alt="58 " data-type="6" coords="452, 547, 426, 540, 428, 529, 449, 519, 459, 522" alt="244" />
+    <area shape="poly" alt="59 " data-type="6" coords="477, 527, 459, 522, 452, 547, 470, 553" alt="243" />
+    <area shape="poly" alt="60 " data-type="6" coords="493, 531, 477, 527, 470, 553, 486, 557" alt="242" />
+    <area shape="poly" alt="61 " data-type="6" coords="509, 536, 493, 531, 486, 557, 502, 561" alt="241" />
+    <area shape="poly" alt="62 " data-type="6" coords="524, 540, 509, 536, 502, 561, 518, 565" alt="240" />
+    <area shape="poly" alt="63 " data-type="6" coords="540, 544, 524, 540, 518, 565, 534, 570" alt="239" />
+    <area shape="poly" alt="64 " data-type="6" coords="549, 574, 534, 570, 540, 544, 556, 548" alt="238" />
+    <area shape="poly" alt="65 " data-type="6" coords="572, 553, 556, 548, 549, 574, 565, 578" alt="237" />
+    <area shape="poly" alt="66 " data-type="6" coords="580, 582, 565, 578, 572, 553, 587, 557" alt="236" />
+    <area shape="poly" alt="67 " data-type="6" coords="597, 587, 580, 582, 587, 557, 593, 558, 604, 561" alt="235" />
+    <area shape="poly" alt="68 " data-type="6" coords="619, 561, 619, 593, 597, 587, 604, 561" alt="234" />
+    <area shape="poly" alt="69 " data-type="6" coords="499, 525, 475, 518, 477, 507, 498, 497, 505, 500" alt="233" />
+    <area shape="poly" alt="70 " data-type="6" coords="518, 530, 499, 525, 505, 500, 512, 501, 525, 505" alt="232" />
+    <area shape="poly" alt="71 " data-type="6" coords="518, 530, 525, 505, 543, 510, 537, 535" alt="231" />
+    <area shape="poly" alt="72 " data-type="6" coords="558, 514, 559, 534, 557, 537, 552, 539, 537, 535, 543, 510" alt="230" />
+    <area shape="poly" alt="73 " data-type="6" coords="541, 483, 533, 480, 515, 489, 512, 501, 534, 508" alt="229" />
+    <area shape="poly" alt="74 " data-type="6" coords="558, 487, 558, 514, 534, 508, 541, 483" alt="228" />
+    <area shape="poly" alt="75 " data-type="6" coords="567, 527, 567, 540, 572, 545, 592, 549, 592, 527" alt="227" />
+    <area shape="poly" alt="76 " data-type="6" coords="619, 543, 619, 561, 604, 561, 593, 558, 593, 543" alt="226" />
+    <area shape="poly" alt="77 " data-type="6" coords="619, 527, 619, 542, 593, 542, 593, 527" alt="225" />
+    <area shape="poly" alt="78 " data-type="6" coords="567, 510, 567, 526, 592, 526, 592, 510" alt="224" />
+    <area shape="poly" alt="79 " data-type="6" coords="619, 510, 619, 526, 593, 526, 593, 510" alt="223" />
+    <area shape="poly" alt="80 " data-type="6" coords="592, 509, 567, 509, 567, 494, 592, 494" alt="222" />
+    <area shape="poly" alt="81 " data-type="6" coords="618, 494, 619, 509, 593, 509, 593, 494" alt="221" />
+    <area shape="poly" alt="82 " data-type="6" coords="567, 477, 567, 493, 592, 493, 592, 477" alt="220" />
+    <area shape="poly" alt="83 " data-type="6" coords="618, 472, 618, 493, 593, 493, 593, 472" alt="219" />
+    <area shape="poly" alt="84 " data-type="6" coords="592, 453, 567, 465, 567, 476, 592, 476" alt="218" />
+    <area shape="poly" alt="85 " data-type="6" coords="618, 440, 618, 471, 593, 471, 593, 453" alt="217" />
+    <area shape="poly" alt="86 " data-type="6" coords="655, 630, 632, 623, 628, 620, 628, 610, 655, 610" alt="216" />
+    <area shape="poly" alt="87 " data-type="6" coords="677, 610, 677, 635, 655, 630, 655, 610" alt="215" />
+    <area shape="poly" alt="88 " data-type="6" coords="655, 610, 628, 610, 628, 594, 655, 594" alt="214" />
+    <area shape="poly" alt="89 " data-type="6" coords="676, 590, 677, 610, 655, 610, 655, 590" alt="213" />
+    <area shape="poly" alt="90 " data-type="6" coords="676, 571, 676, 590, 655, 590, 654, 571" alt="212" />
+    <area shape="poly" alt="91 " data-type="6" coords="627, 571, 627, 586, 654, 586, 654, 571" alt="211" />
+    <area shape="poly" alt="92 " data-type="6" coords="654, 571, 627, 571, 627, 554, 654, 554" alt="210" />
+    <area shape="poly" alt="93 " data-type="6" coords="675, 551, 676, 571, 654, 571, 654, 551" alt="209" />
+    <area shape="poly" alt="94 " data-type="6" coords="675, 532, 675, 551, 654, 551, 654, 532" alt="208" />
+    <area shape="poly" alt="95 " data-type="6" coords="626, 532, 626, 547, 654, 547, 654, 532" alt="207" />
+    <area shape="poly" alt="96 " data-type="6" coords="654, 532, 675, 532, 675, 512, 654, 512" alt="206" />
+    <area shape="poly" alt="97 " data-type="6" coords="654, 515, 626, 515, 626, 532, 654, 532" alt="205" />
+    <area shape="poly" alt="98 " data-type="6" coords="675, 492, 675, 512, 654, 512, 654, 492" alt="204" />
+    <area shape="poly" alt="99 " data-type="6" coords="627, 492, 627, 508, 654, 508, 654, 492" alt="203" />
+    <area shape="poly" alt="100" data-type="6" coords="627, 476, 654, 476, 654, 492, 627, 492" alt="202" />
+    <area shape="poly" alt="101" data-type="6" coords="675, 473, 675, 492, 654, 492, 654, 473" alt="201" />
+    <area shape="poly" alt="102" data-type="6" coords="675, 473, 675, 448, 654, 448, 654, 473" alt="200" />
+    <area shape="poly" alt="103" data-type="6" coords="627, 454, 627, 469, 654, 469, 654, 454" alt="199" />
+    <area shape="poly" alt="104" data-type="6" coords="654, 424, 627, 437, 627, 453, 654, 453, 653, 442" alt="198" />
+    <area shape="poly" alt="105" data-type="6" coords="675, 414, 675, 447, 654, 447, 654, 424" alt="197" />
+    <area shape="poly" alt="106" data-type="6" coords="544, 441, 558, 422, 579, 436, 575, 443, 555, 453" alt="195" />
+    <area shape="poly" alt="107" data-type="6" coords="571, 403, 558, 422, 579, 436, 592, 417" alt="194" />
+    <area shape="poly" alt="108" data-type="6" coords="584, 430, 591, 436, 620, 422, 623, 418, 602, 404" alt="193" />
+    <area shape="poly" alt="109" data-type="6" coords="580, 389, 571, 403, 592, 417, 602, 404" alt="192" />
+    <area shape="poly" alt="110" data-type="6" coords="602, 404, 623, 418, 632, 405, 611, 390" alt="191" />
+    <area shape="poly" alt="111" data-type="6" coords="611, 390, 632, 405, 643, 389, 643, 385, 635, 383, 619, 378" alt="190" />
+    <area shape="poly" alt="112" data-type="6" coords="580, 389, 589, 376, 611, 390, 602, 404" alt="189" />
+    <area shape="poly" alt="113" data-type="6" coords="598, 362, 589, 376, 611, 390, 620, 376" alt="188" />
+    <area shape="poly" alt="114" data-type="6" coords="598, 362, 611, 344, 627, 349, 620, 376" alt="187" />
+    <area shape="poly" alt="115" data-type="6" coords="627, 349, 619, 378, 635, 383, 643, 353" alt="186" />
+    <area shape="poly" alt="116" data-type="6" coords="636, 378, 654, 383, 662, 359, 643, 353" alt="185" />
+    <area shape="poly" alt="117" data-type="6" coords="654, 383, 673, 389, 680, 364, 662, 359" alt="184" />
+    <area shape="poly" alt="118" data-type="6" coords="684, 392, 702, 384, 706, 371, 693, 368, 680, 364, 673, 389" alt="183" />
+    <area shape="poly" alt="119" data-type="6" coords="638, 325, 626, 321, 611, 344, 630, 350" alt="182" />
+    <area shape="poly" alt="120" data-type="6" coords="654, 329, 638, 325, 630, 350, 646, 354" alt="181" />
+    <area shape="poly" alt="121" data-type="6" coords="662, 359, 646, 354, 654, 329, 669, 334" alt="180" />
+    <area shape="poly" alt="122" data-type="6" coords="685, 338, 669, 334, 662, 359, 678, 363" alt="179" />
+    <area shape="poly" alt="123" data-type="6" coords="701, 342, 685, 338, 678, 363, 693, 368" alt="178" />
+    <area shape="poly" alt="124" data-type="6" coords="711, 372, 693, 368, 701, 342, 719, 348" alt="177" />
+    <area shape="poly" alt="125" data-type="6" coords="744, 355, 742, 365, 721, 375, 711, 372, 719, 348" alt="176" />
+    <area shape="poly" alt="126" data-type="6" coords="646, 292, 634, 309, 634, 312, 635, 315, 637, 316, 653, 321, 661, 296" alt="175" />
+    <area shape="poly" alt="127" data-type="6" coords="672, 326, 653, 321, 661, 296, 680, 301" alt="174" />
+    <area shape="poly" alt="128" data-type="6" coords="680, 301, 672, 326, 687, 331, 695, 306" alt="173" />
+    <area shape="poly" alt="129" data-type="6" coords="695, 306, 687, 331, 703, 335, 711, 310" alt="172" />
+    <area shape="poly" alt="130" data-type="6" coords="719, 340, 703, 335, 711, 310, 726, 315" alt="171" />
+    <area shape="poly" alt="131" data-type="6" coords="726, 315, 719, 340, 734, 344, 742, 320" alt="170" />
+    <area shape="poly" alt="132" data-type="6" coords="755, 350, 734, 344, 742, 320, 763, 325" alt="169" />
+    <area shape="poly" alt="133" data-type="6" coords="787, 332, 784, 345, 767, 354, 755, 350, 763, 325" alt="168" />
+    <area shape="poly" alt="134" data-type="6" coords="799, 309, 826, 317, 823, 327, 803, 336, 793, 334" alt="167" />
+    <area shape="poly" alt="135" data-type="6" coords="781, 304, 799, 309, 793, 334, 774, 328" alt="166" />
+    <area shape="poly" alt="136" data-type="6" coords="765, 299, 781, 304, 774, 328, 758, 324" alt="165" />
+    <area shape="poly" alt="137" data-type="6" coords="750, 294, 765, 299, 758, 324, 742, 320" alt="164" />
+    <area shape="poly" alt="138" data-type="6" coords="734, 290, 750, 294, 742, 320, 726, 315" alt="163" />
+    <area shape="poly" alt="139" data-type="6" coords="718, 285, 734, 290, 726, 315, 711, 310" alt="162" />
+    <area shape="poly" alt="140" data-type="6" coords="703, 281, 718, 285, 711, 310, 695, 306" alt="161" />
+    <area shape="poly" alt="141" data-type="6" coords="687, 276, 703, 281, 695, 306, 680, 301" alt="160" />
+    <area shape="poly" alt="142" data-type="6" coords="671, 272, 687, 276, 680, 301, 664, 297" alt="159" />
+    <area shape="poly" alt="143" data-type="6" coords="662, 267, 671, 272, 664, 297, 646, 292" alt="158" />
+    <area shape="poly" alt="144" data-type="6" coords="846, 286, 860, 290, 854, 313, 850, 316, 838, 312" alt="157" />
+    <area shape="poly" alt="145" data-type="6" coords="846, 286, 838, 312, 823, 308, 830, 281" alt="156" />
+    <area shape="poly" alt="146" data-type="6" coords="801, 301, 815, 306, 823, 279, 808, 275" alt="155" />
+    <area shape="poly" alt="147" data-type="6" coords="808, 275, 801, 301, 785, 297, 793, 270" alt="154" />
+    <area shape="poly" alt="148" data-type="6" coords="763, 290, 778, 295, 786, 268, 770, 264" alt="153" />
+    <area shape="poly" alt="149" data-type="6" coords="770, 264, 763, 290, 748, 286, 755, 260" alt="152" />
+    <area shape="poly" alt="150" data-type="6" coords="725, 279, 740, 284, 748, 258, 733, 253" alt="151" />
+    <area shape="poly" alt="151" data-type="6" coords="717, 249, 710, 275, 725, 279, 733, 253" alt="150" />
+    <area shape="poly" alt="152" data-type="6" coords="688, 269, 703, 273, 710, 247, 695, 243" alt="149" />
+    <area shape="poly" alt="153" data-type="6" coords="665, 261, 676, 237, 695, 243, 688, 269" alt="148" />
+    <area shape="poly" alt="154" data-type="6" coords="889, 274, 913, 280, 914, 285, 888, 298, 883, 297" alt="147" />
+    <area shape="poly" alt="155" data-type="6" coords="872, 270, 889, 274, 883, 297, 866, 292" alt="146" />
+    <area shape="poly" alt="156" data-type="6" coords="852, 265, 872, 270, 866, 292, 846, 286" alt="145" />
+    <area shape="poly" alt="157" data-type="6" coords="833, 260, 852, 265, 846, 286, 827, 280" alt="144" />
+    <area shape="poly" alt="158" data-type="6" coords="814, 254, 833, 260, 827, 280, 808, 275" alt="143" />
+    <area shape="poly" alt="159" data-type="6" coords="789, 269, 808, 275, 814, 254, 795, 249" alt="142" />
+    <area shape="poly" alt="160" data-type="6" coords="770, 264, 789, 269, 795, 249, 776, 243" alt="141" />
+    <area shape="poly" alt="161" data-type="6" coords="752, 259, 770, 264, 776, 243, 758, 238" alt="140" />
+    <area shape="poly" alt="162" data-type="6" coords="733, 253, 752, 259, 758, 238, 739, 232" alt="139" />
+    <area shape="poly" alt="163" data-type="6" coords="720, 227, 739, 232, 733, 253, 714, 248" alt="138" />
+    <area shape="poly" alt="164" data-type="6" coords="701, 222, 720, 227, 714, 248, 695, 243" alt="137" />
+    <area shape="poly" alt="165" data-type="6" coords="682, 215, 701, 222, 695, 243, 673, 236" alt="136" />
+    <area shape="poly" alt="166" data-type="6" coords="424, 488, 417, 508, 420, 512, 425, 513, 436, 508, 443, 498" alt="135" />
+    <area shape="poly" alt="167" data-type="6" coords="443, 498, 450, 501, 480, 487, 458, 472" alt="134" />
+    <area shape="poly" alt="168" data-type="6" coords="433, 464, 424, 488, 443, 498, 454, 478" alt="133" />
+    <area shape="poly" alt="169" data-type="6" coords="454, 478, 433, 464, 442, 447, 464, 463" alt="132" />
+    <area shape="poly" alt="170" data-type="6" coords="500, 477, 480, 487, 458, 472, 469, 457" alt="131" />
+    <area shape="poly" alt="171" data-type="6" coords="486, 467, 500, 477, 517, 470, 519, 466, 497, 451" alt="130" />
+    <area shape="poly" alt="172" data-type="6" coords="505, 438, 527, 453, 519, 466, 497, 451" alt="129" />
+    <area shape="poly" alt="173" data-type="6" coords="497, 451, 486, 467, 465, 454, 477, 437" alt="128" />
+    <area shape="poly" alt="174" data-type="6" coords="507, 435, 497, 451, 475, 436, 485, 420" alt="127" />
+    <area shape="poly" alt="175" data-type="6" coords="455, 423, 446, 441, 465, 454, 477, 437" alt="126" />
+    <area shape="poly" alt="176" data-type="6" coords="465, 406, 455, 423, 475, 436, 485, 420" alt="125" />
+    <area shape="poly" alt="177" data-type="6" coords="540, 434, 532, 447, 510, 431, 518, 419" alt="124" />
+    <area shape="poly" alt="178" data-type="6" coords="485, 420, 507, 435, 518, 419, 496, 404" alt="123" />
+    <area shape="poly" alt="179" data-type="6" coords="496, 404, 485, 420, 465, 406, 474, 389" alt="122" />
+    <area shape="poly" alt="180" data-type="6" coords="496, 404, 474, 389, 485, 373, 507, 388" alt="121" />
+    <area shape="poly" alt="181" data-type="6" coords="518, 419, 496, 404, 507, 388, 529, 402" alt="120" />
+    <area shape="poly" alt="182" data-type="6" coords="549, 420, 540, 434, 518, 419, 527, 405" alt="119" />
+    <area shape="poly" alt="183" data-type="6" coords="507, 388, 518, 371, 540, 386, 529, 402" alt="118" />
+    <area shape="poly" alt="184" data-type="6" coords="562, 401, 554, 414, 531, 399, 540, 386" alt="117" />
+    <area shape="poly" alt="185" data-type="6" coords="540, 386, 562, 401, 571, 388, 549, 373" alt="116" />
+    <area shape="poly" alt="186" data-type="6" coords="518, 371, 540, 386, 551, 370, 529, 356" alt="115" />
+    <area shape="poly" alt="187" data-type="6" coords="518, 371, 507, 388, 485, 373, 496, 356" alt="114" />
+    <area shape="poly" alt="188" data-type="6" coords="487, 369, 480, 366, 483, 328, 505, 343" alt="113" />
+    <area shape="poly" alt="189" data-type="6" coords="507, 340, 496, 356, 518, 371, 529, 356" alt="112" />
+    <area shape="poly" alt="190" data-type="6" coords="529, 356, 551, 370, 562, 354, 540, 339" alt="111" />
+    <area shape="poly" alt="191" data-type="6" coords="540, 339, 529, 356, 507, 340, 518, 324" alt="110" />
+    <area shape="poly" alt="192" data-type="6" coords="496, 309, 488, 322, 509, 337, 518, 324" alt="109" />
+    <area shape="poly" alt="193" data-type="6" coords="584, 369, 575, 382, 553, 367, 562, 354" alt="108" />
+    <area shape="poly" alt="194" data-type="6" coords="562, 354, 584, 369, 593, 356, 571, 341" alt="107" />
+    <area shape="poly" alt="195" data-type="6" coords="540, 339, 562, 354, 573, 338, 551, 323" alt="106" />
+    <area shape="poly" alt="196" data-type="6" coords="551, 323, 540, 339, 518, 324, 529, 308" alt="105" />
+    <area shape="poly" alt="197" data-type="6" coords="505, 296, 496, 309, 518, 324, 527, 311" alt="104" />
+    <area shape="poly" alt="198" data-type="6" coords="606, 336, 598, 349, 575, 335, 584, 322" alt="103" />
+    <area shape="poly" alt="199" data-type="6" coords="551, 323, 573, 338, 584, 322, 562, 307" alt="102" />
+    <area shape="poly" alt="200" data-type="6" coords="584, 322, 606, 336, 615, 323, 593, 309" alt="101" />
+    <area shape="poly" alt="201" data-type="6" coords="562, 307, 584, 322, 595, 306, 573, 291" alt="100" />
+    <area shape="poly" alt="202" data-type="6" coords="628, 304, 620, 317, 598, 302, 606, 289" alt="99 " />
+    <area shape="poly" alt="203" data-type="6" coords="573, 291, 595, 306, 606, 289, 584, 274" alt="98 " />
+    <area shape="poly" alt="204" data-type="6" coords="606, 289, 628, 304, 637, 291, 615, 276" alt="97 " />
+    <area shape="poly" alt="205" data-type="6" coords="619, 270, 641, 285, 652, 268, 652, 264, 648, 261, 631, 252" alt="96 " />
+    <area shape="poly" alt="206" data-type="6" coords="617, 273, 606, 289, 584, 274, 595, 258" alt="95 " />
+    <area shape="poly" alt="207" data-type="6" coords="625, 261, 617, 273, 595, 258, 603, 246" alt="94 " />
+    <area shape="poly" alt="208" data-type="6" coords="613, 232, 623, 245, 631, 252, 625, 261, 603, 246" alt="93 " />
+    <area shape="poly" alt="209" data-type="6" coords="540, 292, 562, 307, 551, 323, 529, 308" alt="92 " />
+    <area shape="poly" alt="210" data-type="6" coords="518, 277, 509, 290, 531, 305, 540, 292" alt="91 " />
+    <area shape="poly" alt="211" data-type="6" coords="540, 292, 551, 275, 573, 291, 562, 307" alt="90 " />
+    <area shape="poly" alt="212" data-type="6" coords="527, 264, 518, 277, 540, 292, 548, 279" alt="89 " />
+    <area shape="poly" alt="213" data-type="6" coords="584, 274, 573, 291, 551, 275, 562, 259" alt="88 " />
+    <area shape="poly" alt="214" data-type="6" coords="595, 258, 584, 274, 562, 259, 573, 244" alt="87 " />
+    <area shape="poly" alt="215" data-type="6" coords="605, 242, 595, 258, 573, 244, 584, 227" alt="86 " />
+    <area shape="poly" alt="216" data-type="6" coords="540, 245, 531, 257, 553, 272, 562, 259" alt="85 " />
+    <area shape="poly" alt="217" data-type="6" coords="548, 231, 571, 247, 562, 259, 540, 245" alt="84 " />
+    <area shape="poly" alt="218" data-type="6" coords="597, 211, 613, 232, 605, 242, 584, 227" alt="83 " />
+    <area shape="poly" alt="219" data-type="6" coords="565, 208, 553, 225, 575, 240, 587, 223" alt="82 " />
+    <area shape="poly" alt="220" data-type="6" coords="578, 187, 597, 211, 587, 223, 565, 208" alt="81 " />
+    <area shape="poly" alt="221" data-type="6" coords="644, 251, 658, 257, 670, 232, 656, 227" alt="80 " />
+    <area shape="poly" alt="222" data-type="6" coords="656, 227, 644, 251, 634, 245, 626, 236, 647, 220" alt="79 " />
+    <area shape="poly" alt="223" data-type="6" coords="664, 206, 682, 215, 674, 234, 656, 227, 647, 220" alt="78 " />
+    <area shape="poly" alt="224" data-type="6" coords="647, 220, 626, 236, 616, 224, 638, 207" alt="77 " />
+    <area shape="poly" alt="225" data-type="6" coords="653, 191, 664, 206, 647, 220, 636, 204" alt="76 " />
+    <area shape="poly" alt="226" data-type="6" coords="641, 176, 653, 191, 636, 204, 624, 189" alt="75 " />
+    <area shape="poly" alt="227" data-type="6" coords="602, 206, 611, 218, 633, 201, 624, 189" alt="74 " />
+    <area shape="poly" alt="228" data-type="6" coords="624, 189, 602, 206, 593, 193, 614, 177" alt="73 " />
+    <area shape="poly" alt="229" data-type="6" coords="629, 160, 641, 176, 624, 189, 612, 174" alt="72 " />
+    <area shape="poly" alt="230" data-type="6" coords="617, 145, 629, 160, 612, 174, 600, 158" alt="71 " />
+    <area shape="poly" alt="231" data-type="6" coords="600, 158, 610, 171, 588, 187, 578, 175" alt="70 " />
+    <area shape="poly" alt="232" data-type="6" coords="591, 146, 600, 158, 617, 145, 608, 132" alt="69 " />
+    <area shape="poly" alt="233" data-type="6" coords="595, 115, 608, 132, 591, 146, 583, 135, 584, 129" alt="68 " />
+    <area shape="poly" alt="234" data-type="6" coords="341, 526, 367, 529, 373, 516, 348, 506" alt="67 " />
+    <area shape="poly" alt="235" data-type="6" coords="348, 506, 341, 526, 321, 524, 322, 517, 333, 503" alt="66 " />
+    <area shape="poly" alt="236" data-type="6" coords="377, 503, 402, 512, 398, 525, 394, 528, 368, 526, 375, 509" alt="65 " />
+    <area shape="poly" alt="237" data-type="6" coords="348, 506, 373, 516, 378, 499, 354, 490" alt="64 " />
+    <area shape="poly" alt="238" data-type="6" coords="354, 490, 348, 506, 333, 503, 335, 483" alt="63 " />
+    <area shape="poly" alt="239" data-type="6" coords="410, 491, 405, 505, 380, 496, 386, 481" alt="62 " />
+    <area shape="poly" alt="240" data-type="6" coords="354, 490, 378, 499, 386, 481, 361, 472" alt="61 " />
+    <area shape="poly" alt="241" data-type="6" coords="361, 472, 354, 490, 335, 483, 336, 474, 341, 464" alt="60 " />
+    <area shape="poly" alt="242" data-type="6" coords="386, 481, 410, 491, 416, 476, 391, 466" alt="59 " />
+    <area shape="poly" alt="243" data-type="6" coords="361, 472, 386, 481, 392, 463, 368, 454" alt="58 " />
+    <area shape="poly" alt="244" data-type="6" coords="368, 454, 361, 472, 341, 464, 350, 447" alt="57 " />
+    <area shape="poly" alt="245" data-type="6" coords="368, 454, 392, 463, 399, 444, 376, 433" alt="56 " />
+    <area shape="poly" alt="246" data-type="6" coords="376, 433, 368, 454, 350, 447, 357, 424" alt="55 " />
+    <area shape="poly" alt="247" data-type="6" coords="424, 454, 419, 469, 394, 459, 399, 444" alt="54 " />
+    <area shape="poly" alt="248" data-type="6" coords="372, 404, 368, 413, 357, 424, 376, 433, 388, 412" alt="53 " />
+    <area shape="poly" alt="249" data-type="6" coords="399, 444, 424, 454, 432, 441, 408, 428" alt="52 " />
+    <area shape="poly" alt="250" data-type="6" coords="388, 412, 376, 433, 399, 444, 410, 425" alt="51 " />
+    <area shape="poly" alt="251" data-type="6" coords="443, 421, 435, 434, 412, 421, 420, 408" alt="50 " />
+    <area shape="poly" alt="252" data-type="6" coords="420, 408, 410, 425, 388, 412, 397, 395" alt="49 " />
+    <area shape="poly" alt="253" data-type="6" coords="397, 395, 388, 412, 372, 404, 375, 395, 376, 384" alt="48 " />
+    <area shape="poly" alt="254" data-type="6" coords="420, 408, 443, 421, 451, 407, 427, 394" alt="47 " />
+    <area shape="poly" alt="255" data-type="6" coords="397, 395, 420, 408, 429, 391, 406, 378" alt="46 " />
+    <area shape="poly" alt="256" data-type="6" coords="406, 378, 397, 395, 376, 384, 382, 365" alt="45 " />
+    <area shape="poly" alt="257" data-type="6" coords="462, 387, 454, 401, 431, 387, 438, 374" alt="44 " />
+    <area shape="poly" alt="258" data-type="6" coords="406, 378, 429, 391, 440, 369, 416, 360" alt="43 " />
+    <area shape="poly" alt="259" data-type="6" coords="389, 353, 382, 365, 406, 378, 414, 363" alt="42 " />
+    <area shape="poly" alt="260" data-type="6" coords="468, 365, 469, 376, 462, 387, 438, 374, 440, 369, 442, 363" alt="41 " />
+    <area shape="poly" alt="261" data-type="6" coords="442, 362, 469, 364, 469, 348, 443, 347" alt="40 " />
+    <area shape="poly" alt="262" data-type="6" coords="416, 360, 440, 369, 442, 363, 443, 343, 417, 342" alt="39 " />
+    <area shape="poly" alt="263" data-type="6" coords="417, 342, 416, 360, 414, 363, 389, 353, 393, 347, 394, 341" alt="38 " />
+    <area shape="poly" alt="264" data-type="6" coords="417, 340, 443, 343, 445, 318, 418, 313" alt="37 " />
+    <area shape="poly" alt="265" data-type="6" coords="418, 313, 417, 341, 394, 340, 394, 320, 397, 315, 395, 308" alt="36 " />
+    <area shape="poly" alt="266" data-type="6" coords="451, 307, 473, 322, 470, 325, 471, 340, 443, 339, 445, 318, 446, 315" alt="35 " />
+    <area shape="poly" alt="267" data-type="6" coords="431, 289, 418, 308, 418, 313, 395, 308, 394, 301, 394, 298, 396, 296, 403, 295, 407, 293, 407, 287, 411, 283, 417, 279" alt="34 " />
+    <area shape="poly" alt="268" data-type="6" coords="431, 289, 418, 308, 418, 313, 445, 318, 446, 315, 453, 303" alt="33 " />
+    <area shape="poly" alt="269" data-type="6" coords="431, 289, 453, 303, 464, 287, 442, 273" alt="32 " />
+    <area shape="poly" alt="270" data-type="6" coords="431, 265, 417, 279, 431, 289, 442, 273" alt="31 " />
+    <area shape="poly" alt="271" data-type="6" coords="486, 302, 477, 315, 455, 300, 464, 287" alt="30 " />
+    <area shape="poly" alt="272" data-type="6" coords="464, 287, 486, 302, 495, 289, 473, 275" alt="29 " />
+    <area shape="poly" alt="273" data-type="6" coords="442, 273, 464, 287, 475, 272, 453, 257" alt="28 " />
+    <area shape="poly" alt="274" data-type="6" coords="453, 257, 442, 273, 431, 265, 440, 252, 440, 248" alt="27 " />
+    <area shape="poly" alt="275" data-type="6" coords="453, 257, 475, 272, 486, 255, 465, 241" alt="26 " />
+    <area shape="poly" alt="276" data-type="6" coords="465, 241, 453, 257, 440, 248, 444, 227" alt="25 " />
+    <area shape="poly" alt="277" data-type="6" coords="508, 270, 499, 283, 477, 268, 486, 255" alt="24 " />
+    <area shape="poly" alt="278" data-type="6" coords="486, 255, 508, 270, 517, 257, 495, 242" alt="23 " />
+    <area shape="poly" alt="279" data-type="6" coords="465, 241, 486, 255, 497, 239, 475, 224" alt="22 " />
+    <area shape="poly" alt="280" data-type="6" coords="475, 224, 465, 241, 444, 227, 457, 212" alt="21 " />
+    <area shape="poly" alt="281" data-type="6" coords="530, 238, 521, 251, 499, 236, 508, 223" alt="20 " />
+    <area shape="poly" alt="282" data-type="6" coords="475, 224, 497, 239, 508, 223, 486, 208" alt="19 " />
+    <area shape="poly" alt="283" data-type="6" coords="469, 197, 457, 212, 475, 224, 486, 208" alt="18 " />
+    <area shape="poly" alt="284" data-type="6" coords="508, 223, 530, 238, 538, 225, 517, 210" alt="17 " />
+    <area shape="poly" alt="285" data-type="6" coords="486, 208, 508, 223, 519, 207, 497, 192" alt="16 " />
+    <area shape="poly" alt="286" data-type="6" coords="497, 192, 486, 208, 469, 197, 481, 181" alt="15 " />
+    <area shape="poly" alt="287" data-type="6" coords="552, 205, 543, 218, 521, 204, 530, 191" alt="14 " />
+    <area shape="poly" alt="288" data-type="6" coords="497, 192, 508, 176, 533, 186, 530, 191, 519, 207" alt="13 " />
+    <area shape="poly" alt="289" data-type="6" coords="559, 187, 558, 197, 552, 205, 530, 191, 533, 186, 534, 181" alt="12 " />
+    <area shape="poly" alt="290" data-type="6" coords="558, 98, 582, 117, 574, 126, 546, 120" alt="11 " />
+    <area shape="poly" alt="291" data-type="6" coords="491, 168, 481, 181, 497, 192, 508, 176" alt="10 " />
+    <area shape="poly" alt="292" data-type="6" coords="537, 166, 563, 172, 559, 187, 534, 181" alt="9 " />
+    <area shape="poly" alt="293" data-type="6" coords="508, 176, 533, 186, 538, 162, 512, 157" alt="8 " />
+    <area shape="poly" alt="294" data-type="6" coords="512, 157, 508, 176, 491, 168, 494, 164, 492, 159, 477, 151, 484, 146" alt="7 " />
+    <area shape="poly" alt="295" data-type="6" coords="568, 149, 564, 164, 539, 158, 542, 143" alt="6 " />
+    <area shape="poly" alt="296" data-type="6" coords="512, 157, 538, 162, 542, 143, 516, 138" alt="5 " />
+    <area shape="poly" alt="297" data-type="6" coords="516, 138, 512, 157, 484, 146, 477, 151, 467, 145, 467, 140, 480, 123" alt="4 " />
+    <area shape="poly" alt="298" data-type="6" coords="545, 127, 570, 133, 568, 149, 542, 143" alt="3 " />
+    <area shape="poly" alt="299" data-type="6" coords="521, 121, 545, 127, 542, 143, 516, 138" alt="2 " />
+    <area shape="poly" alt="300" data-type="6" coords="521, 121, 496, 101, 480, 123, 516, 138" alt="1 " />
+=end
+%>
+
+<% end %>
+
 
 
 <%# 

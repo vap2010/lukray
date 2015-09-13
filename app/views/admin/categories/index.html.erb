@@ -1,0 +1,42 @@
+<h1>Listing admin_categories</h1>
+<%= link_to 'New Category', new_admin_category_path %>
+
+<% Category.adm_symtypes.each do |catype|  %>
+
+<h2><%= catype.to_s -%></h2>
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
+  <thead>
+    <tr>
+      <th>del</th>
+      <th>id</th>
+      <th>del</th>
+      <th>pos</th>
+      <th>pub</th>
+      <th>Type</th>
+      <th>Title</th>
+      <th>Image</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Admin::Category.try(catype).each do |admin_category| %>
+      <tr>
+        <td><%= link_to '[x]', admin_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admin_category.id %></td>
+        <td><%= admin_category.is_deleted %></td>
+        <td><%= admin_category.position %></td>
+        <td><%= admin_category.is_published %></td>
+        <td><%= admin_category.type_id %></td>
+        <td><%= admin_category.title %></td>
+        <td><%= admin_category.image %></td>
+        <td><%= link_to 'Show', admin_category %></td>
+        <td><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% end %>
+
+<%= link_to 'New Category', new_admin_category_path %>

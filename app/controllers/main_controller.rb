@@ -6,6 +6,7 @@ class MainController < ApplicationController
 
   def home
     @a = 1 #if is_main_page?  
+    @big_images_arr = BigImage.published.where(:category_id => Category.bigvisuals.first.id)  #.map{|im| im.picture.url}
   end
 
   def page
@@ -17,6 +18,7 @@ class MainController < ApplicationController
       uch = [2,3] if @page.id == 10 
       @homesteads = Homestead.where(:domain_id => uch)   #  params[:id]     
     end
+    
     render action: :page and return 
   end
 
@@ -24,6 +26,14 @@ class MainController < ApplicationController
     @homestead = Homestead.find(params[:id])
     render layout: false
   end
+
+  def price
+    @homesteads1 = Homestead.site_num_sort(Homestead.mkr1)
+    @homesteads2 = Homestead.site_num_sort(Homestead.mkr2)
+    @homesteads3 = Homestead.site_num_sort(Homestead.mkr3)    
+  end
+
+
 
   def township
     render action: :page and return 
@@ -87,10 +97,6 @@ class MainController < ApplicationController
   end
   
   def around
-    render action: :page and return 
-  end
-  
-  def price
     render action: :page and return 
   end
   

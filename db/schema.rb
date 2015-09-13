@@ -11,7 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821145129) do
+ActiveRecord::Schema.define(version: 20150912235207) do
+
+  create_table "big_images", force: true do |t|
+    t.integer  "position"
+    t.boolean  "is_public",            default: true
+    t.boolean  "is_deleted",           default: false
+    t.integer  "category_id"
+    t.string   "title"
+    t.string   "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "preview_file_name"
+    t.string   "preview_content_type"
+    t.integer  "preview_file_size"
+    t.datetime "preview_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.integer  "position"
+    t.boolean  "is_deleted",   default: false
+    t.boolean  "is_published", default: true
+    t.integer  "type_id"
+    t.string   "title"
+    t.string   "image"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -118,6 +149,8 @@ ActiveRecord::Schema.define(version: 20150821145129) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "script_after"
+    t.string   "script_for_eval"
+    t.integer  "skin_id"
   end
 
   create_table "roles", force: true do |t|

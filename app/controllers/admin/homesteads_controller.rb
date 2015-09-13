@@ -9,21 +9,24 @@ class Admin::HomesteadsController < Admin::AdminController
   end
 
   def mkr1
-    @admin_homesteads = Admin::Homestead.where(:domain_id => 1).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    # @admin_homesteads = Admin::Homestead.where(:domain_id => 1).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    @admin_homesteads = Homestead.site_num_sort(Admin::Homestead.mkr1)
     respond_with(@admin_homesteads)  do |format|
       format.html { render template: 'admin/homesteads/index' }
     end
   end
 
   def mkr2
-    @admin_homesteads = Admin::Homestead.where(:domain_id => 2).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    # @admin_homesteads = Admin::Homestead.where(:domain_id => 2).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    @admin_homesteads = Homestead.site_num_sort(Admin::Homestead.mkr2)
     respond_with(@admin_homesteads)  do |format|
       format.html { render template: 'admin/homesteads/index' }
     end
   end
   
   def mkr3
-    @admin_homesteads = Admin::Homestead.where(:domain_id => 3).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    # @admin_homesteads = Admin::Homestead.where(:domain_id => 3).sort{|h1, h2| h1.site_num.to_s.to_i <=> h2.site_num.to_s.to_i}
+    @admin_homesteads = Homestead.site_num_sort(Admin::Homestead.mkr3)
     respond_with(@admin_homesteads)  do |format|
       format.html { render template: 'admin/homesteads/index' }
     end
@@ -94,8 +97,10 @@ class Admin::HomesteadsController < Admin::AdminController
       params.require(:admin_homestead).permit(:domain_id, :land_use_id, :site_num, :cadastral_num, :phase, 
       :status_id, :acreage_s, :price, :discount, :has_coast, :has_forest, :corner_site, :outside_site, 
       :land_link_id, :shape_id, :slope, :altitude, :k_interes, :k_browsing, :neighbors, :note,
-      :booked_date, :distance_to_lake, :has_basement, :has_building)
+      :booked_date, :distance_to_lake, :has_basement, :has_building, :coords, :show_on_map, 
+      :show_but_add_compare, :show_but_demonstrate, :show_but_auction, :show_but_booking)
     end
 end
 
 
+      

@@ -27,6 +27,8 @@
 
 <% if @page.has_script_after =~ /\Amap-/  %>
   <%= render "shared/map_apeas_schema", :page => @page %>
+<% elsif ! @page.has_script_after.empty?  %>
+  <%= render "shared/#{@page.has_script_after}", :page => @page %>
 <% end %>
 
 

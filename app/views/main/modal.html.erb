@@ -1,3 +1,5 @@
+<h1><%= params[:id] -%> / <%= @homestead.id if @homestead %></h1>
+
 <h2>участок № <%= @homestead.site_num.to_s -%>
     <span title="<%= params[:id] -%>"><small>(мкр.№ <%= @homestead.domain_id.to_s -%>)</small></span>
 </h2>

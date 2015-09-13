@@ -4,9 +4,6 @@
     
     <% if controller.class.zone != :admin %><br /><% end %>
     
-    
-
-    
     <%= link_to 'Site', root_path  %> 
     <%= link_to 'ЛК', lk_home_path  -%> 
     
@@ -15,10 +12,12 @@
       <%= link_to 'Админ', admin_home_index_path  %> 
     <% end %>
    
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+    <% if controller_name == 'lk' %>
+      <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+    <% end %>
+    
   <% else %>
     <%= link_to 'Войти', new_user_session_path %> <a></a> 
     <%= link_to 'Зарегистрироваться', new_user_registration_path %>
   <% end %> 
 </p>
-
