@@ -29,13 +29,12 @@ var color9 = '#F47474';
 var color9active = '#F4A5A0';  /* Это ваш дачный участок	#F47474	#F4A5A0 */
 
 
-
 var mapWidth,mapHeight;
 
 $(document).ready(function(){
 	
 	$('.map area').each(function(index){
-		
+	
 		var $this = $(this);
 		var color,colorActive;
 		
@@ -209,9 +208,9 @@ function draw(id,color,colorActive,poly,width,height,left,top,active){
 		context.lineTo(poly[i], poly[i+1]);
 	}
 	context.closePath();
-	context.strokeStyle = '#6B5D1C';
-	context.stroke();
 	context.fillStyle = colorFill;
 	context.fill();
+	context.strokeStyle = '#6B5D1C';
+	context.stroke();
 	
 }

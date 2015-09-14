@@ -109,13 +109,12 @@ jQuery(document).ready(function($){
 		$("header .contakt").slideToggle();
 		$(this).toggleClass("active");
 	});
-
 });
 
 /*Смена фона*/
 $(document).ready(function(){
 	$('.bl_first').bgStretcher({
-	images: ['assets/skel/img/bg/bg_1.jpg', 'assets/skel/img/bg/bg_2.jpg', 'assets/skel/img/bg/bg_3.jpg', 'assets/skel/img/bg/bg_4.jpg', 'assets/skel/img/bg/bg_5.jpg'], //ссылки на изображения
+	images: big_images_arr, //ссылки на изображения
 	imageHeight: 1024,//высотра изображений
 	nextSlideDelay:5000,//интервал между слайдами
 	slideShowSpeed:1000,//скорость смены слайдов
@@ -126,4 +125,8 @@ $(document).ready(function(){
 	});
 });
 
+/*
+  images: ['assets/skel/img/bg/bg_1.jpg', 'assets/skel/img/bg/bg_2.jpg', 'assets/skel/img/bg/bg_3.jpg', 'assets/skel/img/bg/bg_4.jpg', 'assets/skel/img/bg/bg_5.jpg'], //ссылки на изображения
 
+, 'assets/skel/img/bg/bg_6.jpg', 'assets/skel/img/bg/bg_7.jpg', 'assets/skel/img/bg/bg_8.jpg'
+*/

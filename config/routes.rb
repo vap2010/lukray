@@ -1,6 +1,26 @@
 Rails.application.routes.draw do
 
 
+  namespace :admin do
+    resources :photos
+  end
+
+  namespace :admin do
+    resources :banners
+  end
+
+  namespace :admin do
+    resources :big_images
+  end
+
+  namespace :admin do
+    resources :categories
+  end
+
+  namespace :admin do
+    resources :users
+  end
+
   root 'main#home'
   
   # get 'main/home'
