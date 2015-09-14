@@ -1506,9 +1506,10 @@ div.f_left div p a:hover {background:none; color:#000;}
 
 .noborder-margin0 {border:none; margin-top:0px; margin-right:0px; margin-bottom:0px; margin-left:0px;}
 
+/*
 div.container ul    {margin-left: 30px;}
 div.container ul li {font-size: 16px;	color: #333; }
-
+*/
 
 .map {
 	position: relative;
@@ -1543,3 +1544,15 @@ img.ileft-b {  margin-left:20px; }
 
 
 ul li.t-white {color: white;}
+
+.block_head ul li{
+    list-style-type:none;
+    padding:15px 7px;
+    font:14px PT_Sans_Bold!important;;
+    color:#fff!important;
+    display: inline-block;
+    text-transform:uppercase;
+}
+.block_head ul li.t-white:hover {
+    color: #EDBA00;
+}

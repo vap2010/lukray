@@ -13,9 +13,6 @@
   
   <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true   %>
   <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true   %>
-	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
 	<%#
 	  # <link rel="stylesheet" href="assets/skel/css/bgstretcher.css">
 	  # <link rel="stylesheet" href="assets/skel/css/jquery.arcticmodal-0.3.css">
@@ -26,6 +23,7 @@
 	  # <script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
 	  # <script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
 	  # <script type="text/javascript" src="/assets/skel/js/script.js"></script>	
+	
 	%>
 
 	<link rel="stylesheet" href="/assets/skel/css/bgstretcher.css">
@@ -34,10 +32,12 @@
    <% if @page and @page.has_script_after =~ /\Amap-/  -%>
   	  <link rel="stylesheet" href="/assets/skel/css/jquery.qtip.css">
    <% end -%>
+   <%= render 'layouts/big_image_set' if is_main_page?  -%>
 
 	<link rel="stylesheet" href="/assets/skel/css/style.css">
 	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
 	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
@@ -47,11 +47,10 @@
 	  <script type="text/javascript" src="/assets/skel/js/jquery.livequery.js"></script>
    <% end -%>	
 
-   <%= render 'layouts/big_image_set' if is_main_page?  -%>
    
 	<script type="text/javascript" src="/assets/skel/js/script.js"></script>
 
-	<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+	<%# <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>  %> 
 
    <% if @page and @page.has_script_after =~ /\Amap-/  -%>
      <% if @page and [8,9,10].include? @page.id  -%>
@@ -235,9 +234,10 @@
 </footer>
 </div>
 
-<!--
+
+<%# 
 <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=86e805b39fdc81bc21fcdc30841f1ae6" charset="UTF-8"></script>
--->
+%>
 
 
 
