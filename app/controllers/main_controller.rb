@@ -7,6 +7,7 @@ class MainController < ApplicationController
   def home
     @a = 1 #if is_main_page?  
     @big_images_arr = BigImage.published.where(:category_id => Category.bigvisuals.first.id)  #.map{|im| im.picture.url}
+    @infoblocks = Banner.infoblocks
   end
 
   def page

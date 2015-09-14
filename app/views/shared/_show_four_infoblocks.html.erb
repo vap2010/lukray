@@ -1,0 +1,17 @@
+<% if @infoblocks and @infoblocks.size > 1  %>
+<section id="bl_preimusch">
+  <div class="container">
+
+  <% @infoblocks.values_at(0..3).compact.each do |ib|  %>
+    <a href="<%= ib.link -%>" class="bl_preimuschestva">
+	   <p class="img_preim"><img src="<%= ib.image.url -%>" alt="<%= ib.title -%>"></p>
+      <h3><%= ib.title -%></h3>
+      <p><%= ib.text -%></p>
+    </a>
+<% end %>
+	
+    <div class="clear"></div>
+    <%#  <a href="#" class="btn">Все преимущества</a> 		 %>
+  </div>
+</section>
+<% end %>

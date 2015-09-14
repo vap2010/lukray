@@ -9,58 +9,59 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="vadim: 925 585-61-39">
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags  -%>
   
-  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%#
-	 <link rel="stylesheet" href="assets/skel/css/bgstretcher.css">
-	 <link rel="stylesheet" href="assets/skel/css/jquery.arcticmodal-0.3.css">
-	 <link href="assets/skel/css/style.css" rel="stylesheet">
-	 <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true   %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true   %>
 	
-	 <script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
-	 <script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
-	 <script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
-	 <script type="text/javascript" src="/assets/skel/js/script.js"></script>
-  %>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<%#
+	  # <link rel="stylesheet" href="assets/skel/css/bgstretcher.css">
+	  # <link rel="stylesheet" href="assets/skel/css/jquery.arcticmodal-0.3.css">
+	  # <link href="assets/skel/css/style.css" rel="stylesheet">
+	  # <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+	  # 
+	  # <script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
+	  # <script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
+	  # <script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
+	  # <script type="text/javascript" src="/assets/skel/js/script.js"></script>	
+	%>
 
 	<link rel="stylesheet" href="/assets/skel/css/bgstretcher.css">
 	<link rel="stylesheet" href="/assets/skel/css/jquery.arcticmodal-0.3.css">
-	
-   <% if @page and @page.has_script_after =~ /\Amap-/ %>
+
+   <% if @page and @page.has_script_after =~ /\Amap-/  -%>
   	  <link rel="stylesheet" href="/assets/skel/css/jquery.qtip.css">
-   <% end %>	
-   
+   <% end -%>
+
 	<link rel="stylesheet" href="/assets/skel/css/style.css">
 	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
 	
 	<script type="text/javascript" src="/assets/skel/js/jquery-bgstretcher-3.3.0.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.arcticmodal-0.3.min.js"></script>
 	<script type="text/javascript" src="/assets/skel/js/jquery.validate.min.js"></script>
-	
-   <% if @page and @page.has_script_after =~ /\Amap-/  %>
+
+   <% if @page and @page.has_script_after =~ /\Amap-/  -%>
 	  <script type="text/javascript" src="/assets/skel/js/jquery.qtip.min.js"></script>
 	  <script type="text/javascript" src="/assets/skel/js/jquery.livequery.js"></script>
-   <% end %>	
-   
-   <%= render 'layouts/big_image_set' if is_main_page? %>
+   <% end -%>	
+
+   <%= render 'layouts/big_image_set' if is_main_page?  -%>
    
 	<script type="text/javascript" src="/assets/skel/js/script.js"></script>
-	
-	<%#
-	  <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
-   %>
-   
-   <% if @page and @page.has_script_after =~ /\Amap-/ %>
-    <% if @page and [8,9,10].include? @page.id  %>
-	  <script type="text/javascript" src="/assets/skel/js/script-new.js"></script>
-    <% end %>	
-   <% end %>
-   
-   <% if controller_name == 'lk' %>
-   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-   <% end %>
+
+	<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+
+   <% if @page and @page.has_script_after =~ /\Amap-/  -%>
+     <% if @page and [8,9,10].include? @page.id  -%>
+	    <script type="text/javascript" src="/assets/skel/js/script-new.js"></script>
+     <% end -%>
+   <% end -%>
+
+   <% if controller_name == 'lk'  -%>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  -%>
+   <% end  -%>
 
 
 <%#   .bl_page_head{ background: #ccc url(../img/bg/bg_1.jpg) center no-repeat; }    визуал внутр страниц  %>
@@ -72,8 +73,8 @@
 <!--Форма заказа звонка-->
 <div style="display: none;">
     <div class="box-modal" id="exampleModal">
-        <div class="box-modal_close arcticmodal-close">x</div>
-        <h4>Обратный звонок</h4>
+      <div class="box-modal_close arcticmodal-close">x</div>
+      <h4>Обратный звонок</h4>
 		<div id="messegeResult"></div>
 		  <%= render 'post/back_call' %>
     </div>
@@ -98,21 +99,18 @@
 			<a class="cont-icon" id="cont-skypes" style="background:none;"></a>
 		
 			<a href="skype:&#108;&#117;&#098;&#105;&#107;&#114;&#121;" class="cont-icon" id="cont-skype"><%#
-			
-           <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
-           <div id="SkypeButton_Call_lubikry_1">
-             <script type="text/javascript">
-               Skype.ui({
-                 "name": "dropdown",
-                 "element": "SkypeButton_Call_lubikry_1",
-                 "participants": ["lubikry"],
-                 "imageSize": 10
-               });
-             </script>
-           </div>
-           
-         -%></a>
-			
+          # <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+          # <div id="SkypeButton_Call_lubikry_1">
+          #   <script type="text/javascript">
+          #     Skype.ui({
+          #       "name": "dropdown",
+          #       "element": "SkypeButton_Call_lubikry_1",
+          #       "participants": ["lubikry"],
+          #       "imageSize": 10
+          #     });
+          #   </script>
+          # </div>
+          -%></a>
 			<%#
 		 	 <a href="" class="cont-icon" id="cont-icq"></a>
 			 <a href="" class="cont-icon" id="cont-phone"></a>
@@ -145,7 +143,7 @@
 		<div class="block_head">
 		
 		 <% if is_main_page? %>
-			<ul><li>Тишина</li><li>Природа</li><li>Озеро</li><li>Дорога</li><li>Охрана</li><li>Ферма</li></ul>
+			<ul><li class="t-white">Тишина</li><li class="t-white">Природа</li><li class="t-white">Озеро</li><li class="t-white">Дорога</li><li class="t-white">Охрана</li><li class="t-white">Ферма</li></ul>
 			<h1>Край <span class="text_white">хорошей </span><span class="text_yellow">погоды</span></h1>
 			<div class="bl_krug_img"><p class="pagination"></p></div>
 		 <% else %>
@@ -174,7 +172,8 @@
 
 
 <% if  is_main_page?  %>
-  <%= render 'shared/main_four_infoblocks'  %>
+  <%#= render 'shared/main_four_infoblocks'  %>
+  <%= render 'shared/show_four_infoblocks'  %>
 <% else %>
   <section class="content">
 	 <div class="container">
@@ -205,7 +204,8 @@
 		</div>
 	</div>
 	<div class="f_right">
-		<p class="phone">+7 495 150 08 87</p>		
+		<p class="phone">+7 495 150 08 87</p>
+		
 		<%= render 'layouts/web_counts' %>
 	</div>
 	<div class="f_menu">
@@ -235,9 +235,9 @@
 </footer>
 </div>
 
-<%#!--
+<!--
 <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=86e805b39fdc81bc21fcdc30841f1ae6" charset="UTF-8"></script>
---%>
+-->
 
 
 

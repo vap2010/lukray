@@ -39,12 +39,12 @@
   
 
   <div class="field">
-    <%= image_tag @admin_big_image.preview.url %>
+    <%= image_tag @admin_big_image.preview.url if @admin_big_image.preview %>
     <%= f.file_field :preview %>
   </div>
   
   <div class="field">
-    <%= image_tag @admin_big_image.picture.url %>
+    <%= image_tag @admin_big_image.picture.url if @admin_big_image.picture %>
     <%= f.file_field :picture %>
   </div>
   

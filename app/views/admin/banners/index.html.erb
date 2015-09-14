@@ -1,0 +1,54 @@
+<h1>Listing admin_banners</h1>
+
+<% @banners_categories.each do |bancat| %>
+<%= link_to 'New Banner', new_admin_banner_path %>
+
+<h2><%= bancat.id -%>) <%= bancat.title -%> </h2>
+
+
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
+  <thead>
+    <tr>
+      <th>del</th>
+      <th>Pos</th>
+      <th>Cat<br />id</th>
+      <th>Image</th>
+      <th>del</th>
+      <th>pub</th>
+      <th>Has link</th>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Text</th>
+      <th>Show start</th>
+      <th>Show end</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Admin::Banner.where(:category_id => bancat.id).order(:position).each  do |admin_banner| %>
+      <tr>
+        <td><%= link_to '[x]', admin_banner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admin_banner.position %></td>
+        <td><%= admin_banner.category_id %></td>
+        <td><%= image_tag admin_banner.image.url %></td>        
+        <td><%= admin_banner.is_deleted %></td>
+        <td><%= admin_banner.is_published %></td>
+        <td><%= admin_banner.has_link %></td>
+        <td><%= admin_banner.name %></td>
+        <td><%= admin_banner.title %></td>
+        <td><%= admin_banner.link %></td>
+        <td><%= admin_banner.text %></td>
+        <td><%= admin_banner.show_start %></td>
+        <td><%= admin_banner.show_end %></td>
+        <td><%= link_to 'Show', admin_banner %></td>
+        <td><%= link_to 'Edit', edit_admin_banner_path(admin_banner) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% end %>
+
+<%= link_to 'New Banner', new_admin_banner_path %>

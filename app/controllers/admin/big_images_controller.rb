@@ -4,8 +4,8 @@ class Admin::BigImagesController < Admin::AdminController
   respond_to :html
 
   def index
-    @admin_big_images = Admin::BigImage.all
-    @big_images_categories = Category.where(type_id: 8).order(:position) 
+    # @admin_big_images = Admin::BigImage.all
+    @big_images_categories = Category.adm_bigvisuals 
     respond_with(@admin_big_images)
   end
 

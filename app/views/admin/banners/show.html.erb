@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @admin_banner.position %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_banner.category_id %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @admin_banner.is_deleted %>
+</p>
+
+<p>
+  <strong>Is published:</strong>
+  <%= @admin_banner.is_published %>
+</p>
+
+<p>
+  <strong>Has link:</strong>
+  <%= @admin_banner.has_link %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_banner.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_banner.title %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @admin_banner.link %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @admin_banner.text %>
+</p>
+
+<p>
+  <strong>Show start:</strong>
+  <%= @admin_banner.show_start %>
+</p>
+
+<p>
+  <strong>Show end:</strong>
+  <%= @admin_banner.show_end %>
+</p>
+
+<%= link_to 'Edit', edit_admin_banner_path(@admin_banner) %> |
+<%= link_to 'Back', admin_banners_path %>  | 
+<%= link_to 'New Banner', new_admin_banner_path %>
+

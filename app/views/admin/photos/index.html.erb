@@ -1,0 +1,53 @@
+<h1>Listing admin_photos</h1>
+
+<% @photos_categories.each do |bancat| %>
+<%= link_to 'New Photo', new_admin_photo_path %>
+
+<h2><%= bancat.id -%>) <%= bancat.title -%> </h2>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4" class="tdborders_ccc">
+  <thead>
+    <tr>
+      <th>del</th>
+      <th>Pos</th>
+      <th>Cat<br />id</th>
+      <th> img </th>
+      <th>del</th>
+      <th>pub</th>
+      <th>Is shown<br /> in menu</th>
+      <th>Is preview<br /> published</th>
+      <th>Skin</th>
+      <th>Title</th>
+      <th>Menu title</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Admin::Photo.where(:category_id => bancat.id).order(:position).each  do |admin_photo| %>
+      <tr>
+        <td><%= link_to '[x]', admin_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admin_photo.position %></td>
+        <td><%= admin_photo.category_id %></td>
+        <td><%= image_tag admin_banner.image.url %></td>        
+        <td><%= admin_photo.is_deleted %></td>
+        <td><%= admin_photo.is_published %></td>
+        <td><%= admin_photo.is_shown_in_menu %></td>
+        <td><%= admin_photo.is_preview_published %></td>
+        <td><%= admin_photo.skin_id %></td>
+        <td><%= admin_photo.title %></td>
+        <td><%= admin_photo.menu_title %></td>
+        <td><%= link_to 'Show', admin_photo %></td>
+        <td><%= link_to 'Edit', edit_admin_photo_path(admin_photo) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>
+
+
+<%= link_to 'New Photo', new_admin_photo_path %>

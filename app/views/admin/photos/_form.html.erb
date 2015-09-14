@@ -1,0 +1,49 @@
+<%= form_for(@admin_photo) do |f| %>
+  <% if @admin_photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_photo.errors.count, "error") %> prohibited this admin_photo from being saved:</h2>
+
+      <ul>
+      <% @admin_photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="actions">    <%= f.submit %>  </div>
+
+  <div class="field">
+    <%= f.label :position %>           <%= f.text_field :position %>              <br />
+    <%= f.label :category_id %>        <%= f.text_field :category_id %>           <br />
+    <%= f.label :is_deleted %>         <%= f.check_box :is_deleted %>             <br />
+    <%= f.label :is_published %>       <%= f.check_box :is_published %>           <br />
+    <%= f.label :is_shown_in_menu %>      <%= f.check_box :is_shown_in_menu %>    <br />
+    <%= f.label :is_preview_published %>  <%= f.check_box :is_preview_published %><br />
+    <%= f.label :skin_id %>               <%= f.text_field :skin_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %>       <%= f.text_field :title, :size => 60 %><br />
+    <%= f.label :menu_title %>  <%= f.text_field :menu_title, :size => 60 %>
+  </div>
+  <div class="field">
+    <%= f.label :announce %><br>
+    <%= f.text_area :announce, :cols => 60, :rows => 4 %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, :cols => 60, :rows => 4 %>
+  </div>
+  
+  <div class="field">
+    <%= image_tag @admin_photo.preview.url if @admin_photo.preview  %>
+    <%= f.file_field :preview  %>
+  </div>
+  <div class="field">
+    <%= image_tag @admin_photo.image.url if @admin_photo.image  %>
+    <%= f.file_field :image  %>
+  </div>
+  
+  
+  <div class="actions">    <%= f.submit %>  </div>
+<% end %>

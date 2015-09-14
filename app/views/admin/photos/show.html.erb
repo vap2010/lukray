@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @admin_photo.position %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_photo.category_id %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @admin_photo.is_deleted %>
+</p>
+
+<p>
+  <strong>Is published:</strong>
+  <%= @admin_photo.is_published %>
+</p>
+
+<p>
+  <strong>Is shown in menu:</strong>
+  <%= @admin_photo.is_shown_in_menu %>
+</p>
+
+<p>
+  <strong>Is preview published:</strong>
+  <%= @admin_photo.is_preview_published %>
+</p>
+
+<p>
+  <strong>Skin:</strong>
+  <%= @admin_photo.skin_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_photo.title %>
+</p>
+
+<p>
+  <strong>Menu title:</strong>
+  <%= @admin_photo.menu_title %>
+</p>
+
+<p>
+  <strong>Announce:</strong>
+  <%= @admin_photo.announce %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @admin_photo.body %>
+</p>
+
+<%= link_to 'Edit', edit_admin_photo_path(@admin_photo) %> |
+<%= link_to 'Back', admin_photos_path %>
+
+
+<p><%= link_to 'New Photo', new_admin_photo_path %></p>

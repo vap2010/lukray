@@ -1,0 +1,46 @@
+<%= form_for(@admin_banner) do |f| %>
+  <% if @admin_banner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_banner.errors.count, "error") %> prohibited this admin_banner from being saved:</h2>
+
+      <ul>
+      <% @admin_banner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :position %>    <%= f.number_field :position %><br />
+    <%= f.label :category_id %>   <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :is_deleted %>    <%= f.check_box :is_deleted %> <br />
+    <%= f.label :is_published %>  <%= f.check_box :is_published %><br />
+    <%= f.label :has_link %>      <%= f.check_box :has_link %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %>    <%= f.text_field :name, :size => 60 %><br />
+    <%= f.label :title %>   <%= f.text_field :title, :size => 60 %><br />
+    <%= f.label :link %>    <%= f.text_field :link, :size => 60 %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_area :text, :cols => 60, :rows => 4 %>
+  </div>
+  <div class="field">
+    <%= f.label :show_start %> <%= f.datetime_select :show_start %> ||
+    <%= f.label :show_end %>   <%= f.datetime_select :show_end %>
+  </div>
+  
+  <div class="field">
+    <%= image_tag @admin_banner.image.url if @admin_banner.image  %>
+    <%= f.file_field :image  %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

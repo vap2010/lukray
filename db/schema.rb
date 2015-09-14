@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912235207) do
+ActiveRecord::Schema.define(version: 20150913233110) do
+
+  create_table "banners", force: true do |t|
+    t.integer  "position"
+    t.integer  "category_id"
+    t.boolean  "is_deleted",         default: false
+    t.boolean  "is_published",       default: true
+    t.boolean  "has_link",           default: true
+    t.string   "name"
+    t.string   "title"
+    t.string   "link"
+    t.text     "text"
+    t.datetime "show_start"
+    t.datetime "show_end"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "big_images", force: true do |t|
     t.integer  "position"
@@ -151,6 +171,30 @@ ActiveRecord::Schema.define(version: 20150912235207) do
     t.string   "script_after"
     t.string   "script_for_eval"
     t.integer  "skin_id"
+  end
+
+  create_table "photos", force: true do |t|
+    t.integer  "position"
+    t.integer  "category_id"
+    t.boolean  "is_deleted",           default: false
+    t.boolean  "is_published",         default: true
+    t.boolean  "is_shown_in_menu",     default: true
+    t.boolean  "is_preview_published", default: true
+    t.integer  "skin_id"
+    t.string   "title"
+    t.string   "menu_title"
+    t.text     "announce"
+    t.text     "body"
+    t.string   "preview_file_name"
+    t.string   "preview_content_type"
+    t.integer  "preview_file_size"
+    t.datetime "preview_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", force: true do |t|
